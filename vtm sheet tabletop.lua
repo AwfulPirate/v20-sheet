@@ -794,7 +794,7 @@ function onload(saved_data)
     end
 
     spawnedButtonCount = 0
-    createCheckbox()
+    createTickers()
     createCounter()
     createTextbox()
 end
@@ -806,7 +806,7 @@ end
 
 
 --Checks or unchecks the given box
-function click_checkbox(tableIndex,columnIndex,totalColumns, buttonIndex)
+function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex)
     if ref_buttonData.checkbox[tableIndex].value == columnIndex then
         columnIndex = columnIndex - 1
     end
@@ -851,7 +851,7 @@ function click_none() end
 
 
 --Makes checkboxes
-function createCheckbox()
+function createTickers()
     for i, data in ipairs(ref_buttonData.checkbox) do
         
         if data.sequence == nil then data.sequence = 1 end
@@ -868,7 +868,7 @@ function createCheckbox()
             for j=1,data.sequence do
                 --Sets up reference function
                 local funcName = "checkbox"..spawnedButtonCount
-                local func = function() click_checkbox(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber) end
+                local func = function() click_ticker(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber) end
                 self.setVar(funcName, func)
                 --Sets up label
                 local label = data.glyphEmpty
