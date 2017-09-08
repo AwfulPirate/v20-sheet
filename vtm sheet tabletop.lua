@@ -444,6 +444,8 @@ defaultButtonData = {
             pos   = {-0.33,0.1,1.21},
             size  = 300,
             sequence = 10,
+            glyphFilled = string.char(9632),
+            glyphEmpty = string.char(9633),
             value = 5,
             sequenceWidth = 0.07,
         },
@@ -461,6 +463,8 @@ defaultButtonData = {
             size  = 300,
             sequence = 10,
             value = 10,
+            glyphFilled = string.char(9632),
+            glyphEmpty = string.char(9633),
             sequenceColumns = 5,
             sequenceWidth = 0.07,
             sequenceHeight = 0.065,
@@ -471,6 +475,8 @@ defaultButtonData = {
             pos   = {1.205,0.1,0.93},
             size  = 300,
             sequence = 2,
+            glyphFilled = string.char(9632),
+            glyphEmpty = string.char(9633),
             sequenceColumns = 7,
             sequenceWidth = 0.0715,
             sequenceHeight = 0.0735,
@@ -805,12 +811,14 @@ function click_checkbox(tableIndex,columnIndex,totalColumns, buttonIndex)
         columnIndex = columnIndex - 1
     end
 
-    ref_buttonData.checkbox[tableIndex].value = columnIndex
+    local data = ref_buttonData.checkbox[tableIndex]
+
+    data.value = columnIndex
 
     for i=0, (totalColumns - 1) do
-        local localLabel = string.char(9675)
+        local localLabel = data.glyphEmpty
 
-        if i < columnIndex then localLabel = string.char(9679) end
+        if i < columnIndex then localLabel = data.glyphFilled end
 
         self.editButton({index=buttonIndex + i, label=localLabel})
     end
@@ -852,6 +860,9 @@ function createCheckbox()
         if data.sequenceColumns == nil then data.sequenceColumns = 1 end
         if data.value == nil then data.value = 0 end
 
+        if data.glyphFilled == nil then data.glyphFilled = string.char(9679) end
+        if data.glyphEmpty == nil then data.glyphEmpty = string.char(9675) end
+
         local buttonNumber = spawnedButtonCount
         for k=1,data.sequenceColumns do
             for j=1,data.sequence do
@@ -860,8 +871,8 @@ function createCheckbox()
                 local func = function() click_checkbox(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber) end
                 self.setVar(funcName, func)
                 --Sets up label
-                local label = string.char(9675)
-                if data.value >= ((k - 1) * data.sequence) + j then label=string.char(9679) end
+                local label = data.glyphEmpty
+                if data.value >= ((k - 1) * data.sequence) + j then label = data.glyphFilled end
                 --Creates button and counts it
 
                 local copyPos = {data.pos[1] + ((j - 1) * data.sequenceWidth) , data.pos[2], data.pos[3] + ((k - 1) * data.sequenceHeight)}
