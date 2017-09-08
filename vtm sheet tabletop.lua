@@ -51,6 +51,9 @@ Bonus) Finding/Editing Positions for elements
 
 Begin editing below:    ]]
 
+--delay to automatically turn the sheet to read only mode
+readOnlyTimerDelay = 15
+
 --Set this to true while editing and false when you have finished
 disableSave = false
 --Remember to set this to false once you are done making changes
@@ -66,7 +69,7 @@ buttonScale = {0.1,0.1,0.1}
 --This is the button placement information
 defaultButtonData = {
     --Add checkboxes
-    checkbox = {
+    ticker = {
         --[[
         pos   = the position (pasted from the helper tool)
         size  = height/width/font_size for checkbox
@@ -781,7 +784,11 @@ function updateSave()
         saved_data=""
     end
     self.script_state = saved_data
+
+    setReadOnlyTimer()
 end
+
+local writeAllowed = true
 
 --Startup procedure
 function onload(saved_data)
@@ -797,49 +804,124 @@ function onload(saved_data)
     createTickers()
     createCounter()
     createTextbox()
+
+    self.createButton({
+            label="Editable", click_function="click_none", function_owner=self,
+            position= {-1.18,0.1,-2.01}, height=0, width=0,
+            font_size=300, scale=buttonScale,
+            color=buttonColor, font_color=buttonFontColor
+    })
+
+    spawnedButtonCount = spawnedButtonCount + 1
+
+    local label = string.char(9633)
+
+    if writeAllowed == true then label = string.char(9632) end
+
+    local readWriteParams = {click_function="toggleReadWrite",
+            label = label,
+            function_owner=self,
+            position= {-0.92,0.1,-2.01},
+            height=300,
+            width=300,
+            font_size=(300 * 1.5),
+            scale=buttonScale,
+            color=buttonColor,
+            font_color={1,0,0},
+    }
+
+    self.createButton(readWriteParams)
+
 end
 
+function toggleReadWrite()
+    local localWriteAllowed = writeAllowed
 
+    if writeAllowed == true then localWriteAllowed = false else localWriteAllowed = true end
+
+    setReadWrite(localWriteAllowed)
+
+    if writeAllowed == true then
+        setReadOnlyTimer()
+    else
+        clearReadOnlyTimer()
+    end
+end
+
+function setReadWrite(localWriteAllowed)
+    if (type(localWriteAllowed) == "table") then
+        localWriteAllowed = localWriteAllowed.localWriteAllowed
+    end
+
+    writeAllowed = localWriteAllowed
+
+    local label = string.char(9633)
+    if writeAllowed == true then label = string.char(9632) end
+
+    self.editButton({index = spawnedButtonCount, label=label})
+end
+
+function setReadOnlyTimer()
+    clearReadOnlyTimer()
+
+    Timer.create({identifier=("readOnlyTimer"..self.getGUID()), function_name="setReadWrite", parameters= {localWriteAllowed = false}, function_owner=self, delay = readOnlyTimerDelay})
+end
+
+function clearReadOnlyTimer()
+    Timer.destroy("readOnlyTimer"..self.getGUID())
+end
+
+function onPickUp(player_color) 
+    self.setLock(true)
+    broadcastToColor("Unlocking and dragging/dealing currently causes problems, please use the Gizmo's Move on the Tools", player_color, {1,0,0})
+end
 
 --Click functions for buttons
 
-
-
 --Checks or unchecks the given box
 function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex)
-    if ref_buttonData.checkbox[tableIndex].value == columnIndex then
-        columnIndex = columnIndex - 1
+    if writeAllowed == true then
+        if ref_buttonData.ticker[tableIndex].value == columnIndex then
+            columnIndex = columnIndex - 1
+        end
+
+        local data = ref_buttonData.ticker[tableIndex]
+
+        data.value = columnIndex
+
+        for i=0, (totalColumns - 1) do
+            local localLabel = data.glyphEmpty
+
+            if i < columnIndex then localLabel = data.glyphFilled end
+
+            self.editButton({index=buttonIndex + i, label=localLabel})
+        end
+
+        updateSave()
     end
-
-    local data = ref_buttonData.checkbox[tableIndex]
-
-    data.value = columnIndex
-
-    for i=0, (totalColumns - 1) do
-        local localLabel = data.glyphEmpty
-
-        if i < columnIndex then localLabel = data.glyphFilled end
-
-        self.editButton({index=buttonIndex + i, label=localLabel})
-    end
-
-    updateSave()
 end
 
 --Applies value to given counter display
 function click_counter(tableIndex, buttonIndex, amount)
-    ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
-    self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})
-    updateSave()
-end
-
---Updates saved value for given text box
-function click_textbox(i, value, selected)
-    if selected == false then
-        ref_buttonData.textbox[i].value = value
+    if writeAllowed == true then
+        ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
+        self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})
         updateSave()
     end
 end
+
+
+--Updates saved value for given text box
+function click_textbox(i, value, selected)
+    if writeAllowed == true then
+        if selected == false then
+            ref_buttonData.textbox[i].value = value
+            updateSave()
+        end
+    end
+end
+
+
 
 --Dud function for if you have a background on a counter
 function click_none() end
@@ -852,7 +934,7 @@ function click_none() end
 
 --Makes checkboxes
 function createTickers()
-    for i, data in ipairs(ref_buttonData.checkbox) do
+    for i, data in ipairs(ref_buttonData.ticker) do
         
         if data.sequence == nil then data.sequence = 1 end
         if data.sequenceWidth == nil then data.sequenceWidth = 0.045 end
@@ -867,7 +949,7 @@ function createTickers()
         for k=1,data.sequenceColumns do
             for j=1,data.sequence do
                 --Sets up reference function
-                local funcName = "checkbox"..spawnedButtonCount
+                local funcName = "ticker"..spawnedButtonCount
                 local func = function() click_ticker(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber) end
                 self.setVar(funcName, func)
                 --Sets up label
