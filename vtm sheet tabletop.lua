@@ -51,6 +51,9 @@ Bonus) Finding/Editing Positions for elements
 
 Begin editing below:    ]]
 
+--state of play/edit
+writeAllowed = false
+
 --delay to automatically turn the sheet to read only mode
 readOnlyTimerDelay = 15
 
@@ -82,6 +85,7 @@ defaultButtonData = {
             size  = 300,
             sequence = 9,
             value = 1,
+            tooltip = "Strength",
         }, 
 
         --Dex
@@ -90,6 +94,7 @@ defaultButtonData = {
             size  = 300,
             sequence = 9,
             value = 1,
+            tooltip = "Dexterity",
         }, 
         --Stam
          {
@@ -97,6 +102,7 @@ defaultButtonData = {
             size  = 300,
             sequence = 9,
             value = 1,
+            tooltip = "Stamina",
         }, 
         
         --Social
@@ -106,6 +112,7 @@ defaultButtonData = {
             size  = 300,
             sequence = 9,
             value = 1,
+            tooltip = "Charisma",
         },
         
         --Man
@@ -114,6 +121,7 @@ defaultButtonData = {
             size  = 300,
             sequence = 9,
             value = 1,
+            tooltip = "Manipulation",
         },
         
         --App
@@ -122,6 +130,7 @@ defaultButtonData = {
             size  = 300,
             sequence = 9,
             value = 1,
+            tooltip = "Appearance",
         },
         --Mental
         --Per
@@ -130,6 +139,7 @@ defaultButtonData = {
              size  = 300,
              sequence = 9,
              value = 1,
+             tooltip = "Perception",
         },
         --Int
         {
@@ -137,6 +147,7 @@ defaultButtonData = {
              size  = 300,
              sequence = 9,
              value = 1,
+             tooltip = "Inteligence",
         },
         --Wits
         {
@@ -144,6 +155,7 @@ defaultButtonData = {
              size  = 300,
              sequence = 9,
              value = 1,
+             tooltip = "Wits",
         },
         --Abilities
         --Talents
@@ -152,66 +164,77 @@ defaultButtonData = {
             pos   = {-0.9,0.1,-0.62},
             size  = 300,
             sequence = 9,
+            tooltip = "Alertness",
         }, 
         --Athetics
          {
             pos   = {-0.9,0.1,-0.55},
             size  = 300,
             sequence = 9,
+            tooltip = "Athletics",
         }, 
         --Awareness
          {
             pos   = {-0.9,0.1,-0.48},
             size  = 300,
             sequence = 9,
+            tooltip = "Awareness",
         }, 
         --Brawl
          {
             pos   = {-0.9,0.1,-0.41},
             size  = 300,
             sequence = 9,
+            tooltip = "Brawl",
         }, 
         --Empathy
         {
             pos   = {-0.9,0.1,-0.34},
             size  = 300,
             sequence = 9,
+            tooltip = "Empathy",
         }, 
         --Expression
         {
             pos   = {-0.9,0.1,-0.27},
             size  = 300,
             sequence = 9,
+            tooltip = "Expression",
         }, 
         --Intimidation
         {
             pos   = {-0.9,0.1,-0.2},
             size  = 300,
             sequence = 9,
+            tooltip = "Intimidation", 
         }, 
         --Leadership
         {
             pos   = {-0.9,0.1,-0.13},
             size  = 300,
             sequence = 9,
+            tooltip = "Leadership",
         }, 
         --Legerdemain
         {
             pos   = {-0.9,0.1,-0.06},
             size  = 300,
             sequence = 9,
+            tooltip = "Legerdemain",
         }, 
         --Subterfuge
         {
             pos   = {-0.9,0.1,0.01},
             size  = 300,
             sequence = 9,
+            tooltip = "Subterfuge",
         }, 
         --Extra 1
         {
             pos   = {-0.9,0.1,0.08},
             size  = 300,
             sequence = 9,
+            tooltip = "Extra 1",
         }, 
         --Skills
         --Animal Ken
@@ -219,66 +242,77 @@ defaultButtonData = {
             pos   = {0.035,0.1,-0.62},
             size  = 300,
             sequence = 9,
+            tooltip = "Animal Ken",
         },
         --Archery
         {
             pos   = {0.035,0.1,-0.55},
             size  = 300,
             sequence = 9,
+            tooltip = "Archery",
         },
         --Commerce
         {
             pos   = {0.035,0.1,-0.48},
             size  = 300,
             sequence = 9,
+            tooltip = "Commerce",
         },
         --Crafts
         {
             pos   = {0.035,0.1,-0.41},
             size  = 300,
             sequence = 9,
+            tooltip = "Crafts",
         },
         --Etiquette
         {
             pos   = {0.035,0.1,-0.34},
             size  = 300,
             sequence = 9,
+            tooltip = "Etiquette",
         },
         --Melee
         {
             pos   = {0.035,0.1,-0.27},
             size  = 300,
             sequence = 9,
+            tooltip = "Melee",
         },
         --Performance
         {
             pos   = {0.035,0.1,-0.2},
             size  = 300,
             sequence = 9,
+            tooltip = "Performance",
         },
         --Ride
         {
             pos   = {0.035,0.1,-0.13},
             size  = 300,
             sequence = 9,
+            tooltip = "Ride",
         },
         --Stealth
         {
             pos   = {0.035,0.1,-0.06},
             size  = 300,
             sequence = 9,
+            tooltip = "Stealth",
         },
         --Survival
         {
             pos   = {0.035,0.1,0.01},
             size  = 300,
             sequence = 9,
+            tooltip = "Survival",
         },
         --Extra 2
         {
             pos   = {0.035,0.1,0.08},
             size  = 300,
             sequence = 9,
+            tooltip = "Extra 2",
         },
         --Knowledges
         --Academics
@@ -286,68 +320,78 @@ defaultButtonData = {
              pos   = {0.965,0.1,-0.62},
              size  = 300,
              sequence = 9,
+             tooltip = "Academics",
         },
         --Enigmas
         {
              pos   = {0.965,0.1,-0.55},
              size  = 300,
              sequence = 9,
+             tooltip = "Enigmas",
         },
         --Hearth Wisdom
         {
              pos   = {0.965,0.1,-0.48},
              size  = 300,
              sequence = 9,
+             tooltip = "Hearth Wisdom",
         },
         --Investigation
         {
              pos   = {0.965,0.1,-0.41},
              size  = 300,
              sequence = 9,
+             tooltip = "Investigation",
         },
         --Law
         {
              pos   = {0.965,0.1,-0.34},
              size  = 300,
              sequence = 9,
+             tooltip = "Law",
         },
         --Medicine
         {
              pos   = {0.965,0.1,-0.27},
              size  = 300,
              sequence = 9,
+             tooltip = "Medicine",
         },
         --Occult
         {
              pos   = {0.965,0.1,-0.2},
              size  = 300,
              sequence = 9,
+             tooltip = "Occult",
         },
         --Politics
         {
              pos   = {0.965,0.1,-0.13},
              size  = 300,
              sequence = 9,
+             tooltip = "Politics",
         },
         --Seneschal 
         {
              pos   = {0.965,0.1,-0.06},
              size  = 300,
              sequence = 9,
+             tooltip = "Seneschal",
         },
         --Theology 
         {
              pos   = {0.965,0.1,0.01},
              size  = 300,
              sequence = 9,
+             tooltip = "Theology",
         },
         --Extra 3 
         {
              pos   = {0.965,0.1,0.08},
              size  = 300,
              sequence = 9,
+             tooltip = "Extra 3",
         },
-      
 
         --Disciplines
         --Discipline 1
@@ -788,7 +832,6 @@ function updateSave()
     setReadOnlyTimer()
 end
 
-local writeAllowed = true
 
 --Startup procedure
 function onload(saved_data)
@@ -796,8 +839,10 @@ function onload(saved_data)
     if saved_data ~= "" then
         local loaded_data = JSON.decode(saved_data)
         ref_buttonData = loaded_data
+        writeAllowed = false
     else
         ref_buttonData = defaultButtonData
+        writeAllowed = true
     end
 
     spawnedButtonCount = 0
@@ -805,26 +850,30 @@ function onload(saved_data)
     createCounter()
     createTextbox()
 
+    local text = "Play Mode"
+    local label = string.char(9633)
+
+    if writeAllowed == true then 
+        text = "Edit Mode"
+        label = string.char(9632) 
+    end
+
     self.createButton({
-            label="Editable", click_function="click_none", function_owner=self,
-            position= {-1.18,0.1,-2.01}, height=0, width=0,
-            font_size=300, scale=buttonScale,
+            label=text, click_function="click_none", function_owner=self,
+            position= {-1.2,0.1,-2.03}, height=0, width=0,
+            font_size=500, scale=buttonScale,
             color=buttonColor, font_color=buttonFontColor
     })
 
     spawnedButtonCount = spawnedButtonCount + 1
 
-    local label = string.char(9633)
-
-    if writeAllowed == true then label = string.char(9632) end
-
     local readWriteParams = {click_function="toggleReadWrite",
             label = label,
             function_owner=self,
-            position= {-0.92,0.1,-2.01},
-            height=300,
-            width=300,
-            font_size=(300 * 1.5),
+            position= {-0.905,0.1,-2.04},
+            height=500,
+            width=500,
+            font_size=(500 * 1.5),
             scale=buttonScale,
             color=buttonColor,
             font_color={1,0,0},
@@ -855,9 +904,15 @@ function setReadWrite(localWriteAllowed)
 
     writeAllowed = localWriteAllowed
 
+    local text = "Play Mode"
     local label = string.char(9633)
-    if writeAllowed == true then label = string.char(9632) end
 
+    if writeAllowed == true then 
+        text = "Edit Mode"
+        label = string.char(9632) 
+    end
+
+    self.editButton({index = (spawnedButtonCount - 1), label=text})
     self.editButton({index = spawnedButtonCount, label=label})
 end
 
@@ -871,9 +926,28 @@ function clearReadOnlyTimer()
     Timer.destroy("readOnlyTimer"..self.getGUID())
 end
 
-function onPickUp(player_color) 
-    self.setLock(true)
-    broadcastToColor("Unlocking and dragging/dealing currently causes problems, please use the Gizmo's Move on the Tools", player_color, {1,0,0})
+function onUpdate()
+    if self.getLock() == false then
+        self.setLock(true)
+        broadcastToAll("Unlocking and dragging/dealing currently causes problems, please use the Gizmo's Move on the Tools", {1,0,0})
+    else
+
+    end
+
+    if self.use_hands == true then
+        self.use_hands = false
+        broadcastToAll("Unlocking and dragging/dealing currently causes problems, please use the Gizmo's Move on the Tools", {1,0,0})
+    end
+end
+
+function vectorDistance(v1, v2) 
+    local value = (v1[1] - v2[1]) * (v1[1] - v2[1])
+
+    value = value + ((v1[2] - v2[2]) * (v1[2] - v2[2]))
+
+    value = value + ((v1[3] - v2[3]) * (v1[3] - v2[3]))
+
+    return math.sqrt(value)
 end
 
 --Click functions for buttons
@@ -881,6 +955,22 @@ end
 --Checks or unchecks the given box
 function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex)
     if writeAllowed == true then
+
+        --[[local button = self.getButtons()[buttonIndex]
+
+        local worldPosition = self.positionToWorld(button.position)
+
+        for i, player in ipairs(Player.getPlayers()) do
+
+            local origin = {player.getPointerPosition()[1], player.getPointerPosition()[2] + 1.0, player.getPointerPosition()[3]}
+
+            local hit = Physics.cast({type=3, debug = true, origin = origin, direction = {0, -1, 0}, size = {0.1, 0.1, 0.1} })
+
+            print(hit.point)
+        end
+        ]]
+        
+
         if ref_buttonData.ticker[tableIndex].value == columnIndex then
             columnIndex = columnIndex - 1
         end
@@ -898,7 +988,57 @@ function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex)
         end
 
         updateSave()
+    else
+        if ref_buttonData.ticker[tableIndex].value > 0 then
+            local player = inferPlayer(self.getButtons()[buttonIndex + 1].position)
+
+            for i = 1, ref_buttonData.ticker[tableIndex].value do 
+                local dice = spawnObject({type = "D10", position = self.getPosition()})
+
+                local color = {}
+
+                if player == "White" then
+                    color = {1, 1, 1}
+                elseif player == "Red" then
+                    color = {0.856, 0.1, 0.094}
+                elseif player == "Blue" then
+                    color = {0.118, 0.53, 1}
+                elseif player == "Green" then
+                    color = {0.192, 0.701, 0.168}
+                else
+                    color = {0.25, 0.25, 0.25}
+                end
+
+                dice.use_hands = true
+
+                dice.deal(i, player)
+
+                print()
+            end
+        end
     end
+end
+
+function inferPlayer(position) 
+    local closestPlayer = nil
+    local distance = vectorDistance(position, Player.getPlayers()[1].getPointerPosition())
+    
+
+    for i, player in ipairs(Player.getPlayers()) do
+        if player.getPointerPosition() ~= nil then
+            local localPointerPosition = self.positionToLocal(player.getPointerPosition())
+            localPointerPosition = {-localPointerPosition[1], localPointerPosition[2] - 0.05, localPointerPosition[3]}
+
+            local playerDistance = vectorDistance(position, localPointerPosition)
+
+            if closestPlayer == nil or distance > playerDistance then
+                distance = playerDistance
+                closestPlayer = player.color
+            end
+        end
+    end
+
+    return closestPlayer
 end
 
 --Applies value to given counter display
@@ -918,9 +1058,19 @@ function click_textbox(i, value, selected)
             ref_buttonData.textbox[i].value = value
             updateSave()
         end
+    else 
+        if selected == false then
+            local resetFuncName = "resetTextboxTimer"..i.."."..self.getGUID()
+            Timer.destroy(resetFuncName)
+
+            Timer.create({identifier=resetFuncName, function_name="resetTextbox", parameters={index = (i - 1), value = ref_buttonData.textbox[i].value}, function_owner=self, delay=0.03})
+        end
     end
 end
 
+function resetTextbox(parameters)
+    self.editInput({index = parameters.index, value = parameters.value})    
+end
 
 
 --Dud function for if you have a background on a counter
@@ -929,8 +1079,6 @@ function click_none() end
 
 
 --Button creation
-
-
 
 --Makes checkboxes
 function createTickers()
@@ -941,6 +1089,7 @@ function createTickers()
         if data.sequenceHeight == nil then data.sequenceHeight = 0 end
         if data.sequenceColumns == nil then data.sequenceColumns = 1 end
         if data.value == nil then data.value = 0 end
+        if data.tooltip == nil then data.tooltip = "" end
 
         if data.glyphFilled == nil then data.glyphFilled = string.char(9679) end
         if data.glyphEmpty == nil then data.glyphEmpty = string.char(9675) end
@@ -966,7 +1115,7 @@ function createTickers()
                     label=label, click_function=funcName, function_owner=self,
                     position=copyPos, height=data.size, width=data.size,
                     font_size=fontSize, scale=buttonScale,
-                    color=buttonColor, font_color=buttonFontColor
+                    color=buttonColor, font_color=buttonFontColor, tooltip = data.tooltip
                 }) 
                 spawnedButtonCount = spawnedButtonCount + 1
             end
