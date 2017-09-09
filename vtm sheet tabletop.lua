@@ -927,17 +927,13 @@ function clearReadOnlyTimer()
 end
 
 function onUpdate()
-    if self.getLock() == false then
+    if self.getLock() == false or self.use_hands == true  then
         self.setLock(true)
-        broadcastToAll("Unlocking and dragging/dealing currently causes problems, please use the Gizmo's Move on the Tools", {1,0,0})
-    else
-
-    end
-
-    if self.use_hands == true then
         self.use_hands = false
-        broadcastToAll("Unlocking and dragging/dealing currently causes problems, please use the Gizmo's Move on the Tools", {1,0,0})
+        broadcastToAll("Unlocking and dragging/dealing currently causes problems, please use Gizmo's Move on the Tools", {1,0,0})
     end
+
+    if self.tooltip == true then self.tooltip = false end
 end
 
 function vectorDistance(v1, v2) 
@@ -989,31 +985,33 @@ function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex)
 
         updateSave()
     else
-        if ref_buttonData.ticker[tableIndex].value > 0 then
+        if ref_buttonData.ticker[tableIndex].tooltip ~= "" and ref_buttonData.ticker[tableIndex].value > 0 then
             local player = inferPlayer(self.getButtons()[buttonIndex + 1].position)
 
             for i = 1, ref_buttonData.ticker[tableIndex].value do 
                 local dice = spawnObject({type = "D10", position = self.getPosition()})
 
                 local color = {}
+                local hand_index = 1
 
-                if player == "White" then
+                if player.color == "White" then
                     color = {1, 1, 1}
-                elseif player == "Red" then
+                elseif player.color == "Red" then
                     color = {0.856, 0.1, 0.094}
-                elseif player == "Blue" then
+                elseif player.color == "Blue" then
                     color = {0.118, 0.53, 1}
-                elseif player == "Green" then
+                elseif player.color == "Green" then
                     color = {0.192, 0.701, 0.168}
                 else
                     color = {0.25, 0.25, 0.25}
+                    hand_index = 5
                 end
+
+                dice.setColorTint(color)
 
                 dice.use_hands = true
 
-                dice.deal(i, player)
-
-                print()
+                dice.deal(i, player.color)
             end
         end
     end
@@ -1033,7 +1031,7 @@ function inferPlayer(position)
 
             if closestPlayer == nil or distance > playerDistance then
                 distance = playerDistance
-                closestPlayer = player.color
+                closestPlayer = player
             end
         end
     end
