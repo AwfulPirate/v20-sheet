@@ -58,7 +58,7 @@ writeAllowed = false
 readOnlyTimerDelay = 90
 
 --Set this to true while editing and false when you have finished
-disableSave = true
+disableSave = false
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -467,6 +467,7 @@ defaultButtonData = {
             size  = 300,
             value = 1,
             sequence = 5,
+            tooltip = "Conscience/Conviction",
         },
         --Self-control
         {
@@ -474,6 +475,7 @@ defaultButtonData = {
             size  = 300,
             value = 1,
             sequence = 5,
+            tooltip = "Self-Control/Instinct",
         },
         --Courage
         {
@@ -481,6 +483,7 @@ defaultButtonData = {
             size  = 300,
             value = 1,
             sequence = 5,
+            tooltip = "Courage",
         },
         --Road (0.07)
         {
@@ -489,6 +492,7 @@ defaultButtonData = {
             sequence = 10,
             value = 5,
             sequenceWidth = 0.07,
+            tooltip = "Road",
         },
         --Willpower
         {
@@ -819,7 +823,7 @@ defaultButtonData = {
     --Add custom
     custom = {
         {
-            ownerColor = Player.Black
+            ownerColor = Player.Black.color
         }
     }
 }
@@ -887,22 +891,20 @@ function onload(saved_data)
             label = string.char(9632), click_function="cycleColor", function_owner=self,
             position= {-0.96,0.1,-1.705}, height=400, width=400,
             font_size=500, scale=buttonScale,
-            color={0, 0, 0}, font_color=playerColor, tooltip = ref_buttonData.custom[1].ownerColor.color
+            color={0, 0, 0}, font_color=playerColor, tooltip = ref_buttonData.custom[1].ownerColor
     })
 
     spawnedButtonCount = spawnedButtonCount + 1
 
-    local text = "Play Mode"
     local label = string.char(9633)
 
     if writeAllowed == true then 
-        text = "Edit Mode"
         label = string.char(9632) 
     end
 
 
     self.createButton({
-            label=text, click_function="click_none", function_owner=self,
+            label="Edit Mode", click_function="click_none", function_owner=self,
             position= {-1.2,0.1,-2.03}, height=0, width=0,
             font_size=500, scale=buttonScale,
             color=buttonColor, font_color=buttonFontColor
@@ -934,7 +936,7 @@ function getPlayerColor(player)
     local color = {}
     for i, playerColor in ipairs(playerColors) do 
         
-        if player.color == playerColor.name then
+        if player == playerColor.name then
             color = playerColor.color
             break
         end
@@ -944,15 +946,15 @@ function getPlayerColor(player)
 end
 
 
-function cycleColor(object, playerColorClicked)
-    if Player[playerColorClicked] ~= Player.Black then
-        Player[playerColorClicked].broadcast("Only the Black Color Player (GM) can change Sheet Ownership")
+function cycleColor(object, playerColor)
+    if Player[playerColor] ~= Player.Black then
+        Player[playerColor].broadcast("Only the Black Color Player (GM) can change Sheet Ownership")
     elseif writeAllowed then
         local currentColor = ref_buttonData.custom[1].ownerColor
         local colorIndex = 1
 
         for i, playerColor in ipairs(playerColors) do
-            if playerColor.name == currentColor.color then
+            if playerColor.name == currentColor then
                 colorIndex = i + 1
                 break
             end
@@ -960,9 +962,9 @@ function cycleColor(object, playerColorClicked)
 
         if playerColors[colorIndex] == nil then colorIndex = 1 end
 
-        ref_buttonData.custom[1].ownerColor = Player[playerColors[colorIndex].name]
+        ref_buttonData.custom[1].ownerColor = Player[playerColors[colorIndex].name].color
 
-        self.editButton({index = (spawnedButtonCount - 2), font_color=getPlayerColor(ref_buttonData.custom[1].ownerColor), tooltip = ref_buttonData.custom[1].ownerColor.color})
+        self.editButton({index = (spawnedButtonCount - 2), font_color=getPlayerColor(ref_buttonData.custom[1].ownerColor), tooltip = ref_buttonData.custom[1].ownerColor})
 
         updateSave()
     end
@@ -989,15 +991,12 @@ function setReadWrite(localWriteAllowed)
 
     writeAllowed = localWriteAllowed
 
-    local text = "Play Mode"
     local label = string.char(9633)
 
     if writeAllowed == true then 
-        text = "Edit Mode"
         label = string.char(9632) 
     end
 
-    self.editButton({index = (spawnedButtonCount - 1), label=text})
     self.editButton({index = spawnedButtonCount, label=label})
 
     local color = readOnlyButtonColor
@@ -1046,7 +1045,7 @@ end
 
 --Checks or unchecks the given box
 function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex, playerColor)
-    if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor.color then
+    if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor then
         if writeAllowed == true then
             if ref_buttonData.ticker[tableIndex].value == columnIndex then
                 columnIndex = columnIndex - 1
@@ -1074,11 +1073,11 @@ function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex, player
                 for i = 1, ref_buttonData.ticker[tableIndex].value do 
                     local dice = spawnObject({type = "D10", position = self.getPosition()})
 
-                    local color = getPlayerColor(Player[playerColor])
+                    local color = getPlayerColor(Player[playerColor].color)
 
                     dice.setColorTint(color)
 
-                    dice.setLuaScript("function onDropped()\nself.highlightOff()\nstartLuaCoroutine(self, 'afterDrop')\nend\n\nhighlightDuration = 30\n\nfunction afterDrop()\nwhile not self.resting do\ncoroutine.yield(0)\nend\n\nlocal value = self.getValue()\nif value == 1 then\nself.highlightOn({1,0,0}, highlightDuration)\nelseif value == 10 then\nself.highlightOn({0,0.8,0}, highlightDuration)\nelse self.highlightOff() end\n\ncoroutine.yield(1)\nend")
+                    dice.setLuaScript("local destroyed = false \n \nlocal isRolling = false \nhighlightDuration = 30 \n \nfunction onUpdate() \n    if not isRolling and not self.resting then \n        isRolling = true \n        self.highlightOff() \n    elseif isRolling and self.resting then \n        isRolling = false \n \n        local value = self.getValue() \n        if value == 1 then \n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration) \n        elseif value == 10 then \n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration) \n        elseif value >= 7 then  \n            self.highlightOn({1, 1, 1}, highlightDuration)  \n        end \n    end \nend \n")
 
                     dice.use_hands = true
 
@@ -1093,7 +1092,7 @@ end
 
 --Applies value to given counter display
 function click_counter(tableIndex, playerColor, buttonIndex, amount)
-    if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor.color then
+    if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor then
         if writeAllowed == true then
             ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
             self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})
@@ -1104,8 +1103,8 @@ end
 
 
 --Updates saved value for given text box
-function click_textbox(i,playerColorClicked, value, selected)
-    if (playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor.color) and writeAllowed == true then
+function click_textbox(i,playerColor, value, selected)
+    if (playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor) and writeAllowed == true then
         if selected == false then
             ref_buttonData.textbox[i].value = value
             updateSave()
