@@ -885,9 +885,9 @@ function onload(saved_data)
 
     self.createButton({
             label = string.char(9632), click_function="cycleColor", function_owner=self,
-            position= {-1.10,0.1,-1.70}, height=300, width=300,
-            font_size=300, scale=buttonScale,
-            color={0, 0, 0}, font_color=playerColor
+            position= {-0.96,0.1,-1.705}, height=400, width=400,
+            font_size=500, scale=buttonScale,
+            color={0, 0, 0}, font_color=playerColor, tooltip = ref_buttonData.custom[1].ownerColor.color
     })
 
     spawnedButtonCount = spawnedButtonCount + 1
@@ -913,7 +913,7 @@ function onload(saved_data)
     local readWriteParams = {click_function="toggleReadWrite",
             label = label,
             function_owner=self,
-            position= {-0.905,0.1,-2.04},
+            position= {-0.895,0.1,-2.04},
             height=500,
             width=500,
             font_size=(500 * 1.5),
@@ -947,7 +947,7 @@ end
 function cycleColor(object, playerColorClicked)
     if Player[playerColorClicked] ~= Player.Black then
         Player[playerColorClicked].broadcast("Only the Black Color Player (GM) can change Sheet Ownership")
-    else
+    elseif writeAllowed then
         local currentColor = ref_buttonData.custom[1].ownerColor
         local colorIndex = 1
 
@@ -962,7 +962,9 @@ function cycleColor(object, playerColorClicked)
 
         ref_buttonData.custom[1].ownerColor = Player[playerColors[colorIndex].name]
 
-        self.editButton({index = (spawnedButtonCount - 2), font_color=getPlayerColor(ref_buttonData.custom[1].ownerColor)})
+        self.editButton({index = (spawnedButtonCount - 2), font_color=getPlayerColor(ref_buttonData.custom[1].ownerColor), tooltip = ref_buttonData.custom[1].ownerColor.color})
+
+        updateSave()
     end
 end
 
@@ -1066,6 +1068,8 @@ function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex, player
         else
             if ref_buttonData.ticker[tableIndex].tooltip ~= "" and ref_buttonData.ticker[tableIndex].value > 0 then
                 local player = Player[playerColor]
+
+                if player == Player.Black then player = Player.Orange end
 
                 for i = 1, ref_buttonData.ticker[tableIndex].value do 
                     local dice = spawnObject({type = "D10", position = self.getPosition()})
