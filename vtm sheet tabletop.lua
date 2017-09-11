@@ -55,10 +55,10 @@ Begin editing below:    ]]
 writeAllowed = false
 
 --delay to automatically turn the sheet to read only mode
-readOnlyTimerDelay = 15
+readOnlyTimerDelay = 90
 
 --Set this to true while editing and false when you have finished
-disableSave = false
+disableSave = true
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -66,6 +66,10 @@ disableSave = false
 buttonFontColor = {0,0,0}
 --Color information for button background
 buttonColor = {1,1,1}
+
+--Color information for button background
+readOnlyButtonColor = {0.78,0.78,0.78}
+
 --Change scale of button (Avoid changing if possible)
 buttonScale = {0.1,0.1,0.1}
 
@@ -811,6 +815,12 @@ defaultButtonData = {
         },
 
         --End of textboxes
+    },
+    --Add custom
+    custom = {
+        {
+            ownerColor = Player.Black
+        }
     }
 }
 
@@ -818,7 +828,18 @@ defaultButtonData = {
 
 --Lua beyond this point, I recommend doing something more fun with your life
 
-
+playerColors = {
+    {name = "White", color = {1, 1, 1}},
+    {name ="Brown", color = {0.443, 0.231, 0.09}},
+    {name =  "Red", color = {0.856, 0.1, 0.094}},
+    {name = "Orange", color = {0.956, 0.392, 0.113}} ,
+    {name = "Yellow", color = {0.905, 0.898, 0.172}} ,
+    {name = "Green", color = {0.192, 0.701, 0.168}} ,
+    {name = "Teal", color = {0.129, 0.694, 0.607}} ,
+    {name = "Blue", color = {0.118, 0.53, 1}},
+    {name =  "Purple", color = {0.627, 0.125, 0.941}},
+    {name =  "Pink", color = {0.96, 0.439, 0.807}},
+    {name = "Black", color = {0.25, 0.25, 0.25}}}
 
 --Save function
 function updateSave()
@@ -831,7 +852,6 @@ function updateSave()
 
     setReadOnlyTimer()
 end
-
 
 --Startup procedure
 function onload(saved_data)
@@ -850,6 +870,28 @@ function onload(saved_data)
     createCounter()
     createTextbox()
 
+    --permission
+
+    self.createButton({
+            label="Owner", click_function="click_none", function_owner=self,
+            position= {-1.28,0.1,-1.70}, height=0, width=0,
+            font_size=300, scale=buttonScale,
+            color=buttonColor, font_color=buttonFontColor
+    })
+
+    spawnedButtonCount = spawnedButtonCount + 1
+
+    local playerColor = getPlayerColor(ref_buttonData.custom[1].ownerColor)
+
+    self.createButton({
+            label = string.char(9632), click_function="cycleColor", function_owner=self,
+            position= {-1.10,0.1,-1.70}, height=300, width=300,
+            font_size=300, scale=buttonScale,
+            color={0, 0, 0}, font_color=playerColor
+    })
+
+    spawnedButtonCount = spawnedButtonCount + 1
+
     local text = "Play Mode"
     local label = string.char(9633)
 
@@ -857,6 +899,7 @@ function onload(saved_data)
         text = "Edit Mode"
         label = string.char(9632) 
     end
+
 
     self.createButton({
             label=text, click_function="click_none", function_owner=self,
@@ -881,6 +924,46 @@ function onload(saved_data)
 
     self.createButton(readWriteParams)
 
+    if self.getInputs()[2].value ~= nil and self.getInputs()[2].value ~= "" then 
+        self.setName(self.getInputs()[2].value.."'s' V20:DA Character Sheet") --hard-coded, fix me !
+    end
+
+end
+
+function getPlayerColor(player)
+    local color = {}
+    for i, playerColor in ipairs(playerColors) do 
+        
+        if player.color == playerColor.name then
+            color = playerColor.color
+            break
+        end
+    end
+
+    return color
+end
+
+
+function cycleColor(object, playerColorClicked)
+    if Player[playerColorClicked] ~= Player.Black then
+        Player[playerColorClicked].broadcast("Only the Black Color Player (GM) can change Sheet Ownership")
+    else
+        local currentColor = ref_buttonData.custom[1].ownerColor
+        local colorIndex = 1
+
+        for i, playerColor in ipairs(playerColors) do
+            if playerColor.name == currentColor.color then
+                colorIndex = i + 1
+                break
+            end
+        end
+
+        if playerColors[colorIndex] == nil then colorIndex = 1 end
+
+        ref_buttonData.custom[1].ownerColor = Player[playerColors[colorIndex].name]
+
+        self.editButton({index = (spawnedButtonCount - 2), font_color=getPlayerColor(ref_buttonData.custom[1].ownerColor)})
+    end
 end
 
 function toggleReadWrite()
@@ -914,6 +997,17 @@ function setReadWrite(localWriteAllowed)
 
     self.editButton({index = (spawnedButtonCount - 1), label=text})
     self.editButton({index = spawnedButtonCount, label=label})
+
+    local color = readOnlyButtonColor
+    if writeAllowed == true then color = buttonColor end 
+
+    for i, button in ipairs(self.getButtons()) do
+        self.editButton({index = button.index, color = color})
+    end
+
+    for j, input in ipairs(self.getInputs()) do
+        self.editInput({index = input.index, color = color})
+    end
 end
 
 function setReadOnlyTimer()
@@ -949,113 +1043,71 @@ end
 --Click functions for buttons
 
 --Checks or unchecks the given box
-function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex)
-    if writeAllowed == true then
+function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex, playerColor)
+    if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor.color then
+        if writeAllowed == true then
+            if ref_buttonData.ticker[tableIndex].value == columnIndex then
+                columnIndex = columnIndex - 1
+            end
 
-        --[[local button = self.getButtons()[buttonIndex]
+            local data = ref_buttonData.ticker[tableIndex]
 
-        local worldPosition = self.positionToWorld(button.position)
+            data.value = columnIndex
 
-        for i, player in ipairs(Player.getPlayers()) do
+            for i=0, (totalColumns - 1) do
+                local localLabel = data.glyphEmpty
 
-            local origin = {player.getPointerPosition()[1], player.getPointerPosition()[2] + 1.0, player.getPointerPosition()[3]}
+                if i < columnIndex then localLabel = data.glyphFilled end
 
-            local hit = Physics.cast({type=3, debug = true, origin = origin, direction = {0, -1, 0}, size = {0.1, 0.1, 0.1} })
+                self.editButton({index=buttonIndex + i, label=localLabel})
+            end
 
-            print(hit.point)
-        end
-        ]]
-        
+            updateSave()
+        else
+            if ref_buttonData.ticker[tableIndex].tooltip ~= "" and ref_buttonData.ticker[tableIndex].value > 0 then
+                local player = Player[playerColor]
 
-        if ref_buttonData.ticker[tableIndex].value == columnIndex then
-            columnIndex = columnIndex - 1
-        end
+                for i = 1, ref_buttonData.ticker[tableIndex].value do 
+                    local dice = spawnObject({type = "D10", position = self.getPosition()})
 
-        local data = ref_buttonData.ticker[tableIndex]
+                    local color = getPlayerColor(Player[playerColor])
 
-        data.value = columnIndex
+                    dice.setColorTint(color)
 
-        for i=0, (totalColumns - 1) do
-            local localLabel = data.glyphEmpty
+                    dice.setLuaScript("function onDropped()\nself.highlightOff()\nstartLuaCoroutine(self, 'afterDrop')\nend\n\nhighlightDuration = 30\n\nfunction afterDrop()\nwhile not self.resting do\ncoroutine.yield(0)\nend\n\nlocal value = self.getValue()\nif value == 1 then\nself.highlightOn({1,0,0}, highlightDuration)\nelseif value == 10 then\nself.highlightOn({0,0.8,0}, highlightDuration)\nelse self.highlightOff() end\n\ncoroutine.yield(1)\nend")
 
-            if i < columnIndex then localLabel = data.glyphFilled end
+                    dice.use_hands = true
 
-            self.editButton({index=buttonIndex + i, label=localLabel})
-        end
-
-        updateSave()
-    else
-        if ref_buttonData.ticker[tableIndex].tooltip ~= "" and ref_buttonData.ticker[tableIndex].value > 0 then
-            local player = inferPlayer(self.getButtons()[buttonIndex + 1].position)
-
-            for i = 1, ref_buttonData.ticker[tableIndex].value do 
-                local dice = spawnObject({type = "D10", position = self.getPosition()})
-
-                local color = {}
-                local hand_index = 1
-
-                if player.color == "White" then
-                    color = {1, 1, 1}
-                elseif player.color == "Red" then
-                    color = {0.856, 0.1, 0.094}
-                elseif player.color == "Blue" then
-                    color = {0.118, 0.53, 1}
-                elseif player.color == "Green" then
-                    color = {0.192, 0.701, 0.168}
-                else
-                    color = {0.25, 0.25, 0.25}
-                    hand_index = 5
+                    dice.deal(i, player.color)
                 end
-
-                dice.setColorTint(color)
-
-                dice.use_hands = true
-
-                dice.deal(i, player.color)
             end
         end
     end
 end
 
-function inferPlayer(position) 
-    local closestPlayer = nil
-    local distance = vectorDistance(position, Player.getPlayers()[1].getPointerPosition())
-    
 
-    for i, player in ipairs(Player.getPlayers()) do
-        if player.getPointerPosition() ~= nil then
-            local localPointerPosition = self.positionToLocal(player.getPointerPosition())
-            localPointerPosition = {-localPointerPosition[1], localPointerPosition[2] - 0.05, localPointerPosition[3]}
-
-            local playerDistance = vectorDistance(position, localPointerPosition)
-
-            if closestPlayer == nil or distance > playerDistance then
-                distance = playerDistance
-                closestPlayer = player
-            end
-        end
-    end
-
-    return closestPlayer
-end
 
 --Applies value to given counter display
-function click_counter(tableIndex, buttonIndex, amount)
-    if writeAllowed == true then
-        ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
-        self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})
-        updateSave()
+function click_counter(tableIndex, playerColor, buttonIndex, amount)
+    if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor.color then
+        if writeAllowed == true then
+            ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
+            self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})
+            updateSave()
+        end
     end
 end
 
 
 --Updates saved value for given text box
-function click_textbox(i, value, selected)
-    if writeAllowed == true then
+function click_textbox(i,playerColorClicked, value, selected)
+    if (playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor.color) and writeAllowed == true then
         if selected == false then
             ref_buttonData.textbox[i].value = value
             updateSave()
         end
+
+        setReadOnlyTimer()
     else 
         if selected == false then
             local resetFuncName = "resetTextboxTimer"..i.."."..self.getGUID()
@@ -1097,7 +1149,7 @@ function createTickers()
             for j=1,data.sequence do
                 --Sets up reference function
                 local funcName = "ticker"..spawnedButtonCount
-                local func = function() click_ticker(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber) end
+                local func = function(_, playerColor) click_ticker(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
                 self.setVar(funcName, func)
                 --Sets up label
                 local label = data.glyphEmpty
@@ -1142,7 +1194,7 @@ function createCounter()
 
         --Sets up add 1
         local funcName = "counterAdd"..i
-        local func = function() click_counter(i, displayNumber, 1) end
+        local func = function(_, playerColor) click_counter(i, playerColor, displayNumber, 1) end
         self.setVar(funcName, func)
         --Sets up label
         local label = "+"
@@ -1162,7 +1214,7 @@ function createCounter()
 
         --Sets up subtract 1
         local funcName = "counterSub"..i
-        local func = function() click_counter(i, displayNumber, -1) end
+        local func = function(_, playerColor) click_counter(i, playerColor, displayNumber, -1) end
         self.setVar(funcName, func)
         --Sets up label
         local label = "-"
@@ -1183,7 +1235,7 @@ function createTextbox()
     for i, data in ipairs(ref_buttonData.textbox) do
         --Sets up reference function
         local funcName = "textbox"..i
-        local func = function(_,_,val,sel) click_textbox(i,val,sel) end
+        local func = function(_,playerColor,val,sel) click_textbox(i,playerColor,val,sel) end
         self.setVar(funcName, func)
 
         self.createInput({
