@@ -76,7 +76,7 @@ buttonScale = {0.1,0.1,0.1}
 --This is the button placement information
 defaultButtonData = {
     --Add checkboxes
-    ticker = {
+    dots = {
         --[[
         pos   = the position (pasted from the helper tool)
         size  = height/width/font_size for checkbox
@@ -834,15 +834,15 @@ defaultButtonData = {
 
 playerColors = {
     {name = "White", color = {1, 1, 1}},
-    {name ="Brown", color = {0.443, 0.231, 0.09}},
-    {name =  "Red", color = {0.856, 0.1, 0.094}},
+    {name = "Red", color = {0.856, 0.1, 0.094}},
+    {name = "Green", color = {0.192, 0.701, 0.168}} ,
+    {name = "Blue", color = {0.118, 0.53, 1}},
+    {name = "Brown", color = {0.443, 0.231, 0.09}},
     {name = "Orange", color = {0.956, 0.392, 0.113}} ,
     {name = "Yellow", color = {0.905, 0.898, 0.172}} ,
-    {name = "Green", color = {0.192, 0.701, 0.168}} ,
     {name = "Teal", color = {0.129, 0.694, 0.607}} ,
-    {name = "Blue", color = {0.118, 0.53, 1}},
-    {name =  "Purple", color = {0.627, 0.125, 0.941}},
-    {name =  "Pink", color = {0.96, 0.439, 0.807}},
+    {name = "Purple", color = {0.627, 0.125, 0.941}},
+    {name = "Pink", color = {0.96, 0.439, 0.807}},
     {name = "Black", color = {0.25, 0.25, 0.25}}}
 
 --Save function
@@ -870,15 +870,15 @@ function onload(saved_data)
     end
 
     spawnedButtonCount = 0
-    createTickers()
+    createDots()
     createCounter()
     createTextbox()
 
     --permission
 
     self.createButton({
-            label="Owner", click_function="click_none", function_owner=self,
-            position= {-1.28,0.1,-1.70}, height=0, width=0,
+            label="OWNER", click_function="click_none", function_owner=self,
+            position= {-1.265,0.1,-1.70}, height=0, width=0,
             font_size=300, scale=buttonScale,
             color=buttonColor, font_color=buttonFontColor
     })
@@ -930,6 +930,7 @@ function onload(saved_data)
         self.setName(self.getInputs()[2].value.."'s' V20:DA Character Sheet") --hard-coded, fix me !
     end
 
+    setReadWrite(writeAllowed)
 end
 
 function getPlayerColor(player)
@@ -1031,27 +1032,17 @@ function onUpdate()
     if self.tooltip == true then self.tooltip = false end
 end
 
-function vectorDistance(v1, v2) 
-    local value = (v1[1] - v2[1]) * (v1[1] - v2[1])
-
-    value = value + ((v1[2] - v2[2]) * (v1[2] - v2[2]))
-
-    value = value + ((v1[3] - v2[3]) * (v1[3] - v2[3]))
-
-    return math.sqrt(value)
-end
-
 --Click functions for buttons
 
 --Checks or unchecks the given box
-function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex, playerColor)
+function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerColor)
     if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor then
         if writeAllowed == true then
-            if ref_buttonData.ticker[tableIndex].value == columnIndex then
+            if ref_buttonData.dots[tableIndex].value == columnIndex then
                 columnIndex = columnIndex - 1
             end
 
-            local data = ref_buttonData.ticker[tableIndex]
+            local data = ref_buttonData.dots[tableIndex]
 
             data.value = columnIndex
 
@@ -1065,23 +1056,24 @@ function click_ticker(tableIndex, columnIndex, totalColumns, buttonIndex, player
 
             updateSave()
         else
-            if ref_buttonData.ticker[tableIndex].tooltip ~= "" and ref_buttonData.ticker[tableIndex].value > 0 then
+            if ref_buttonData.dots[tableIndex].tooltip ~= "" and ref_buttonData.dots[tableIndex].value > 0 then
                 local player = Player[playerColor]
 
-                if player == Player.Black then player = Player.Orange end
+                --if player == Player.Black then player = Player.Orange end
 
-                for i = 1, ref_buttonData.ticker[tableIndex].value do 
+
+                for i = 1, ref_buttonData.dots[tableIndex].value do 
                     local dice = spawnObject({type = "D10", position = self.getPosition()})
 
                     local color = getPlayerColor(Player[playerColor].color)
 
                     dice.setColorTint(color)
 
-                    dice.setLuaScript("local destroyed = false \n \nlocal isRolling = false \nhighlightDuration = 30 \n \nfunction onUpdate() \n    if not isRolling and not self.resting then \n        isRolling = true \n        self.highlightOff() \n    elseif isRolling and self.resting then \n        isRolling = false \n \n        local value = self.getValue() \n        if value == 1 then \n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration) \n        elseif value == 10 then \n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration) \n        elseif value >= 7 then  \n            self.highlightOn({1, 1, 1}, highlightDuration)  \n        end \n    end \nend \n")
+                    dice.setLuaScript("local destroyed = false \n \nlocal isRolling = false \nhighlightDuration = 30 \n \nfunction onUpdate() \n    if self.resting then  \n        self.highlightOff() \n        isRolling = true \n    elseif isRolling and self.resting then \n        isRolling = false \n \n        local value = self.getValue() \n        if value == 1 then \n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration) \n        elseif value == 10 then \n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration) \n        elseif value >= 7 then  \n            self.highlightOn({1, 1, 1}, highlightDuration)  \n        end \n    end \nend \n")
 
                     dice.use_hands = true
 
-                    dice.deal(i, player.color)
+                    dice.deal(i)
                 end
             end
         end
@@ -1134,8 +1126,8 @@ function click_none() end
 --Button creation
 
 --Makes checkboxes
-function createTickers()
-    for i, data in ipairs(ref_buttonData.ticker) do
+function createDots()
+    for i, data in ipairs(ref_buttonData.dots) do
         
         if data.sequence == nil then data.sequence = 1 end
         if data.sequenceWidth == nil then data.sequenceWidth = 0.045 end
@@ -1151,8 +1143,8 @@ function createTickers()
         for k=1,data.sequenceColumns do
             for j=1,data.sequence do
                 --Sets up reference function
-                local funcName = "ticker"..spawnedButtonCount
-                local func = function(_, playerColor) click_ticker(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
+                local funcName = "dot"..spawnedButtonCount
+                local func = function(_, playerColor) click_dot(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
                 self.setVar(funcName, func)
                 --Sets up label
                 local label = data.glyphEmpty
