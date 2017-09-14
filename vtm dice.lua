@@ -1,5 +1,3 @@
-local destroyed = false
-
 local isRolling = false
 highlightDuration = 30
 
