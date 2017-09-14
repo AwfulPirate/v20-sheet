@@ -1291,7 +1291,7 @@ end
 
 
 --Applies value to given counter display
-function click_counter(tableIndex, playerColor, buttonIndex, amount)
+function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used for generation ?
     if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor then
         if writeAllowed == true then
             ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
@@ -1363,7 +1363,7 @@ function createDots()
         for k=1,data.sequenceColumns do
             for j=1,data.sequence do
                 --Sets up reference function
-                local funcName = "dot"..spawnedButtonCount
+                local funcName = "dot"..data.id..j
                 local func = function(_, playerColor) click_dot(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
                 self.setVar(funcName, func)
                 --Sets up label
@@ -1386,7 +1386,7 @@ function createDots()
             end
 
             if data.specializes == true then
-                local funcName = "specialization"..i
+                local funcName = "specialization"..data.id
                 local func = function(_,playerColor,val,sel) click_specialization(i,playerColor,val,sel) end
                 self.setVar(funcName, func)
 
@@ -1473,7 +1473,7 @@ end
 function createTextbox()
     for i, data in ipairs(ref_buttonData.textbox) do
         --Sets up reference function
-        local funcName = "textbox"..i
+        local funcName = "textbox"..data.id
         local func = function(_,playerColor,val,sel) click_textbox(i,playerColor,val,sel) end
         self.setVar(funcName, func)
 
