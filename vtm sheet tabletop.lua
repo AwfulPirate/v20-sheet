@@ -58,7 +58,7 @@ writeAllowed = false
 readOnlyTimerDelay = 90
 
 --Set this to true while editing and false when you have finished
-disableSave = false
+disableSave = true
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -311,6 +311,7 @@ defaultButtonData = {
             width     = 2600,
             font_size = 270,
             label     = "Aura",
+            id        = "Aura",
             alignment = 3
         },
         --Other Traits
