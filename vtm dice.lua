@@ -13,7 +13,7 @@ function onUpdate()
             self.highlightOn({0.856, 0.1, 0.094}, highlightDuration)
         elseif value == 10 then
             self.highlightOn({0.192, 0.701, 0.168}, highlightDuration)
-        elseif value >= 7 then 
+        elseif value > 5 then 
             self.highlightOn({1, 1, 1}, highlightDuration) 
         end
     end

@@ -183,7 +183,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 3700,
             font_size = 270,
-            label     = "Flasw",
+            label     = "Flaw",
             id        = "Flaw 1",
         },
         {--0.07
@@ -880,7 +880,7 @@ defaultButtonData = {
             width     = 2600,
             font_size = 270,
             label     = "Weapon/Attack",
-            id        = "Weapon 2",
+            id        = "Weapon 3",
         },
          {--0.07
             pos       = {0.147,0.1,1.479},
@@ -888,7 +888,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Diff",
-            id        = "Diff 2",
+            id        = "Diff 3",
         },
         {--0.07
             pos       = {0.364,0.1,1.479},
@@ -896,7 +896,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Damage",
-            id        = "Damage 2",
+            id        = "Damage 3",
         },
         {--0.07
             pos       = {0.611,0.1,1.479},
@@ -904,7 +904,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Range",
-            id        = "Range 2",
+            id        = "Range 3",
         },
         {--0.07
             pos       = {0.851,0.1,1.479},
@@ -912,7 +912,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Rate",
-            id        = "Rate 2",
+            id        = "Rate 3",
         },
         {--0.07
             pos       = {1.063,0.1,1.479},
@@ -920,7 +920,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Clip",
-            id        = "Diff 2",
+            id        = "Diff 3",
         },
         {--0.07
             pos       = {1.275,0.1,1.479},
@@ -928,7 +928,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Conceal",
-            id        = "Conceal 2",
+            id        = "Conceal 3",
         },
 
         {--0.07
@@ -937,7 +937,7 @@ defaultButtonData = {
             width     = 2600,
             font_size = 270,
             label     = "Weapon/Attack",
-            id        = "Weapon 2",
+            id        = "Weapon 4",
         },
          {--0.07
             pos       = {0.147,0.1,1.559},
@@ -945,7 +945,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Diff",
-            id        = "Diff 2",
+            id        = "Diff 4",
         },
         {--0.07
             pos       = {0.364,0.1,1.559},
@@ -953,7 +953,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Damage",
-            id        = "Damage 2",
+            id        = "Damage 4",
         },
         {--0.07
             pos       = {0.611,0.1,1.559},
@@ -961,7 +961,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Range",
-            id        = "Range 2",
+            id        = "Range 4",
         },
         {--0.07
             pos       = {0.851,0.1,1.559},
@@ -969,7 +969,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Rate",
-            id        = "Rate 2",
+            id        = "Rate 4",
         },
         {--0.07
             pos       = {1.063,0.1,1.559},
@@ -977,7 +977,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Clip",
-            id        = "Diff 2",
+            id        = "Diff 5",
         },
         {--0.07
             pos       = {1.275,0.1,1.559},
@@ -985,7 +985,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Conceal",
-            id        = "Conceal 2",
+            id        = "Conceal 5",
         },
 
         {--0.07
@@ -994,7 +994,7 @@ defaultButtonData = {
             width     = 2600,
             font_size = 270,
             label     = "Weapon/Attack",
-            id        = "Weapon 2",
+            id        = "Weapon 5",
         },
          {--0.07
             pos       = {0.147,0.1,1.639},
@@ -1002,7 +1002,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Diff",
-            id        = "Diff 2",
+            id        = "Diff 5",
         },
         {--0.07
             pos       = {0.364,0.1,1.639},
@@ -1010,7 +1010,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Damage",
-            id        = "Damage 2",
+            id        = "Damage 5",
         },
         {--0.07
             pos       = {0.611,0.1,1.639},
@@ -1018,7 +1018,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Range",
-            id        = "Range 2",
+            id        = "Range 5",
         },
         {--0.07
             pos       = {0.851,0.1,1.639},
@@ -1026,7 +1026,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Rate",
-            id        = "Rate 2",
+            id        = "Rate 5",
         },
         {--0.07
             pos       = {1.063,0.1,1.639},
@@ -1034,7 +1034,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Clip",
-            id        = "Diff 2",
+            id        = "Diff 5",
         },
         {--0.07
             pos       = {1.275,0.1,1.639},
@@ -1042,7 +1042,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Conceal",
-            id        = "Conceal 2",
+            id        = "Conceal 5",
         },
 
          {--0.07
@@ -1051,7 +1051,7 @@ defaultButtonData = {
             width     = 2600,
             font_size = 270,
             label     = "Weapon/Attack",
-            id        = "Weapon 2",
+            id        = "Weapon 6",
         },
          {--0.07
             pos       = {0.147,0.1,1.719},
@@ -1059,7 +1059,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Diff",
-            id        = "Diff 2",
+            id        = "Diff 6",
         },
         {--0.07
             pos       = {0.364,0.1,1.719},
@@ -1067,7 +1067,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Damage",
-            id        = "Damage 2",
+            id        = "Damage 6",
         },
         {--0.07
             pos       = {0.611,0.1,1.719},
@@ -1075,7 +1075,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Range",
-            id        = "Range 2",
+            id        = "Range 6",
         },
         {--0.07
             pos       = {0.851,0.1,1.719},
@@ -1083,7 +1083,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Rate",
-            id        = "Rate 2",
+            id        = "Rate 6",
         },
         {--0.07
             pos       = {1.063,0.1,1.719},
@@ -1091,7 +1091,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Clip",
-            id        = "Diff 2",
+            id        = "Diff 6",
         },
         {--0.07
             pos       = {1.275,0.1,1.719},
@@ -1099,7 +1099,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Conceal",
-            id        = "Conceal 2",
+            id        = "Conceal 6",
         },
 
          {--0.07
@@ -1108,7 +1108,7 @@ defaultButtonData = {
             width     = 2600,
             font_size = 270,
             label     = "Weapon/Attack",
-            id        = "Weapon 2",
+            id        = "Weapon 7",
         },
          {--0.07
             pos       = {0.147,0.1,1.799},
@@ -1116,7 +1116,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Diff",
-            id        = "Diff 2",
+            id        = "Diff 7",
         },
         {--0.07
             pos       = {0.364,0.1,1.799},
@@ -1124,7 +1124,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Damage",
-            id        = "Damage 2",
+            id        = "Damage 7",
         },
         {--0.07
             pos       = {0.611,0.1,1.799},
@@ -1132,7 +1132,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Range",
-            id        = "Range 2",
+            id        = "Range 7",
         },
         {--0.07
             pos       = {0.851,0.1,1.799},
@@ -1140,7 +1140,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Rate",
-            id        = "Rate 2",
+            id        = "Rate 7",
         },
         {--0.07
             pos       = {1.063,0.1,1.799},
@@ -1148,7 +1148,7 @@ defaultButtonData = {
             width     = 800,
             font_size = 270,
             label     = "Clip",
-            id        = "Diff 2",
+            id        = "Diff 7",
         },
         {--0.07
             pos       = {1.275,0.1,1.799},
@@ -1156,7 +1156,7 @@ defaultButtonData = {
             width     = 1000,
             font_size = 270,
             label     = "Conceal",
-            id        = "Conceal 2",
+            id        = "Conceal 7",
         },
         --End of textboxes
     },
