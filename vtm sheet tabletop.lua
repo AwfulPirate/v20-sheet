@@ -296,13 +296,13 @@ defaultButtonData = {
         },
         --Road
         {
-            pos       = {0.0,0.1,0.862},
+            pos       = {-0.43,0.1,0.862},
             rows      = 1,
             width     = 4050,
             font_size = 300,
             label     = "Humanitas",
             id        = "Road",
-            alignment = 3
+            alignment = 3,
         },
         --Aura
         {
@@ -312,7 +312,7 @@ defaultButtonData = {
             font_size = 270,
             label     = "Aura",
             id        = "Aura",
-            alignment = 3
+            alignment = 3,
         },
         --Other Traits
         {
@@ -373,6 +373,7 @@ defaultButtonData = {
         --[[
         pos   = the position (pasted from the helper tool)
         size  = height/width/font_size for checkbox
+        dependsOn = {0 = nothing, 1 = generation, 2 = bloodPool}
         ]]
         --Attributes
         --Physical
@@ -385,6 +386,7 @@ defaultButtonData = {
             category = 1,
             group = 1,
             specializes = true,
+            dependsOn = 1,
         }, 
 
         --Dex
@@ -993,6 +995,14 @@ function updateSave()
     setReadOnlyTimer()
 end
 
+local bloodPool = 0
+local maxTraitDots = 0
+local bloodPerTurn = 0
+
+local readWriteId = 0
+local cycleColorId = 0
+local bloodPerTurnId = 0
+
 --Startup procedure
 function onload(saved_data)
     if disableSave==true then saved_data="" end
@@ -1006,6 +1016,18 @@ function onload(saved_data)
     end
 
     spawnedButtonCount = 0
+    spawnedInputCount = 0
+
+    calculateGenerationStats()
+
+     self.createButton({label=bloodPerTurn, click_function="click_none", function_owner = self,
+     position = ref_buttonData.custom[2].pos, font_size=ref_buttonData.custom[2].font_size,
+     height = 0, width = 0, scale = buttonScale, color=buttonColor, font_color=buttonFontColor})
+
+    bloodPerTurnId = spawnedButtonCount
+
+    spawnedButtonCount = spawnedButtonCount + 1
+
     createDots()
     createCounter()
     createTextbox()
@@ -1030,6 +1052,8 @@ function onload(saved_data)
             color={0, 0, 0}, font_color=playerColor, tooltip = ref_buttonData.custom[1].ownerColor
     })
 
+    cycleColorId = spawnedButtonCount
+
     spawnedButtonCount = spawnedButtonCount + 1
 
     local label = string.char(9633)
@@ -1038,46 +1062,15 @@ function onload(saved_data)
         label = string.char(9632) 
     end
 
-    local bloodPool = 0
-    local bloodPerTurn = 0
-
-    if ref_buttonData.counter[1].value >= 13 then 
-        bloodPerTurn = 1
-        bloodPool = 10  
-    elseif ref_buttonData.counter[1].value == 12 then 
-        bloodPerTurn = 1
-        bloodPool = 11  
-    elseif ref_buttonData.counter[1].value == 11 then 
-        bloodPerTurn = 1
-        bloodPool = 12
-    elseif ref_buttonData.counter[1].value == 10 then 
-        bloodPerTurn = 1
-        bloodPool = 13        
-    elseif ref_buttonData.counter[1].value == 9 then
-        bloodPerTurn = 2 
-        bloodPool = 14
-    elseif ref_buttonData.counter[1].value == 8 then
-        bloodPerTurn = 3
-        bloodPool = 15
-    elseif ref_buttonData.counter[1].value == 7 then
-        bloodPerTurn = 4
-        bloodPool = 20
-    elseif ref_buttonData.counter[1].value == 6 then 
-        bloodPerTurn = 6
-        bloodPool = 30
-    elseif ref_buttonData.counter[1].value == 5 then
-        bloodPerTurn = 8
-        bloodPool = 40
-    else
-        bloodPerTurn = 10 
-        bloodPool = 50
-    end
-
+    
     self.createButton({label=bloodPerTurn, click_function="click_none", function_owner = self,
      position = ref_buttonData.custom[2].pos, font_size=ref_buttonData.custom[2].font_size,
      height = 0, width = 0, scale = buttonScale, color=buttonColor, font_color=buttonFontColor})
 
+    bloodPerTurnId = spawnedButtonCount
+
     spawnedButtonCount = spawnedButtonCount + 1
+    
 
     local bearing = ""
 
@@ -1119,13 +1112,59 @@ function onload(saved_data)
             font_color={1,0,0},
     }
 
+    readWriteId = spawnedButtonCount
+
     self.createButton(readWriteParams)
+
+    spawnedButtonCount = spawnedButtonCount + 1
 
     if self.getInputs()[2].value ~= nil and self.getInputs()[2].value ~= "" then 
         self.setName(self.getInputs()[2].value.."'s' V20:DA Character Sheet") --hard-coded, fix me !
     end
 
     setReadWrite(writeAllowed)
+end
+
+function calculateGenerationStats() 
+
+    bloodPerTurn = 0
+    maxTraitDots = 5
+
+    if ref_buttonData.counter[1].value >= 13 then 
+        bloodPerTurn = 1
+        bloodPool = 10  
+    elseif ref_buttonData.counter[1].value == 12 then 
+        bloodPerTurn = 1
+        bloodPool = 11  
+    elseif ref_buttonData.counter[1].value == 11 then 
+        bloodPerTurn = 1
+        bloodPool = 12
+    elseif ref_buttonData.counter[1].value == 10 then 
+        bloodPerTurn = 1
+        bloodPool = 13        
+    elseif ref_buttonData.counter[1].value == 9 then
+        bloodPerTurn = 2 
+        bloodPool = 14
+    elseif ref_buttonData.counter[1].value == 8 then
+        bloodPerTurn = 3
+        bloodPool = 15
+    elseif ref_buttonData.counter[1].value == 7 then
+        maxTraitDots = 6
+        bloodPerTurn = 4
+        bloodPool = 20
+    elseif ref_buttonData.counter[1].value == 6 then 
+        maxTraitDots = 7
+        bloodPerTurn = 6
+        bloodPool = 30
+    elseif ref_buttonData.counter[1].value == 5 then
+        maxTraitDots = 8
+        bloodPerTurn = 8
+        bloodPool = 40
+    else
+        maxTraitDots = 9
+        bloodPerTurn = 10 
+        bloodPool = 50
+    end
 end
 
 function getDot(id)
@@ -1174,7 +1213,7 @@ function cycleColor(object, playerColor)
 
         ref_buttonData.custom[1].ownerColor = Player[playerColors[colorIndex].name].color
 
-        self.editButton({index = (spawnedButtonCount - 2), font_color=getPlayerColor(ref_buttonData.custom[1].ownerColor), tooltip = ref_buttonData.custom[1].ownerColor})
+        self.editButton({index = cycleColorId, font_color=getPlayerColor(ref_buttonData.custom[1].ownerColor), tooltip = ref_buttonData.custom[1].ownerColor})
 
         updateSave()
     end
@@ -1207,7 +1246,7 @@ function setReadWrite(localWriteAllowed)
         label = string.char(9632) 
     end
 
-    self.editButton({index = spawnedButtonCount, label=label})
+    self.editButton({index = readWriteId, label=label})
 
     local color = readOnlyButtonColor
     if writeAllowed == true then color = buttonColor end 
@@ -1298,48 +1337,50 @@ function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used 
             ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
             self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})
             updateSave()
+
+            calculateGenerationStats()
         end
-    end
-end
-
-
-function click_specialization(i,playerColor, value, selected)
-    if (playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor) and writeAllowed == true then
-        if selected == false then
-            ref_buttonData.dots[i].specialization = value
-            updateSave()
-        end
-
-        setReadOnlyTimer()
     end
 end
 
 --Updates saved value for given text box
-function click_textbox(i,playerColor, value, selected)
+function click_textbox(i, type, playerColor, value, selected)
     if (playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor) and writeAllowed == true then
         if selected == false then
-            ref_buttonData.textbox[i].value = value
+            (ref_buttonData[type])[i].value = value
             updateSave()
         end
 
         setReadOnlyTimer()
     else 
         if selected == false then
-            local resetFuncName = "resetTextboxTimer"..i.."."..self.getGUID()
+            local resetFuncName = "reset"..type.."Timer"..i.."."..self.getGUID()
             Timer.destroy(resetFuncName)
 
-            Timer.create({identifier=resetFuncName, function_name="resetTextbox", parameters={index = (i - 1), value = ref_buttonData.textbox[i].value}, function_owner=self, delay=0.03})
+            Timer.create({identifier=resetFuncName, function_name="resetTextbox", parameters={index = (ref_buttonData[type])[i].inputId, value = ref_buttonData.textbox[i].value}, function_owner=self, delay=0.03})
         end
     end
 end
 
 function resetTextbox(parameters)
-    self.editInput({index = parameters.index, value = parameters.value})    
+    local val = nil
+    if  parameters.value == val then
+        val = ""
+    else 
+        val = parameters.value
+    end
+
+    self.editInput({index = parameters.index, value = val})    
 end
 
 
 --Dud function for if you have a background on a counter
 function click_none() end
+
+function getGeneration() 
+    return ref_buttonData.counter[1].value
+end
+
 
 
 
@@ -1356,39 +1397,63 @@ function createDots()
         if data.value == nil then data.value = 0 end
         if data.id == nil then data.id = "" end
         if data.size == nil then data.size = 340 end
+        if data.buttonId == nil then data.buttonId = {} end
 
         if data.glyphFilled == nil then data.glyphFilled = string.char(9679) end
         if data.glyphEmpty == nil then data.glyphEmpty = string.char(9675) end
 
+        local finalSequence = data.sequence
+        if data.dependsOn == 1 then
+            finalSequence = maxTraitDots
+        elseif data.dependsOn == 2 then
+            finalSequence = bloodPool            
+        end
+
         local buttonNumber = spawnedButtonCount
         for k=1,data.sequenceColumns do
-            for j=1,data.sequence do
+            for j=1,finalSequence do
                 --Sets up reference function
-                local funcName = "dot"..data.id..j
-                local func = function(_, playerColor) click_dot(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
-                self.setVar(funcName, func)
+                local realIndex = ((k - 1) * data.sequence) + j
+
+                local funcName = "dot"..data.id..realIndex
+                
                 --Sets up label
                 local label = data.glyphEmpty
-                if data.value >= ((k - 1) * data.sequence) + j then label = data.glyphFilled end
+                if data.value >= realIndex then label = data.glyphFilled end
                 --Creates button and counts it
 
-                local copyPos = {data.pos[1] + ((j - 1) * data.sequenceWidth) , data.pos[2], data.pos[3] + ((k - 1) * data.sequenceHeight)}
-                
-                local fontSize = data.size * 1.5
 
-                self.createButton({
+                if data.buttonId[realIndex] == nil then
+                    local func = function(_, playerColor) click_dot(i, realIndex, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
+                    self.setVar(funcName, func)
+
+                    local copyPos = {data.pos[1] + ((j - 1) * data.sequenceWidth) , data.pos[2], data.pos[3] + ((k - 1) * data.sequenceHeight)}
+                    
+                    local fontSize = data.size * 1.5
+
+                    self.createButton({
                     index = spawnedButtonCount,
                     label=label, click_function=funcName, function_owner=self,
                     position=copyPos, height=data.size, width=data.size,
                     font_size=fontSize, scale=buttonScale,
                     color=buttonColor, font_color=buttonFontColor, tooltip = data.id
-                }) 
-                spawnedButtonCount = spawnedButtonCount + 1
-            end
+                    })     
 
-            if data.specializes == true then
-                local funcName = "specialization"..data.id
-                local func = function(_,playerColor,val,sel) click_specialization(i,playerColor,val,sel) end
+                    data.buttonId[realIndex] = spawnedButtonCount
+
+                    spawnedButtonCount = spawnedButtonCount + 1
+                else 
+                    self.editButton({
+                            index = (data.buttonId[realIndex]), label = label
+                        })
+                end
+            end
+        end
+
+        if (data.value > 3 and data.specializes) then
+            if data.inputId == nil then
+                local funcName = "specialty"..data.id
+                local func = function(_,playerColor,val,sel) click_textbox(i, "dots", playerColor,val,sel) end
                 self.setVar(funcName, func)
 
                 local width = 800
@@ -1405,9 +1470,17 @@ function createDots()
                     font_size      = fontSize,
                     color          = buttonColor,
                     font_color     = buttonFontColor,
-                    value          = data.specialization,
+                    value          = data.speciality,
                     validation     = data.validation
-        })
+                 })
+
+                data.inputId = spawnedInputCount
+
+                spawnedInputCount = spawnedInputCount + 1
+            else 
+                self.editInput({
+                    index = data.inputId, value = data.speciality
+                    })
             end
         end
     end
@@ -1475,7 +1548,7 @@ function createTextbox()
     for i, data in ipairs(ref_buttonData.textbox) do
         --Sets up reference function
         local funcName = "textbox"..data.id
-        local func = function(_,playerColor,val,sel) click_textbox(i,playerColor,val,sel) end
+        local func = function(_,playerColor,val,sel) click_textbox(i, "textbox", playerColor,val,sel) end
         self.setVar(funcName, func)
 
         local height = (data.font_size*data.rows)+24
@@ -1501,5 +1574,9 @@ function createTextbox()
             value          = data.value,
             validation     = data.validation
         })
+
+        data.inputId = spawnedInputCount
+
+        spawnedInputCount = spawnedInputCount + 1
     end
 end
