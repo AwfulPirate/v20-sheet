@@ -1,55 +1,5 @@
 --[[    Character Sheet Template    by: MrStump
-V20: Dark Ages Character Sheet by: Phenicks
-
-You can set up your own character sheet if you follow these steps.
-
-Step 1) Change the character sheet image
-    -Right click on the character sheet, click Custom
-    -Replace the image URL with one for your character sheet
-    -Click import, make sure your sheet loads
-    -SAVE THE GAME (the table setup)
-    -LOAD FROM THAT SAVE YOU JUST MADE
-
-Step 2) Edit script to fit your character sheet
-    -Below you will see some general options, and then the big data table
-    -The data table is what determines how many of which buttons are made
-        -Checkboxes
-        -Counters
-        -Textboxes
-    -By default, there are 3 of each. You can add more or remove entries
-    -If you intend to add/remove, be sure only to add/remove ENTRIES
-        -This is what an entry looks like:
-            {
-                pos   = {-0.977,0.1,-0.589},
-                size  = 800,
-                state = false,
-            },
-        -Deleting the whole thing would remove that specific item on the sheet
-        -Copy and pasting it after another entry would create another
-    -Each entry type has unique data points (pos, size, state, etc)
-        -Do not try to add in your own data points or remove them individually
-        -There is a summary of what each point does at the top of its category
-
-Step 3) Save and check script changes
-    -Hit Save & Apply in the script window to save your code
-    -You can edit your code as needed and Save+Apply as often as needed
-    -When you are finished, make disableSave = false below then Save+apply
-        -This enables saving, so your sheet will remember whats on it.
-
-Bonus) Finding/Editing Positions for elements
-    I have included a tool to get positions for buttons in {x,y,z} form
-    Place it where you want the center of your element to be
-    Then copy the table from the notes (lower right of screen)
-        You can highlight it and CTRL+C
-    Paste it into the data table where needed (pos=)
-    If you want to manually tweek the values:
-        {0,0,0} is the center of the character sheet
-        {1,0,0} is right, {-1,0,0} is left
-        {0,0,-1} is up, {0,0,1} is down
-        0.1 for Y is the height off of the page.
-            If it was 0, it would be down inside the model of the sheet
-
-Begin editing below:    ]]
+V20: Dark Ages Character Sheet by: Phenicks]]
 
 --state of play/edit
 writeAllowed = false
@@ -88,423 +38,278 @@ defaultButtonData = {
                     (1=Automatic, 2=Left, 3=Center, 4=Right, 5=Justified)
         ]]
         {--0.07
-            pos       = {-1.477,0.1,-1.486},
-            rows      = 1,
-            width     = 3700,
+            pos       = {-1.483,0.1,-1.585},
+            rows      = 15,
+            width     = 4650,
             font_size = 270,
-            label     = "Merit",
-            id        = "Merit 1",
-        },
-        {
-            pos       = {-1.477,0.1,-1.416},
-            rows      = 1,
-            width     = 3700,
-            font_size = 270,
-            label     = "Merit",
-            id        = "Merit 2",
-        },
-        {
-            pos       = {-1.477,0.1,-1.346},
-            rows      = 1,
-            width     = 3700,
-            font_size = 270,
-            label     = "Merit",
-            id        = "Merit 3",
-        },
-        {
-            pos       = {-1.477,0.1,-1.276},
-            rows      = 1,
-            width     = 3700,
-            font_size = 270,
-            label     = "Merit",
-            id        = "Merit 4",
-        },
-        {
-            pos       = {-1.477,0.1,-1.206},
-            rows      = 1,
-            width     = 3700,
-            font_size = 270,
-            label     = "Merit",
-            id        = "Merit 5",
-        },
-        {
-            pos       = {-0.66,0.1,-1.486},
-            rows      = 1,
-            width     = 450,
-            font_size = 270,
-            alignment = 3,
-            label     = "0",
-            validation = 2,
-            id        = "Merit Cost 1",
-        },
-        {
-            pos       = {-0.66,0.1,-1.416},
-            rows      = 1,
-            width     = 450,
-            alignment = 3,
-            font_size = 270,
-            label     = "0",
-            validation = 2,
-            id        = "Merit Cost 2",
-        },
-        {
-            pos       = {-0.66,0.1,-1.346},
-            rows      = 1,
-            alignment = 3,
-            width     = 450,
-            font_size = 270,
-            label     = "0",
-            validation = 2,
-            id        = "Merit Cost 3",
-        },
-        {
-            pos       = {-0.66,0.1,-1.276},
-            rows      = 1,
-            alignment = 3,
-            width     = 450,
-            font_size = 270,
-            validation = 2,
-            label     = "0",
-            id        = "Merit Cost 4",
-        },
-        {
-            pos       = {-0.66,0.1,-1.206},
-            rows      = 1,
-            alignment = 3,
-            width     = 450,
-            font_size = 270,
-            label     = "0",
-            validation = 2,
-            id        = "Merit Cost 5",
-        },
-        
-        {--0.07
-            pos       = {-1.477,0.1,-1.0625},
-            rows      = 1,
-            width     = 3700,
-            font_size = 270,
-            label     = "Flaw",
-            id        = "Flaw 1",
+            label     = "Notes",
+            id        = "Notes",
         },
         {--0.07
-            pos       = {-1.477,0.1,-0.9925},
-            rows      = 1,
-            width     = 3700,
-            font_size = 270,
-            label     = "Flaw",
-            id        = "Flaw 2",
-        },
-        {--0.07
-            pos       = {-1.477,0.1,-0.9225},
-            rows      = 1,
-            width     = 3700,
-            font_size = 270,
-                label     = "Flaw",
-            id        = "Flaw 3",
-        },
-        {--0.07
-            pos       = {-1.477,0.1,-0.8525},
-            rows      = 1,
-            width     = 3700,
-            font_size = 270,
-                        label     = "Flaw",
-            id        = "Flaw 4",
-        },
-        {--0.07
-            pos       = {-1.477,0.1,-0.7825},
-            rows      = 1,
-            width     = 3700,
-                        font_size = 270,
-            label     = "Flaw",
-            id        = "Flaw 5",
-        },
-
-         {--0.07
-            pos       = {-0.66,0.1,-1.0625},
-            rows      = 1,
-            alignment = 3,
-            width     = 450,
-            font_size = 270,
-            validation = 2,
-            label     = "0",
-            id        = "Flaw Cost 1",
-        },
-        {--0.07
-            pos       = {-0.66,0.1,-0.9925},
-            rows      = 1,
-            alignment = 3,
-            width     = 450,
-            font_size = 270,
-            validation = 2,
-            label     = "0",
-            id        = "Flaw Cost 2",
-        },
-        {--0.07
-            pos       = {-0.66,0.1,-0.9225},
-            rows      = 1,
-            alignment = 3,
-            width     = 450,
-            font_size = 270,
-            validation = 2,
-            label     = "0",
-            id        = "Flaw Cost 3",
-        },
-        {--0.07
-            pos       = {-0.66,0.1,-0.8525},
-            rows      = 1,
-            alignment = 3,
-            width     = 450,
-            font_size = 270,
-            validation = 2,
-            label     = "0",
-            id        = "Flaw Cost 4",
-        },
-        {--0.07
-            pos       = {-0.66,0.1,-0.7825},
-            rows      = 1,
-            alignment = 3,
-            width     = 450,
-            font_size = 270,
-            validation = 2,
-            label     = "0",
-            id        = "Flaw Cost 5",
-        },
-        {--0.07
-            pos       = {-1.477,0.1,-0.558},
+            pos       = {-1.491,0.1,-0.558},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 1",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,-0.488},
+            pos       = {-1.491,0.1,-0.488},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 2",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,-0.418},
+            pos       = {-1.491,0.1,-0.418},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 3",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,-0.348},
+            pos       = {-1.491,0.1,-0.348},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 4",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,-0.278},
+            pos       = {-1.491,0.1,-0.278},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 5",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,-0.208},
+            pos       = {-1.491,0.1,-0.208},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 6",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,-0.138},
+            pos       = {-1.491,0.1,-0.138},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 7",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,-0.068},
+            pos       = {-1.491,0.1,-0.068},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 8",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.002},
+            pos       = {-1.491,0.1,0.002},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 9",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.223},
+            pos       = {-1.491,0.1,0.223},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Path",
             id        = "Path 1",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.293},
+            pos       = {-1.491,0.1,0.293},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Path",
             id        = "Path 2",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.363},
+            pos       = {-1.491,0.1,0.363},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Path",
             id        = "Path 3",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.433},
+            pos       = {-1.491,0.1,0.433},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Path",
             id        = "Path 4",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.503},
+            pos       = {-1.491,0.1,0.503},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Path",
             id        = "Path 5",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.573},
+            pos       = {-1.491,0.1,0.573},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Path",
             id        = "Path 6",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.643},
+            pos       = {-1.491,0.1,0.643},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Path",
             id        = "Path 7",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.713},
+            pos       = {-1.491,0.1,0.713},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Path",
             id        = "Path 8",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,0.783},
+            pos       = {-1.491,0.1,0.783},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Path",
             id        = "Path 9",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.072},
+            pos       = {-1.491,0.1,1.072},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 1",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.142},
+            pos       = {-1.491,0.1,1.1447},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 2",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.212},
+            pos       = {-1.491,0.1,1.2174},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 3",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.282},
+            pos       = {-1.491,0.1,1.2901},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 4",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.352},
+            pos       = {-1.491,0.1,1.3628},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 5",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.422},
+            pos       = {-1.491,0.1,1.4355},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 6",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.492},
+            pos       = {-1.491,0.1,1.5082},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 7",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.562},
+            pos       = {-1.491,0.1,1.5809},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 8",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.632},
+            pos       = {-1.491,0.1,1.6536},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 9",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.702},
+            pos       = {-1.491,0.1,1.7263},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 10",
+            fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.477,0.1,1.772},
+            pos       = {-1.491,0.1,1.799},
             rows      = 1,
             width     = 2500,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 11",
+            fkTooltip = true,
         },
         {--0.07
             pos       = {-0.66,0.1,1.072},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             alignment = 3,
             font_size = 270,
             validation = 2,
@@ -512,9 +317,9 @@ defaultButtonData = {
             id        = "Ritual Level 1",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.142},
+            pos       = {-0.66,0.1,1.1447},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             validation = 2,
             alignment = 3,
             font_size = 270,
@@ -522,9 +327,9 @@ defaultButtonData = {
             id        = "Ritual Level 2",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.212},
+            pos       = {-0.66,0.1,1.2174},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             alignment = 3,
             validation = 2,
             font_size = 270,
@@ -532,9 +337,9 @@ defaultButtonData = {
             id        = "Ritual Level 3",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.282},
+            pos       = {-0.66,0.1,1.2901},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             validation = 2,
             alignment = 3,
             font_size = 270,
@@ -542,9 +347,9 @@ defaultButtonData = {
             id        = "Ritual Level 4",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.352},
+            pos       = {-0.66,0.1,1.3628},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             validation = 2,
             alignment = 3,
             font_size = 270,
@@ -552,9 +357,9 @@ defaultButtonData = {
             id        = "Ritual Level 5",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.422},
+            pos       = {-0.66,0.1,1.4355},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             validation = 2,
             alignment = 3,
             font_size = 270,
@@ -562,18 +367,18 @@ defaultButtonData = {
             id        = "Ritual Level 6",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.492},
+            pos       = {-0.66,0.1,1.5082},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             alignment = 3,
             font_size = 270,
             label     = "0",
             id        = "Ritual Level 7",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.562},
+            pos       = {-0.66,0.1,1.5809},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             validation = 2,
             alignment = 3,
             font_size = 270,
@@ -581,9 +386,9 @@ defaultButtonData = {
             id        = "Ritual Level 8",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.632},
+            pos       = {-0.66,0.1,1.6536},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             validation = 2,
             alignment = 3,
             font_size = 270,
@@ -591,9 +396,9 @@ defaultButtonData = {
             id        = "Ritual Level 9",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.702},
+            pos       = {-0.66,0.1,1.7263},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             validation = 2,
             alignment = 3,
             font_size = 270,
@@ -601,9 +406,9 @@ defaultButtonData = {
             id        = "Ritual Level 10",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.772},
+            pos       = {-0.66,0.1,1.799},
             rows      = 1,
-            width     = 450,
+            width     = 700,
             validation = 2,
             alignment = 3,
             font_size = 270,
@@ -612,25 +417,25 @@ defaultButtonData = {
         },
 
         {
-            pos       = {-0.392,0.1,-1.594},
-            rows      = 11,
-            width     = 9100,
+            pos       = {-0.392,0.1,-1.585},
+            rows      = 10,
+            width     = 9200,
             font_size = 270,
             label     = "",
             id        = "History",
         },
         {
-            pos       = {-0.392,0.1,-0.871},
+            pos       = {-0.392,0.1,-0.891},
             rows      = 4,
-            width     = 9100,
+            width     = 9200,
             font_size = 270,
             label     = "",
             id        = "Goals",
         },
         {
-            pos       = {-0.392,0.1,-0.51},
-            rows      = 4,
-            width     = 9100,
+            pos       = {-0.392,0.1,-0.542},
+            rows      = 5,
+            width     = 9200,
             font_size = 270,
             label     = "",
             id        = "Description",
@@ -684,7 +489,7 @@ defaultButtonData = {
             id        = "Race",
         },
          {
-            pos       = {1.467,0.1, -0.212},
+            pos       = {1.475,0.1, -0.212},
             rows      = 1,
             font_size = 270,
             width     = 2500,
@@ -693,7 +498,7 @@ defaultButtonData = {
             id        = "Hair",
         },
          {
-            pos       = {1.467,0.1, -0.142},
+            pos       = {1.475,0.1, -0.142},
             rows      = 1,
             font_size = 270,
             width     = 2500,
@@ -702,7 +507,7 @@ defaultButtonData = {
             id        = "Eyes",
         },
         {
-            pos       = {1.467,0.1, -0.072},
+            pos       = {1.475,0.1, -0.072},
             rows      = 1,
             font_size = 270,
             width     = 2500,
@@ -711,7 +516,7 @@ defaultButtonData = {
             id        = "Height",
         },
          {
-            pos       = {1.467,0.1, -0.002},
+            pos       = {1.475,0.1, -0.002},
             rows      = 1,
             font_size = 270,
             width     = 2500,
@@ -720,7 +525,7 @@ defaultButtonData = {
             id        = "Weight",
         },
          {
-            pos       = {1.467,0.1, 0.068},
+            pos       = {1.475,0.1, 0.068},
             rows      = 1,
             font_size = 270,
             width     = 2500,
@@ -729,7 +534,7 @@ defaultButtonData = {
             id        = "Nationality",
         },
         {
-            pos       = {-0.426,0.1,0.268},
+            pos       = {-0.41,0.1,0.268},
             rows      = 6,
             width     = 4550,
             font_size = 270,
@@ -737,7 +542,7 @@ defaultButtonData = {
             id        = "Allies",
         },
         {
-            pos       = {0.551,0.1,0.268},
+            pos       = {0.568,0.1,0.268},
             rows      = 6,
             width     = 4550,
             font_size = 270,
@@ -745,31 +550,63 @@ defaultButtonData = {
             id        = "Contacts",
         },
         {
-            pos       = {-0.426,0.1,0.757},
-            rows      = 6,
+            pos       = {-0.41,0.1,0.757},
+            rows      = 4,
             width     = 4550,
             font_size = 270,
             label     = "Gear",
             id        = "Gear",
         },
         {
-            pos       = {0.551,0.1,0.757},
-            rows      = 6,
+            pos       = {0.568,0.1,0.757},
+            rows      = 4,
             width     = 4550,
             font_size = 270,
             label     = "Equipment",
             id        = "Equipment",
         },
-        {--0.07
-            pos       = {-0.426,0.1,1.319},
+        {
+            pos       = {-0.247,0.1,1.072},
             rows      = 1,
-            width     = 2600,
+            width     = 3750,
+            font_size = 270,
+            label     = "Armor",
+            id        = "Armor",
+        },
+        {
+            pos       = {0.736,0.1,1.072},
+            rows      = 1,
+            width     = 500,
+            font_size = 270,
+            label     = "Class",
+            id        = "Class",
+        },
+        {
+            pos       = {1.057,0.1,1.072},
+            rows      = 1,
+            width     = 500,
+            font_size = 270,
+            label     = "Rating",
+            id        = "Rating",
+        },
+        {
+            pos       = {1.393,0.1,1.072},
+            rows      = 1,
+            width     = 500,
+            font_size = 270,
+            label     = "Penalty",
+            id        = "Penalty",
+        },
+        {--0.07
+            pos       = {-0.426,0.1,1.324},
+            rows      = 1,
+            width     = 2700,
             font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 1",
         },
         {--0.07
-            pos       = {0.147,0.1,1.319},
+            pos       = {0.167,0.1,1.319},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -777,7 +614,7 @@ defaultButtonData = {
             id        = "Diff 1",
         },
         {--0.07
-            pos       = {0.364,0.1,1.319},
+            pos       = {0.384,0.1,1.319},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -785,7 +622,7 @@ defaultButtonData = {
             id        = "Damage 1",
         },
         {--0.07
-            pos       = {0.611,0.1,1.319},
+            pos       = {0.626,0.1,1.319},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -793,7 +630,7 @@ defaultButtonData = {
             id        = "Range 1",
         },
         {--0.07
-            pos       = {0.851,0.1,1.319},
+            pos       = {0.871,0.1,1.319},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -801,7 +638,7 @@ defaultButtonData = {
             id        = "Rate 1",
         },
         {--0.07
-            pos       = {1.063,0.1,1.319},
+            pos       = {1.093,0.1,1.319},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -809,7 +646,7 @@ defaultButtonData = {
             id        = "Diff 1",
         },
         {--0.07
-            pos       = {1.275,0.1,1.319},
+            pos       = {1.289,0.1,1.319},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -820,13 +657,13 @@ defaultButtonData = {
         {--0.07
             pos       = {-0.426,0.1,1.399},
             rows      = 1,
-            width     = 2600,
+            width     = 2700,
             font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 2",
         },
          {--0.07
-            pos       = {0.147,0.1,1.399},
+            pos       = {0.167,0.1,1.399},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -834,7 +671,7 @@ defaultButtonData = {
             id        = "Diff 2",
         },
         {--0.07
-            pos       = {0.364,0.1,1.399},
+            pos       = {0.384,0.1,1.399},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -842,7 +679,7 @@ defaultButtonData = {
             id        = "Damage 2",
         },
         {--0.07
-            pos       = {0.611,0.1,1.399},
+            pos       = {0.626,0.1,1.399},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -850,7 +687,7 @@ defaultButtonData = {
             id        = "Range 2",
         },
         {--0.07
-            pos       = {0.851,0.1,1.399},
+            pos       = {0.871,0.1,1.399},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -858,7 +695,7 @@ defaultButtonData = {
             id        = "Rate 2",
         },
         {--0.07
-            pos       = {1.063,0.1,1.399},
+            pos       = {1.093,0.1,1.399},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -866,7 +703,7 @@ defaultButtonData = {
             id        = "Diff 2",
         },
         {--0.07
-            pos       = {1.275,0.1,1.399},
+            pos       = {1.289,0.1,1.399},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -877,13 +714,13 @@ defaultButtonData = {
          {--0.07
             pos       = {-0.426,0.1,1.479},
             rows      = 1,
-            width     = 2600,
+            width     = 2700,
             font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 3",
         },
          {--0.07
-            pos       = {0.147,0.1,1.479},
+            pos       = {0.167,0.1,1.479},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -891,7 +728,7 @@ defaultButtonData = {
             id        = "Diff 3",
         },
         {--0.07
-            pos       = {0.364,0.1,1.479},
+            pos       = {0.384,0.1,1.479},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -899,7 +736,7 @@ defaultButtonData = {
             id        = "Damage 3",
         },
         {--0.07
-            pos       = {0.611,0.1,1.479},
+            pos       = {0.626,0.1,1.479},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -907,7 +744,7 @@ defaultButtonData = {
             id        = "Range 3",
         },
         {--0.07
-            pos       = {0.851,0.1,1.479},
+            pos       = {0.871,0.1,1.479},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -915,7 +752,7 @@ defaultButtonData = {
             id        = "Rate 3",
         },
         {--0.07
-            pos       = {1.063,0.1,1.479},
+            pos       = {1.093,0.1,1.479},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -923,7 +760,7 @@ defaultButtonData = {
             id        = "Diff 3",
         },
         {--0.07
-            pos       = {1.275,0.1,1.479},
+            pos       = {1.289,0.1,1.479},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -934,13 +771,13 @@ defaultButtonData = {
         {--0.07
             pos       = {-0.426,0.1,1.559},
             rows      = 1,
-            width     = 2600,
+            width     = 2700,
             font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 4",
         },
          {--0.07
-            pos       = {0.147,0.1,1.559},
+            pos       = {0.167,0.1,1.559},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -948,7 +785,7 @@ defaultButtonData = {
             id        = "Diff 4",
         },
         {--0.07
-            pos       = {0.364,0.1,1.559},
+            pos       = {0.384,0.1,1.559},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -956,7 +793,7 @@ defaultButtonData = {
             id        = "Damage 4",
         },
         {--0.07
-            pos       = {0.611,0.1,1.559},
+            pos       = {0.626,0.1,1.559},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -964,7 +801,7 @@ defaultButtonData = {
             id        = "Range 4",
         },
         {--0.07
-            pos       = {0.851,0.1,1.559},
+            pos       = {0.871,0.1,1.559},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -972,7 +809,7 @@ defaultButtonData = {
             id        = "Rate 4",
         },
         {--0.07
-            pos       = {1.063,0.1,1.559},
+            pos       = {1.093,0.1,1.559},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -980,7 +817,7 @@ defaultButtonData = {
             id        = "Diff 5",
         },
         {--0.07
-            pos       = {1.275,0.1,1.559},
+            pos       = {1.289,0.1,1.559},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -991,13 +828,13 @@ defaultButtonData = {
         {--0.07
             pos       = {-0.426,0.1,1.639},
             rows      = 1,
-            width     = 2600,
+            width     = 2700,
             font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 5",
         },
          {--0.07
-            pos       = {0.147,0.1,1.639},
+            pos       = {0.167,0.1,1.639},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -1005,7 +842,7 @@ defaultButtonData = {
             id        = "Diff 5",
         },
         {--0.07
-            pos       = {0.364,0.1,1.639},
+            pos       = {0.384,0.1,1.639},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -1013,7 +850,7 @@ defaultButtonData = {
             id        = "Damage 5",
         },
         {--0.07
-            pos       = {0.611,0.1,1.639},
+            pos       = {0.626,0.1,1.639},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -1021,7 +858,7 @@ defaultButtonData = {
             id        = "Range 5",
         },
         {--0.07
-            pos       = {0.851,0.1,1.639},
+            pos       = {0.871,0.1,1.639},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -1029,7 +866,7 @@ defaultButtonData = {
             id        = "Rate 5",
         },
         {--0.07
-            pos       = {1.063,0.1,1.639},
+            pos       = {1.093,0.1,1.639},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -1037,7 +874,7 @@ defaultButtonData = {
             id        = "Diff 5",
         },
         {--0.07
-            pos       = {1.275,0.1,1.639},
+            pos       = {1.289,0.1,1.639},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -1048,13 +885,13 @@ defaultButtonData = {
          {--0.07
             pos       = {-0.426,0.1,1.719},
             rows      = 1,
-            width     = 2600,
+            width     = 2700,
             font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 6",
         },
          {--0.07
-            pos       = {0.147,0.1,1.719},
+            pos       = {0.167,0.1,1.719},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -1062,7 +899,7 @@ defaultButtonData = {
             id        = "Diff 6",
         },
         {--0.07
-            pos       = {0.364,0.1,1.719},
+            pos       = {0.384,0.1,1.719},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -1070,7 +907,7 @@ defaultButtonData = {
             id        = "Damage 6",
         },
         {--0.07
-            pos       = {0.611,0.1,1.719},
+            pos       = {0.626,0.1,1.719},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -1078,7 +915,7 @@ defaultButtonData = {
             id        = "Range 6",
         },
         {--0.07
-            pos       = {0.851,0.1,1.719},
+            pos       = {0.871,0.1,1.719},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -1086,7 +923,7 @@ defaultButtonData = {
             id        = "Rate 6",
         },
         {--0.07
-            pos       = {1.063,0.1,1.719},
+            pos       = {1.093,0.1,1.719},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -1094,7 +931,7 @@ defaultButtonData = {
             id        = "Diff 6",
         },
         {--0.07
-            pos       = {1.275,0.1,1.719},
+            pos       = {1.289,0.1,1.719},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -1105,13 +942,13 @@ defaultButtonData = {
          {--0.07
             pos       = {-0.426,0.1,1.799},
             rows      = 1,
-            width     = 2600,
+            width     = 2700,
             font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 7",
         },
          {--0.07
-            pos       = {0.147,0.1,1.799},
+            pos       = {0.167,0.1,1.799},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -1119,7 +956,7 @@ defaultButtonData = {
             id        = "Diff 7",
         },
         {--0.07
-            pos       = {0.364,0.1,1.799},
+            pos       = {0.384,0.1,1.799},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -1127,7 +964,7 @@ defaultButtonData = {
             id        = "Damage 7",
         },
         {--0.07
-            pos       = {0.611,0.1,1.799},
+            pos       = {0.626,0.1,1.799},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -1135,7 +972,7 @@ defaultButtonData = {
             id        = "Range 7",
         },
         {--0.07
-            pos       = {0.851,0.1,1.799},
+            pos       = {0.871,0.1,1.799},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -1143,7 +980,7 @@ defaultButtonData = {
             id        = "Rate 7",
         },
         {--0.07
-            pos       = {1.063,0.1,1.799},
+            pos       = {1.093,0.1,1.799},
             rows      = 1,
             width     = 800,
             font_size = 270,
@@ -1151,7 +988,7 @@ defaultButtonData = {
             id        = "Diff 7",
         },
         {--0.07
-            pos       = {1.275,0.1,1.799},
+            pos       = {1.289,0.1,1.799},
             rows      = 1,
             width     = 1000,
             font_size = 270,
@@ -1179,86 +1016,103 @@ defaultButtonData = {
             pos   = {-0.9333,0.1,-0.488},
             sequence = 9,
             id =  "Other Trait 2",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.418},
             sequence = 9,
             id =  "Other Trait 3",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.348},
             sequence = 9,
             id =  "Other Trait 4",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.278},
             sequence = 9,
             id =  "Other Trait 5",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.208},
             sequence = 9,
             id =  "Other Trait 6",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.138},
             sequence = 9,
             id =  "Other Trait 7",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.068},
             sequence = 9,
             id =  "Other Trait 8",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.9333,0.1,0.002},
             sequence = 9,
             id =  "Other Trait 9",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.752,0.1,0.223},
             sequence = 5,
             id =  "Path 1",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.752,0.1,0.293},
             sequence = 5,
             id =  "Path 2",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.752,0.1,0.363},
             sequence = 5,
             id =  "Path 3",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.752,0.1,0.433},
             sequence = 5,
             id =  "Path 4",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.752,0.1,0.503},
             sequence = 5,
             id =  "Path 5",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.752,0.1,0.573},
             sequence = 5,
             id =  "Path 6",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.752,0.1,0.643},
             sequence = 5,
             id =  "Path 7",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.752,0.1,0.713},
             sequence = 5,
             id =  "Path 8",
+            fkTooltip = true,
         }, 
         {
             pos   = {-0.752,0.1,0.783},
             sequence = 5,
             id =  "Path 9",
+            fkTooltip = true,
         }, 
         --End of checkboxes
     },
@@ -1272,22 +1126,14 @@ defaultButtonData = {
         ]]
         --End of counters
     },
+    mainSheet = {
+    },
+    player =  {
+    },
     --Add custom
     custom = {
         {
             ownerColor = Player.Black.color
-        },
-        --Blood per Turn
-        {
-            pos       = {0.152,0.1,1.815},
-            width     = 4700,
-            font_size = 300,
-        },
-        --Aura modifier
-        {
-            pos       = {0.381,0.1,1.055},
-            width     = 4700,
-            font_size = 300,
         },
     }
 }
@@ -1309,6 +1155,8 @@ playerColors = {
     {name = "Pink", color = {0.96, 0.439, 0.807}},
     {name = "Black", color = {0.25, 0.25, 0.25}}}
 
+local mainSheet = nil
+
 --Save function
 function updateSave()
     if disableSave==false then
@@ -1319,6 +1167,24 @@ function updateSave()
     self.script_state = saved_data
 
     setReadOnlyTimer()
+end
+
+local readWriteId = 0
+
+function orphanSheet(params) 
+    if mainSheet and params.mainSheet == mainSheet then
+        mainSheet = nil
+
+        self.editInput({index = mainSheetSetId, value = ""}) 
+    end
+end
+
+function setClaimant(params) 
+    if mainSheet and params.mainSheet == mainSheet.getGUID() then
+        ref_buttonData.player.claimantId = params.claimantId
+
+        updateSave()
+    end
 end
 
 --Startup procedure
@@ -1333,59 +1199,116 @@ function onload(saved_data)
         writeAllowed = true
     end
 
+    if ref_buttonData.mainSheet.guid then
+        mainSheet = getObjectFromGUID(ref_buttonData.mainSheet.guid)
+    end
+
     spawnedButtonCount = 0
+    spawnedInputCount = 0
+
     createDots()
-    createCounter()
     createTextbox()
 
-    --permission
-
-    self.createButton({
-            label="OWNER", click_function="click_none", function_owner=self,
-            position= {-1.265,0.1,-1.779}, height=0, width=0,
-            font_size=300, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
-    })
-
-    spawnedButtonCount = spawnedButtonCount + 1
-
-    local playerColor = getPlayerColor(ref_buttonData.custom[1].ownerColor)
-
-    self.createButton({
-            label = string.char(9632), click_function="cycleColor", function_owner=self,
-            position= {-0.96,0.1,-1.784}, height=400, width=400,
-            font_size=500, scale=buttonScale,
-            color={0, 0, 0}, font_color=playerColor, tooltip = ref_buttonData.custom[1].ownerColor
-    })
-
-    spawnedButtonCount = spawnedButtonCount + 1
-
     --Read/Write has to be last because of id, fixme
-
-    self.createButton({
-            label="Edit Mode", click_function="click_none", function_owner=self,
-            position= {-1.2,0.1,-2.03}, height=0, width=0,
-            font_size=500, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
-    })
-
-    spawnedButtonCount = spawnedButtonCount + 1
 
     local readWriteParams = {click_function="toggleReadWrite",
             label = label,
             function_owner=self,
-            position= {-0.895,0.1,-2.04},
-            height=500,
-            width=500,
+            position= {-1.053,0.1,-1.773},
+            height=400,
+            width=400,
             font_size=(500 * 1.5),
             scale=buttonScale,
             color=buttonColor,
             font_color={1,0,0},
     }
 
+    readWriteId = spawnedButtonCount
+
     self.createButton(readWriteParams)
 
+    spawnedButtonCount = spawnedButtonCount + 1
+
     setReadWrite(writeAllowed)
+     
+    local localPos = {-1.053 + 0.25, 0.1, -1.773}
+
+    self.createInput({
+            input_function = "mainSheetSet",
+            function_owner = self,
+            label = "",
+            position = localPos,
+            height = 400,
+            width = 2000,
+            font_size = 300,
+            scale=buttonScale,
+            color = buttonColor,
+            font_color = buttonFontColor,
+        })
+
+    mainSheetSetId = spawnedButtonCount
+
+     spawnedButtonCount = spawnedButtonCount + 1
+end
+
+function mainSheetSet(obj, playerColor, val, sel)
+    if playerColor == "Black" then
+        if not sel then
+            mainSheet = getObjectFromGUID(val)
+
+            if mainSheet ~= nil then
+                print("called")
+                mainSheet.call("setChildSheet", {sheet = self})
+
+                ref_buttonData.mainSheet.guid = val
+
+                ref_buttonData.player.claimantId = mainSheet.call("getClaimantId")
+                updateSave()
+
+                createDots()
+            end
+        end
+    else 
+        Player[playerColor].broadcast("Only the GM/Black Player can set main sheet")
+    end
+end
+
+function claim(obj, playerColor) 
+    if writeAllowed and ref_buttonData.player.claimantId == nil and playerColor ~= "Black" then
+        ref_buttonData.player.claimantId = Player[playerColor].steam_id
+        ref_buttonData.player.claimantName = Player[playerColor].steam_name
+
+        updateSave()
+
+        self.editButton({
+            index = ref_buttonData.player.buttonId,
+            label = ref_buttonData.player.claimantName,
+            tooltip = ""
+            })  
+
+        self.setName(ref_buttonData.player.claimantName.."'s' V20:DA Character Sheet")
+    end
+end
+
+function revokeClaim(obj, playerColor)
+    if writeAllowed then
+        if playerColor == "Black" then
+            ref_buttonData.player.claimantId = nil
+            ref_buttonData.player.claimantName = nil
+
+            updateSave()
+
+            self.editButton({
+                index = ref_buttonData.player.buttonId,
+                label = "Claim",
+                tooltip = "Claim this sheet"
+                })  
+
+            self.setName("V20:DA Character Sheet")
+        else
+            Player[playerColor].broadcast("Only the GM (Black) Player can revoke claims")
+        end
+    end
 end
 
 function getDot(id)
@@ -1402,42 +1325,18 @@ function getDot(id)
     return selectedDot
 end
 
-function getPlayerColor(player)
-    local color = {}
-    for i, playerColor in ipairs(playerColors) do 
-        
-        if player == playerColor.name then
-            color = playerColor.color
+function getTextbox(id)
+    local selectedTextbox = {}
+
+    for i, textbox in ipairs(ref_buttonData.textbox) do
+
+        if textbox.id == id then
+            selectedTextbox = textbox
             break
         end
     end
 
-    return color
-end
-
-
-function cycleColor(object, playerColor)
-    if Player[playerColor] ~= Player.Black then
-        Player[playerColor].broadcast("Only the Black Color Player (GM) can change Sheet Ownership")
-    elseif writeAllowed then
-        local currentColor = ref_buttonData.custom[1].ownerColor
-        local colorIndex = 1
-
-        for i, playerColor in ipairs(playerColors) do
-            if playerColor.name == currentColor then
-                colorIndex = i + 1
-                break
-            end
-        end
-
-        if playerColors[colorIndex] == nil then colorIndex = 1 end
-
-        ref_buttonData.custom[1].ownerColor = Player[playerColors[colorIndex].name].color
-
-        self.editButton({index = (spawnedButtonCount - 2), font_color=getPlayerColor(ref_buttonData.custom[1].ownerColor), tooltip = ref_buttonData.custom[1].ownerColor})
-
-        updateSave()
-    end
+    return selectedTextbox
 end
 
 function toggleReadWrite()
@@ -1467,7 +1366,7 @@ function setReadWrite(localWriteAllowed)
         label = string.char(9632) 
     end
 
-    self.editButton({index = spawnedButtonCount, label=label})
+    self.editButton({index = readWriteId, label=label})
 
     local color = readOnlyButtonColor
     if writeAllowed == true then color = buttonColor end 
@@ -1505,7 +1404,7 @@ end
 
 --Checks or unchecks the given box
 function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerColor)
-    if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor then
+    if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId then
         if writeAllowed == true then
             if ref_buttonData.dots[tableIndex].value == columnIndex then
                 columnIndex = columnIndex - 1
@@ -1515,20 +1414,12 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
 
             data.value = columnIndex
 
-            for i=0, (totalColumns - 1) do
-                local localLabel = data.glyphEmpty
-
-                if i < columnIndex then localLabel = data.glyphFilled end
-
-                self.editButton({index=buttonIndex + i, label=localLabel})
-            end
+            fillDots(data)
 
             updateSave()
         else
             if ref_buttonData.dots[tableIndex].tooltip ~= "" and ref_buttonData.dots[tableIndex].value > 0 then
                 local player = Player[playerColor]
-
-                --if player == Player.Black then player = Player.Orange end
 
 
                 for i = 1, ref_buttonData.dots[tableIndex].value do 
@@ -1538,7 +1429,7 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
 
                     dice.setColorTint(color)
 
-                    dice.setLuaScript("local destroyed = false \n \nlocal isRolling = false \nhighlightDuration = 30 \n \nfunction onUpdate() \n    if not self.resting then  \n        self.highlightOff() \n        isRolling = true \n    elseif isRolling and self.resting then \n        isRolling = false \n \n        local value = self.getValue() \n        if value == 1 then \n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration) \n        elseif value == 10 then \n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration) \n        elseif value >= 7 then  \n            self.highlightOn({1, 1, 1}, highlightDuration)  \n        end \n    end \nend")
+                    dice.setLuaScript("local destroyed = false \n \nlocal isRolling = false \nhighlightDuration = 30 \n \nfunction onUpdate() \n    if not self.resting then  \n        self.highlightOff() \n        isRolling = true \n    elseif isRolling and self.resting then \n        isRolling = false \n \n        local value = self.getValue() \n        if value == 1 then \n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration) \n        elseif value == 10 then \n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration) \n        elseif value >= 6 then  \n            self.highlightOn({1, 1, 1}, highlightDuration)  \n        end \n    end \nend")
 
                     dice.use_hands = true
 
@@ -1550,58 +1441,49 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
 end
 
 
-
---Applies value to given counter display
-function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used for generation ?
-    if playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor then
-        if writeAllowed == true then
-            ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount
-            self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})
-            updateSave()
-        end
-    end
-end
-
-
-function click_specialization(i,playerColor, value, selected)
-    if (playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor) and writeAllowed == true then
-        if selected == false then
-            ref_buttonData.dots[i].specialization = value
-            updateSave()
-        end
-
-        setReadOnlyTimer()
-    end
-end
-
 --Updates saved value for given text box
-function click_textbox(i,playerColor, value, selected)
-    if (playerColor == "Black" or playerColor == ref_buttonData.custom[1].ownerColor) and writeAllowed == true then
+function click_textbox(i, type, key,  playerColor, value, selected)
+    if (playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId) and writeAllowed == true then
         if selected == false then
-            ref_buttonData.textbox[i].value = value
+            ((ref_buttonData[type])[i])[key] = value
             updateSave()
+
+            local id = ((ref_buttonData[type])[i]).id
+
+            if type == "textbox" and ref_buttonData.textbox[i].fkTooltip then
+                local dot = getDot(id)
+
+                for i = 1, dot.sequence do
+                    self.editButton({index = dot.buttonId + (i - 1), tooltip = value})
+                end
+            end
         end
 
         setReadOnlyTimer()
     else 
         if selected == false then
-            local resetFuncName = "resetTextboxTimer"..i.."."..self.getGUID()
+            local resetFuncName = "reset"..type.."Timer"..i.."."..self.getGUID()
             Timer.destroy(resetFuncName)
 
-            Timer.create({identifier=resetFuncName, function_name="resetTextbox", parameters={index = (i - 1), value = ref_buttonData.textbox[i].value}, function_owner=self, delay=0.03})
+            Timer.create({identifier=resetFuncName, function_name="resetTextbox", parameters={index = (ref_buttonData[type])[i].inputId, value = ((ref_buttonData[type])[i])[key]}, function_owner=self, delay=0.03})
         end
     end
 end
 
 function resetTextbox(parameters)
-    self.editInput({index = parameters.index, value = parameters.value})    
+    local val = nil
+    if  parameters.value == val then
+        val = ""
+    else 
+        val = parameters.value
+    end
+
+    self.editInput({index = parameters.index, value = val})    
 end
 
 
 --Dud function for if you have a background on a counter
 function click_none() end
-
-
 
 --Button creation
 
@@ -1616,126 +1498,115 @@ function createDots()
         if data.value == nil then data.value = 0 end
         if data.id == nil then data.id = "" end
         if data.size == nil then data.size = 340 end
+        if data.dependsOn == nil then data.dependsOn = 1 end
 
         if data.glyphFilled == nil then data.glyphFilled = string.char(9679) end
         if data.glyphEmpty == nil then data.glyphEmpty = string.char(9675) end
 
-        local buttonNumber = spawnedButtonCount
-        for k=1,data.sequenceColumns do
-            for j=1,data.sequence do
-                --Sets up reference function
-                local funcName = "dot"..data.id..j
-                local func = function(_, playerColor) click_dot(i, ((k - 1) * data.sequence) + j, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
+        fillDots(data, i)
+    end
+end
+
+function fillDots(data, i)
+    local finalSequence = data.sequence * data.sequenceColumns
+
+    local buttonNumber = spawnedButtonCount
+    for k=1,data.sequenceColumns do
+        for j=1,data.sequence do
+            --Sets up reference function
+            local realIndex = ((k - 1) * data.sequence) + j
+            
+            --Sets up label
+            local label = data.glyphEmpty
+            if data.value >= realIndex then label = data.glyphFilled end
+            --Creates button and counts it
+
+            local isDisabled = finalSequence < realIndex
+
+            local size = data.size
+            if isDisabled then size = 0 end
+
+            local fontSize = size * 1.5
+
+            if data.buttonId == nil then
+                local funcName = "dot"..data.id..realIndex
+
+                local func = function(_, playerColor) click_dot(i, realIndex, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
                 self.setVar(funcName, func)
-                --Sets up label
-                local label = data.glyphEmpty
-                if data.value >= ((k - 1) * data.sequence) + j then label = data.glyphFilled end
-                --Creates button and counts it
 
                 local copyPos = {data.pos[1] + ((j - 1) * data.sequenceWidth) , data.pos[2], data.pos[3] + ((k - 1) * data.sequenceHeight)}
-                
-                local fontSize = data.size * 1.5
 
                 self.createButton({
-                    index = spawnedButtonCount,
-                    label=label, click_function=funcName, function_owner=self,
-                    position=copyPos, height=data.size, width=data.size,
-                    font_size=fontSize, scale=buttonScale,
-                    color=buttonColor, font_color=buttonFontColor, tooltip = data.id
-                }) 
+                index = spawnedButtonCount,
+                label=label, click_function=funcName, function_owner=self,
+                position=copyPos, height=size, width=size,
+                font_size=fontSize, scale=buttonScale,
+                color=buttonColor, font_color=buttonFontColor, tooltip = data.id
+                })     
+
+
                 spawnedButtonCount = spawnedButtonCount + 1
+            else 
+                self.editButton({
+                        index = (data.buttonId + ( realIndex - 1)), label = label, height=size, width=size, font_size = fontSize
+                    })
             end
+        end
+    end
 
-            if data.specializes == true then
-                local funcName = "specialization"..data.id
-                local func = function(_,playerColor,val,sel) click_specialization(i,playerColor,val,sel) end
-                self.setVar(funcName, func)
+    if data.buttonId == nil then
+        data.buttonId = buttonNumber
+    end
 
-                local width = 800
-                local fontSize = 140
+    if data.specializes then
+        local specialityUnlocked = data.value > 3
 
-                self.createInput({
-                    input_function = funcName,
-                    function_owner = self,
-                    alignment      = 4,
-                    position       = {data.pos[1] - data.sequenceWidth - ((width / 2) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3]},
-                    scale          = buttonScale,
-                    width          = width,
-                    height         = fontSize + 24,
-                    font_size      = fontSize,
-                    color          = buttonColor,
-                    font_color     = buttonFontColor,
-                    value          = data.specialization,
-                    validation     = data.validation
-        })
-            end
+        local width = 900
+        if not specialityUnlocked then width = 0 end
+
+        local fontSize = 155
+        if not specialityUnlocked then fontSize = 0 end
+
+        if data.inputId == nil then
+            local funcName = "speciality"..data.id
+            local func = function(_,playerColor,val,sel) click_textbox(i, "dots", "speciality", playerColor,val,sel) end
+            self.setVar(funcName, func)
+
+            
+
+            self.createInput({
+                input_function = funcName,
+                function_owner = self,
+                alignment      = 4,
+                position       = {data.pos[1] - data.sequenceWidth - ((900 / 2) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3] - 0.005},
+                scale          = buttonScale,
+                width          = width,
+                height         = fontSize + 24,
+                font_size      = fontSize,
+                color          = buttonColor,
+                font_color     = buttonFontColor,
+                value          = data.speciality,
+                validation     = data.validation,
+                label = "Speciality"
+             })
+
+            data.inputId = spawnedInputCount
+
+            spawnedInputCount = spawnedInputCount + 1
+        else 
+            self.editInput({
+                index = data.inputId, value = data.speciality, height = fontSize + 24, width = width, font_size = fontSize,
+                })
         end
     end
 end
 
---Makes counters
-function createCounter()
-    for i, data in ipairs(ref_buttonData.counter) do
-        --Sets up display
-        local displayNumber = spawnedButtonCount
-        --Sets up label
-        local label = data.value
-        --Sets height/width for display
-        local size = data.size
-        if data.hideBG == true then size = 0 end
-        --Creates button and counts it
-        self.createButton({
-            label=label, click_function="click_none", function_owner=self,
-            position=data.pos, height=size, width=size,
-            font_size=data.size, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
-        })
-        spawnedButtonCount = spawnedButtonCount + 1
-
-        --Sets up add 1
-        local funcName = "counterAdd"..i
-        local func = function(_, playerColor) click_counter(i, playerColor, displayNumber, 1) end
-        self.setVar(funcName, func)
-        --Sets up label
-        local label = "+"
-        --Sets up position
-        local offsetDistance = (data.size/2 + data.size/4) * (buttonScale[1] * 0.002)
-        local pos = {data.pos[1] + offsetDistance, data.pos[2], data.pos[3]}
-        --Sets up size
-        local size = data.size / 2
-        --Creates button and counts it
-        self.createButton({
-            label=label, click_function=funcName, function_owner=self,
-            position=pos, height=size, width=size,
-            font_size=size, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
-        })
-        spawnedButtonCount = spawnedButtonCount + 1
-
-        --Sets up subtract 1
-        local funcName = "counterSub"..i
-        local func = function(_, playerColor) click_counter(i, playerColor, displayNumber, -1) end
-        self.setVar(funcName, func)
-        --Sets up label
-        local label = "-"
-        --Set up position
-        local pos = {data.pos[1] - offsetDistance, data.pos[2], data.pos[3]}
-        --Creates button and counts it
-        self.createButton({
-            label=label, click_function=funcName, function_owner=self,
-            position=pos, height=size, width=size,
-            font_size=size, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
-        })
-        spawnedButtonCount = spawnedButtonCount + 1
-    end
-end
 
 function createTextbox()
     for i, data in ipairs(ref_buttonData.textbox) do
         --Sets up reference function
         local funcName = "textbox"..data.id
-        local func = function(_,playerColor,val,sel) click_textbox(i,playerColor,val,sel) end
+        local func = function(_,playerColor,val,sel) click_textbox(i, "textbox", "value", playerColor,val,sel) end
         self.setVar(funcName, func)
 
         local height = (data.font_size*data.rows)+24
@@ -1761,5 +1632,9 @@ function createTextbox()
             value          = data.value,
             validation     = data.validation
         })
+
+        data.inputId = spawnedInputCount
+
+        spawnedInputCount = spawnedInputCount + 1
     end
 end
