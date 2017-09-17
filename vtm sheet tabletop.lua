@@ -8,7 +8,7 @@ writeAllowed = false
 readOnlyTimerDelay = 90
 
 --Set this to true while editing and false when you have finished
-disableSave = true
+disableSave = false
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -958,42 +958,36 @@ defaultButtonData = {
             pos   = {0.095,0.1,0.22},
             sequence = 9,
             id =  "Background 1",
-            dependsOn = 0,
         },
         --Background 2
         {
             pos   = {0.095,0.1,0.2916},
             sequence = 9,
             id =  "Background 2",
-            dependsOn = 0,
         },
         --Background 3
         {
             pos   = {0.095,0.1,0.3632},
             sequence = 9,
             id =  "Background 3",
-            dependsOn = 0,
         },
         --Background 4
         {
             pos   = {0.095,0.1,0.4348},
             sequence = 9,
             id =  "Background 4",
-            dependsOn = 0,
         },
         --Background 5
         {
             pos   = {0.095,0.1,0.5064},
             sequence = 9,
             id =  "Background 5",
-            dependsOn = 0,
         },
         --Background 6
         {
             pos   = {0.095,0.1,0.578},
             sequence = 9,
             id =  "Background 6",
-            dependsOn = 0,
         },
         
         --Virtues
@@ -1129,8 +1123,6 @@ defaultButtonData = {
     }
 }
 
-
-
 --Lua beyond this point, I recommend doing something more fun with your life
 --Intercom
 local childSheet = nil
@@ -1205,7 +1197,7 @@ function onload(saved_data)
 
     calculateGenerationStats()
 
-    createDots()
+    createDots(true)
     createCounter()
     createTextbox()
     createHealth()
@@ -1430,18 +1422,24 @@ function getTextbox(id)
     return selectedTextbox
 end
 
-function toggleReadWrite()
-    local localWriteAllowed = writeAllowed
+function toggleReadWrite(val, playerColor)
+    if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId then 
+        local localWriteAllowed = writeAllowed
 
-    if writeAllowed == true then localWriteAllowed = false else localWriteAllowed = true end
+        if writeAllowed == true then localWriteAllowed = false else localWriteAllowed = true end
 
-    setReadWrite(localWriteAllowed)
+        setReadWrite(localWriteAllowed)
 
-    if writeAllowed == true then
-        setReadOnlyTimer()
-    else
-        clearReadOnlyTimer()
+        if writeAllowed == true then
+            setReadOnlyTimer()
+        else
+            clearReadOnlyTimer()
+        end
     end
+end
+
+function getReadWrite(localWriteAllowed)
+    return writeAllowed
 end
 
 function setReadWrite(localWriteAllowed)
@@ -1468,6 +1466,10 @@ function setReadWrite(localWriteAllowed)
 
     for j, input in ipairs(self.getInputs()) do
         self.editInput({index = input.index, color = color})
+    end
+
+    if childSheet then
+        childSheet.call("setReadWrite", {localWriteAllowed = localWriteAllowed})
     end
 end
 
@@ -1551,6 +1553,12 @@ function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used 
                 calculateGenerationStats()
                 self.editButton({index = bloodPerTurnId, label = bloodPerTurn})
 
+                print("will call")
+
+                if childSheet then
+                    childSheet.call("setGeneration", {mainSheet = self, generation = newValue})
+                end
+
                 createDots()
             end
         end
@@ -1626,7 +1634,7 @@ end
 --Button creation
 
 --Makes checkboxes
-function createDots()
+function createDots(reset)
     for i, data in ipairs(ref_buttonData.dots) do
         
         if data.sequence == nil then data.sequence = 1 end
@@ -1641,11 +1649,11 @@ function createDots()
         if data.glyphFilled == nil then data.glyphFilled = string.char(9679) end
         if data.glyphEmpty == nil then data.glyphEmpty = string.char(9675) end
 
-        fillDots(data, i)
+        fillDots(data, i, reset)
     end
 end
 
-function fillDots(data, i)
+function fillDots(data, i, reset)
     local finalSequence = data.sequence * data.sequenceColumns
     if data.dependsOn == 1 then
         finalSequence = maxTraitDots
@@ -1671,13 +1679,19 @@ function fillDots(data, i)
 
             local fontSize = size * 1.5
 
-            if data.buttonId == nil then
+            local copyPos = {data.pos[1] + ((j - 1) * data.sequenceWidth) , data.pos[2], data.pos[3] + ((k - 1) * data.sequenceHeight)}
+
+            if data.dependsOn == 1 then
+                copyPos[1] = copyPos[1] + ((data.sequence - finalSequence) * data.sequenceWidth)
+            end
+
+            if reset or data.buttonId == nil then
                 local funcName = "dot"..data.id..realIndex
 
                 local func = function(_, playerColor) click_dot(i, realIndex, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
                 self.setVar(funcName, func)
 
-                local copyPos = {data.pos[1] + ((j - 1) * data.sequenceWidth) , data.pos[2], data.pos[3] + ((k - 1) * data.sequenceHeight)}
+                
 
                 self.createButton({
                 index = spawnedButtonCount,
@@ -1691,7 +1705,8 @@ function fillDots(data, i)
                 spawnedButtonCount = spawnedButtonCount + 1
             else 
                 self.editButton({
-                        index = (data.buttonId + ( realIndex - 1)), label = label, height=size, width=size, font_size = fontSize
+                        index = (data.buttonId + ( realIndex - 1)), label = label, height=size, width=size, font_size = fontSize, position = copyPos,
+
                     })
             end
         end
@@ -1704,24 +1719,32 @@ function fillDots(data, i)
     if data.specializes then
         local specialityUnlocked = data.value > 3
 
+        local fontSize = 180
+        if not specialityUnlocked then fontSize = 0 end
+
         local width = 900
         if not specialityUnlocked then width = 0 end
 
-        local fontSize = 155
-        if not specialityUnlocked then fontSize = 0 end
+        if width > 0 and data.dependsOn == 1 then
+            width = (width * (data.sequence / finalSequence))
+        end
 
-        if data.inputId == nil then
+        local localPos = {data.pos[1] - data.sequenceWidth - ((width / 2) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3] - 0.005}
+
+        if data.dependsOn == 1 then
+            localPos[1] = localPos[1] + ((data.sequence - finalSequence) * data.sequenceWidth)
+        end
+
+        if reset or data.inputId == nil then
             local funcName = "speciality"..data.id
             local func = function(_,playerColor,val,sel) click_textbox(i, "dots", "speciality", playerColor,val,sel) end
             self.setVar(funcName, func)
-
-            
 
             self.createInput({
                 input_function = funcName,
                 function_owner = self,
                 alignment      = 4,
-                position       = {data.pos[1] - data.sequenceWidth - ((900 / 2) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3] - 0.005},
+                position       = localPos,
                 scale          = buttonScale,
                 width          = width,
                 height         = fontSize + 24,
@@ -1730,7 +1753,8 @@ function fillDots(data, i)
                 font_color     = buttonFontColor,
                 value          = data.speciality,
                 validation     = data.validation,
-                label = "Speciality"
+                label = "Speciality",
+                tooltip = data.speciality
              })
 
             data.inputId = spawnedInputCount
@@ -1738,7 +1762,7 @@ function fillDots(data, i)
             spawnedInputCount = spawnedInputCount + 1
         else 
             self.editInput({
-                index = data.inputId, value = data.speciality, height = fontSize + 24, width = width, font_size = fontSize,
+                index = data.inputId, value = data.speciality, height = fontSize + 24, width = width, font_size = fontSize, position = localPos, tooltip = data.speciality
                 })
         end
     end

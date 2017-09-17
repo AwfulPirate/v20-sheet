@@ -48,7 +48,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.558},
             rows      = 1,
-            width     = 2500,
+            width     = 1700,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 1",
@@ -57,7 +57,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.488},
             rows      = 1,
-            width     = 2500,
+            width     = 1700,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 2",
@@ -66,7 +66,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.418},
             rows      = 1,
-            width     = 2500,
+            width     = 1700,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 3",
@@ -75,7 +75,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.348},
             rows      = 1,
-            width     = 2500,
+            width     = 1700,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 4",
@@ -84,7 +84,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.278},
             rows      = 1,
-            width     = 2500,
+            width     = 1700,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 5",
@@ -93,7 +93,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.208},
             rows      = 1,
-            width     = 2500,
+            width     = 1700,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 6",
@@ -102,7 +102,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.138},
             rows      = 1,
-            width     = 2500,
+            width     = 1700,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 7",
@@ -111,7 +111,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.068},
             rows      = 1,
-            width     = 2500,
+            width     = 1700,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 8",
@@ -120,7 +120,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.002},
             rows      = 1,
-            width     = 2500,
+            width     = 1700,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 9",
@@ -1011,108 +1011,126 @@ defaultButtonData = {
             pos   = {-0.9333,0.1,-0.558},
             sequence = 9,
             id =  "Other Trait 1",
+            specializes = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.488},
             sequence = 9,
             id =  "Other Trait 2",
             fkTooltip = true,
+            specializes = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.418},
             sequence = 9,
             id =  "Other Trait 3",
             fkTooltip = true,
+            specializes = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.348},
             sequence = 9,
             id =  "Other Trait 4",
             fkTooltip = true,
+            specializes = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.278},
             sequence = 9,
             id =  "Other Trait 5",
             fkTooltip = true,
+            specializes = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.208},
             sequence = 9,
             id =  "Other Trait 6",
             fkTooltip = true,
+            specializes = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.138},
             sequence = 9,
             id =  "Other Trait 7",
             fkTooltip = true,
+            specializes = true,
         }, 
         {
             pos   = {-0.9333,0.1,-0.068},
             sequence = 9,
             id =  "Other Trait 8",
             fkTooltip = true,
+            specializes = true,
         }, 
-        {
+        { --0.0475
             pos   = {-0.9333,0.1,0.002},
             sequence = 9,
             id =  "Other Trait 9",
             fkTooltip = true,
+            specializes = true,
         }, 
         {
-            pos   = {-0.752,0.1,0.223},
+            pos   = {-0.7433,0.1,0.223},
             sequence = 5,
             id =  "Path 1",
             fkTooltip = true,
+            dependsOn = 0,
         }, 
         {
-            pos   = {-0.752,0.1,0.293},
+            pos   = {-0.7433,0.1,0.293},
             sequence = 5,
             id =  "Path 2",
             fkTooltip = true,
+            dependsOn = 0,
         }, 
         {
-            pos   = {-0.752,0.1,0.363},
+            pos   = {-0.7433,0.1,0.363},
             sequence = 5,
             id =  "Path 3",
             fkTooltip = true,
+            dependsOn = 0,
         }, 
         {
-            pos   = {-0.752,0.1,0.433},
+            pos   = {-0.7433,0.1,0.433},
             sequence = 5,
             id =  "Path 4",
             fkTooltip = true,
+            dependsOn = 0,
         }, 
         {
-            pos   = {-0.752,0.1,0.503},
+            pos   = {-0.7433,0.1,0.503},
             sequence = 5,
             id =  "Path 5",
             fkTooltip = true,
+            dependsOn = 0,
         }, 
         {
-            pos   = {-0.752,0.1,0.573},
+            pos   = {-0.7433,0.1,0.573},
             sequence = 5,
             id =  "Path 6",
             fkTooltip = true,
+            dependsOn = 0,
         }, 
         {
-            pos   = {-0.752,0.1,0.643},
+            pos   = {-0.7433,0.1,0.643},
             sequence = 5,
             id =  "Path 7",
             fkTooltip = true,
+            dependsOn = 0,
         }, 
         {
-            pos   = {-0.752,0.1,0.713},
+            pos   = {-0.7433,0.1,0.713},
             sequence = 5,
             id =  "Path 8",
             fkTooltip = true,
+            dependsOn = 0,
         }, 
         {
-            pos   = {-0.752,0.1,0.783},
+            pos   = {-0.7433,0.1,0.783},
             sequence = 5,
             id =  "Path 9",
             fkTooltip = true,
+            dependsOn = 0,
         }, 
         --End of checkboxes
     },
@@ -1166,10 +1184,14 @@ function updateSave()
     end
     self.script_state = saved_data
 
-    setReadOnlyTimer()
+    --setReadOnlyTimer()
+
+    if mainSheet then
+        mainSheet.call("setReadOnlyTimer")
+    end
 end
 
-local readWriteId = 0
+
 
 function orphanSheet(params) 
     if mainSheet and params.mainSheet == mainSheet then
@@ -1187,16 +1209,18 @@ function setClaimant(params)
     end
 end
 
+local bloodPool = 0
+local maxTraitDots = 0
+local bloodPerTurn = 0
+
 --Startup procedure
 function onload(saved_data)
     if disableSave==true then saved_data="" end
     if saved_data ~= "" then
         local loaded_data = JSON.decode(saved_data)
         ref_buttonData = loaded_data
-        writeAllowed = false
     else
         ref_buttonData = defaultButtonData
-        writeAllowed = true
     end
 
     if ref_buttonData.mainSheet.guid then
@@ -1206,37 +1230,25 @@ function onload(saved_data)
     spawnedButtonCount = 0
     spawnedInputCount = 0
 
-    createDots()
+    calculateGenerationStats()
+
+    createDots(true)
     createTextbox()
-
-    --Read/Write has to be last because of id, fixme
-
-    local readWriteParams = {click_function="toggleReadWrite",
-            label = label,
-            function_owner=self,
-            position= {-1.053,0.1,-1.773},
-            height=400,
-            width=400,
-            font_size=(500 * 1.5),
-            scale=buttonScale,
-            color=buttonColor,
-            font_color={1,0,0},
-    }
-
-    readWriteId = spawnedButtonCount
-
-    self.createButton(readWriteParams)
-
-    spawnedButtonCount = spawnedButtonCount + 1
 
     setReadWrite(writeAllowed)
      
     local localPos = {-1.053 + 0.25, 0.1, -1.773}
 
+    local guid = ""
+    if ref_buttonData.mainSheet.guid then
+        guid = ref_buttonData.mainSheet.guid 
+    end
+
     self.createInput({
             input_function = "mainSheetSet",
             function_owner = self,
-            label = "",
+            label = "Main Sheet GUID",
+            value = guid,
             position = localPos,
             height = 400,
             width = 2000,
@@ -1246,31 +1258,114 @@ function onload(saved_data)
             font_color = buttonFontColor,
         })
 
-    mainSheetSetId = spawnedButtonCount
+    mainSheetSetId = spawnedInputCount
 
-     spawnedButtonCount = spawnedButtonCount + 1
+    spawnedInputCount = spawnedInputCount + 1
+
 end
 
 function mainSheetSet(obj, playerColor, val, sel)
-    if playerColor == "Black" then
-        if not sel then
+    if not sel then
+        if playerColor == "Black" and getObjectFromGUID(val) then
+
             mainSheet = getObjectFromGUID(val)
 
             if mainSheet ~= nil then
-                print("called")
                 mainSheet.call("setChildSheet", {sheet = self})
 
                 ref_buttonData.mainSheet.guid = val
 
                 ref_buttonData.player.claimantId = mainSheet.call("getClaimantId")
+                ref_buttonData.player.generation = mainSheet.call("getGeneration")
                 updateSave()
 
+                calculateGenerationStats()
                 createDots()
+
+                setReadWrite(mainSheet.call("getReadWrite"))
+
+                Player[playerColor].broadcast("Valid GUID set !")
+            end
+        else 
+            local resetFuncName = "resetMainSheet"..self.getGUID()
+            Timer.destroy(resetFuncName)
+
+            Timer.create({identifier=resetFuncName, function_name="resetMainSheet", parameters = {label = ref_buttonData.player.claimantId, index = mainSheetSetId}, function_owner=self, delay=0.03})
+            
+            if playerColor ~= "Black" then
+                Player[playerColor].broadcast("Only the GM/Black Player can set main sheet")
+            elseif not getObjectFromGUID(val) then
+                Player[playerColor].broadcast("Invalid GUID, Right Click the Main Sheet, go to Scripting and press GUID to get a valid one")
             end
         end
-    else 
-        Player[playerColor].broadcast("Only the GM/Black Player can set main sheet")
     end
+end
+
+function setGeneration(parameters) 
+    print("called")
+    if parameters.mainSheet == mainSheet then
+        ref_buttonData.player.generation = parameters.generation
+        updateSave()
+
+        calculateGenerationStats()
+        createDots()
+    end
+end
+
+function calculateGenerationStats() 
+
+    local generation = ref_buttonData.player.generation
+
+    if not generation then generation = 0 end
+
+    bloodPerTurn = 0
+    maxTraitDots = 5
+
+    if generation >= 13 then 
+        bloodPerTurn = 1
+        bloodPool = 10  
+    elseif generation == 12 then 
+        bloodPerTurn = 1
+        bloodPool = 11  
+    elseif generation == 11 then 
+        bloodPerTurn = 1
+        bloodPool = 12
+    elseif generation == 10 then 
+        bloodPerTurn = 1
+        bloodPool = 13        
+    elseif generation == 9 then
+        bloodPerTurn = 2 
+        bloodPool = 14
+    elseif generation == 8 then
+        bloodPerTurn = 3
+        bloodPool = 15
+    elseif generation == 7 then
+        maxTraitDots = 6
+        bloodPerTurn = 4
+        bloodPool = 20
+    elseif generation == 6 then 
+        maxTraitDots = 7
+        bloodPerTurn = 6
+        bloodPool = 30
+    elseif generation == 5 then
+        maxTraitDots = 8
+        bloodPerTurn = 8
+        bloodPool = 40
+    else
+        maxTraitDots = 9
+        bloodPerTurn = 10 
+        bloodPool = 50
+    end
+end
+
+function resetMainSheet(parameters)
+    local label = ""
+
+    if parameters.label then label = parameters.label end
+
+    print(parameters.index)
+
+    self.editInput({index = parameters.index, value = label})
 end
 
 function claim(obj, playerColor) 
@@ -1360,23 +1455,21 @@ function setReadWrite(localWriteAllowed)
 
     writeAllowed = localWriteAllowed
 
-    local label = string.char(9633)
-
-    if writeAllowed == true then 
-        label = string.char(9632) 
-    end
-
-    self.editButton({index = readWriteId, label=label})
-
     local color = readOnlyButtonColor
     if writeAllowed == true then color = buttonColor end 
 
-    for i, button in ipairs(self.getButtons()) do
-        self.editButton({index = button.index, color = color})
+    if self.getButtons() then
+        for i, button in ipairs(self.getButtons()) do
+            self.editButton({index = button.index, color = color})
+        end
     end
 
-    for j, input in ipairs(self.getInputs()) do
-        self.editInput({index = input.index, color = color})
+    if self.getInputs() then 
+        for j, input in ipairs(self.getInputs()) do
+            if input.index ~= mainSheetSetId then
+                self.editInput({index = input.index, color = color})
+            end
+        end
     end
 end
 
@@ -1453,8 +1546,11 @@ function click_textbox(i, type, key,  playerColor, value, selected)
             if type == "textbox" and ref_buttonData.textbox[i].fkTooltip then
                 local dot = getDot(id)
 
+                local tooltip = value
+                if tooltip == nil or tooltip =='' then tooltip = dot.id end
+
                 for i = 1, dot.sequence do
-                    self.editButton({index = dot.buttonId + (i - 1), tooltip = value})
+                    self.editButton({index = dot.buttonId + (i - 1), tooltip = tooltip})
                 end
             end
         end
@@ -1488,7 +1584,7 @@ function click_none() end
 --Button creation
 
 --Makes checkboxes
-function createDots()
+function createDots(reset)
     for i, data in ipairs(ref_buttonData.dots) do
         
         if data.sequence == nil then data.sequence = 1 end
@@ -1503,12 +1599,17 @@ function createDots()
         if data.glyphFilled == nil then data.glyphFilled = string.char(9679) end
         if data.glyphEmpty == nil then data.glyphEmpty = string.char(9675) end
 
-        fillDots(data, i)
+        fillDots(data, i, reset)
     end
 end
 
-function fillDots(data, i)
+function fillDots(data, i, reset)
     local finalSequence = data.sequence * data.sequenceColumns
+    if data.dependsOn == 1 then
+        finalSequence = maxTraitDots
+    elseif data.dependsOn == 2 then
+        finalSequence = bloodPool            
+    end
 
     local buttonNumber = spawnedButtonCount
     for k=1,data.sequenceColumns do
@@ -1528,13 +1629,19 @@ function fillDots(data, i)
 
             local fontSize = size * 1.5
 
-            if data.buttonId == nil then
+            local copyPos = {data.pos[1] + ((j - 1) * data.sequenceWidth) , data.pos[2], data.pos[3] + ((k - 1) * data.sequenceHeight)}
+
+            if data.dependsOn == 1 then
+                copyPos[1] = copyPos[1] + ((data.sequence - finalSequence) * data.sequenceWidth)
+            end
+
+            if reset or data.buttonId == nil then
                 local funcName = "dot"..data.id..realIndex
 
                 local func = function(_, playerColor) click_dot(i, realIndex, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
                 self.setVar(funcName, func)
 
-                local copyPos = {data.pos[1] + ((j - 1) * data.sequenceWidth) , data.pos[2], data.pos[3] + ((k - 1) * data.sequenceHeight)}
+                
 
                 self.createButton({
                 index = spawnedButtonCount,
@@ -1548,7 +1655,8 @@ function fillDots(data, i)
                 spawnedButtonCount = spawnedButtonCount + 1
             else 
                 self.editButton({
-                        index = (data.buttonId + ( realIndex - 1)), label = label, height=size, width=size, font_size = fontSize
+                        index = (data.buttonId + ( realIndex - 1)), label = label, height=size, width=size, font_size = fontSize, position = copyPos,
+
                     })
             end
         end
@@ -1561,24 +1669,32 @@ function fillDots(data, i)
     if data.specializes then
         local specialityUnlocked = data.value > 3
 
+        local fontSize = 180
+        if not specialityUnlocked then fontSize = 0 end
+
         local width = 900
         if not specialityUnlocked then width = 0 end
 
-        local fontSize = 155
-        if not specialityUnlocked then fontSize = 0 end
+        if width > 0 and data.dependsOn == 1 then
+            width = (width * (data.sequence / finalSequence))
+        end
 
-        if data.inputId == nil then
+        local localPos = {data.pos[1] - data.sequenceWidth - ((width / 2) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3] - 0.005}
+
+        if data.dependsOn == 1 then
+            localPos[1] = localPos[1] + ((data.sequence - finalSequence) * data.sequenceWidth)
+        end
+
+        if reset or data.inputId == nil then
             local funcName = "speciality"..data.id
             local func = function(_,playerColor,val,sel) click_textbox(i, "dots", "speciality", playerColor,val,sel) end
             self.setVar(funcName, func)
-
-            
 
             self.createInput({
                 input_function = funcName,
                 function_owner = self,
                 alignment      = 4,
-                position       = {data.pos[1] - data.sequenceWidth - ((900 / 2) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3] - 0.005},
+                position       = localPos,
                 scale          = buttonScale,
                 width          = width,
                 height         = fontSize + 24,
@@ -1587,7 +1703,8 @@ function fillDots(data, i)
                 font_color     = buttonFontColor,
                 value          = data.speciality,
                 validation     = data.validation,
-                label = "Speciality"
+                label = "Speciality",
+                tooltip = data.speciality
              })
 
             data.inputId = spawnedInputCount
@@ -1595,12 +1712,11 @@ function fillDots(data, i)
             spawnedInputCount = spawnedInputCount + 1
         else 
             self.editInput({
-                index = data.inputId, value = data.speciality, height = fontSize + 24, width = width, font_size = fontSize,
+                index = data.inputId, value = data.speciality, height = fontSize + 24, width = width, font_size = fontSize, position = localPos, tooltip = data.speciality
                 })
         end
     end
 end
-
 
 function createTextbox()
     for i, data in ipairs(ref_buttonData.textbox) do
