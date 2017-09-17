@@ -91,52 +91,43 @@ defaultButtonData = {
         {
             pos       = {-1.17,0.1,-1.68},
             rows      = 1,
-            width     = 2500,
+            width     = 3200,
             font_size = 300,
             label     = "Name",
             id        = "Name",
-        },
-        --Player
-        {
-            pos       = {-1.17,0.1,-1.59},
-            rows      = 1,
-            width     = 2500,
-            font_size = 300,
-            label     = "Player",
-            id        = "Player",
         },
         --Campaign
         {
             pos       = {-1.17,0.1,-1.5},
             rows      = 1,
-            width     = 2500,
+            width     = 3200,
             font_size = 300,
             label     = "Campaign",
             id        = "Campaign",
         },
         --Nature
         {
-            pos       = {-0.188,0.1,-1.68},
+            pos       = {-0.16,0.1,-1.68},
             rows      = 1,
-            width     = 2500,
+            width     = 3200,
             font_size = 300,
             label     = "Nature",
             id        = "Nature",
         },
         --Demeanor
         {
-            pos       = {-0.188,0.1,-1.59},
+            pos       = {-0.16,0.1,-1.59},
             rows      = 1,
-            width     = 2500,
+            width     = 3200,
             font_size = 300,
             label     = "Demeanor",
             id        = "Demeanor",
         },
         --Concept
         {
-            pos       = {-0.188,0.1,-1.5},
+            pos       = {-0.16,0.1,-1.5},
             rows      = 1,
-            width     = 2500,
+            width     = 3200,
             font_size = 300,
             label     = "Concept",
             id        = "Concept",
@@ -145,7 +136,7 @@ defaultButtonData = {
         {
             pos       = {0.874,0.1,-1.68},
             rows      = 1,
-            width     = 2500,
+            width     = 3200,
             font_size = 300,
             label     = "Clan",
             id        = "Clan",
@@ -154,151 +145,166 @@ defaultButtonData = {
         {
             pos       = {0.874,0.1,-1.5},
             rows      = 1,
-            width     = 2500,
+            width     = 3200,
             font_size = 300,
             label     = "Sire",
             id        = "Sire",
         },
         --Extra 1
         {
-            pos       = {-1.478,0.1,0.-0.071},
+            pos       = {-1.496,0.1,0.-0.065},
             rows      = 1,
             width     = 1700,
             font_size = 340,
             label     = "Extra",
             id        = "Extra 1",
+            fkTooltip = true,
         },
         --Extra 2
         {
-            pos       = {-0.500,0.1,-0.071},
+            pos       = {-0.491,0.1,-0.065},
             rows      = 1,
             width     = 1700,
             font_size = 340,
             label     = "Extra",
             id        = "Extra 2",
+            fkTooltip = true,
         },
         --Extra 3
         {
-            pos       = {0.55,0.1,-0.071},
+            pos       = {0.523,0.1,-0.065},
             rows      = 1,
             width     = 1700,
             font_size = 340,
             label     = "Extra",
             id        = "Extra 3",
+            fkTooltip = true,
         },
         --Discipline 1
         {
-            pos       = {-1.478,0.1,0.22},
+            pos       = {-1.496,0.1,0.22},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 1",
+            fkTooltip = true,
         },
         --Discipline 2
         {
-            pos       = {-1.478,0.1,0.291},
+            pos       = {-1.496,0.1,0.2916},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 2",
+            fkTooltip = true,
         },
         --Discipline 3
         {
-            pos       = {-1.478,0.1,0.362},
+            pos       = {-1.496,0.1,0.3632},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 3",
+            fkTooltip = true,
         },
         --Discipline 4
         {
-            pos       = {-1.478,0.1,0.433},
+            pos       = {-1.496,0.1,0.4348},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 4",
+            fkTooltip = true,
         },
         --Discipline 5
         {
-            pos       = {-1.478,0.1,0.504},
+            pos       = {-1.496,0.1,0.5064},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 5",
+            fkTooltip = true,
         },
         --Discipline 6
         {
-            pos       = {-1.478,0.1,0.575},
+            pos       = {-1.496,0.1,0.578},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 6",
+            fkTooltip = true,
         },
         --Background 1
         {
-            pos       = {-0.505,0.1,0.22},
+            pos       ={-0.491,0.1,0.22},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Background",
             id        = "Background 1",
+            fkTooltip = true,
         },
         --Background 2
         {
-            pos       = {-0.505,0.1,0.291},
+            pos       ={-0.491,0.1,0.2916},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Background",
             id        = "Background 2",
+            fkTooltip = true,
         },
         --Background 3
         {
-            pos       = {-0.505,0.1,0.362},
+            pos       ={-0.491,0.1,0.3632},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Background",
             id        = "Background 3",
+            fkTooltip = true,
         },
         --Background 4
         {
-            pos       = {-0.505,0.1,0.433},
+            pos       ={-0.491,0.1,0.4348},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Background",
             id        = "Background 4",
+            fkTooltip = true,
         },
         --Background 5
         {
-            pos       = {-0.505,0.1,0.504},
+            pos       ={-0.491,0.1,0.5064},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Background",
             id        = "Background 5",
+            fkTooltip = true,
         },
          --Background 6
         {
-            pos       = {-0.505,0.1,0.575},
+            pos       ={-0.491,0.1,0.578},
             rows      = 1,
             width     = 1700,
             font_size = 300,
             label     = "Background",
             id        = "Background 6",
+            fkTooltip = true,
         },
         --Road
         {
-            pos       = {-0.43,0.1,0.862},
+            pos       = {-0.469,0.1,0.862},
             rows      = 1,
-            width     = 4050,
+            width     = 4740,
             font_size = 300,
             label     = "Humanitas",
             id        = "Road",
@@ -306,22 +312,196 @@ defaultButtonData = {
         },
         --Aura
         {
-            pos       = {-0.232,0.1,1.051},
+            pos       = {-0.258,0.1,1.046},
             rows      = 1,
-            width     = 2600,
+            width     = 3070,
             font_size = 270,
             label     = "Aura",
             id        = "Aura",
             alignment = 3,
         },
-        --Other Traits
+        {--0.0712
+            pos       = {-1.487,0.1,0.980},
+            rows      = 1,
+            width     = 3700,
+            font_size = 270,
+            label     = "Merit",
+            id        = "Merit 1",
+        },
         {
-            pos       = {-1.482,0.1,0.778},
-            rows      = 17,
-            width     = 4700,
-            font_size = 300,
-            label     = "Other Traits",
-            id        = "Other Traits",
+            pos       = {-1.487,0.1,1.0512},
+            rows      = 1,
+            width     = 3700,
+            font_size = 270,
+            label     = "Merit",
+            id        = "Merit 2",
+        },
+        {
+            pos       = {-1.487,0.1,1.1224},
+            rows      = 1,
+            width     = 3700,
+            font_size = 270,
+            label     = "Merit",
+            id        = "Merit 3",
+        },
+        {
+            pos       = {-1.487,0.1,1.1936},
+            rows      = 1,
+            width     = 3700,
+            font_size = 270,
+            label     = "Merit",
+            id        = "Merit 4",
+        },
+        {
+            pos       = {-1.487,0.1,1.2648},
+            rows      = 1,
+            width     = 3700,
+            font_size = 270,
+            label     = "Merit",
+            id        = "Merit 5",
+        },
+        {
+            pos       = {-0.636,0.1,0.980},
+            rows      = 1,
+            width     = 450,
+            font_size = 270,
+            alignment = 3,
+            label     = "0",
+            validation = 2,
+            id        = "Merit Cost 1",
+        },
+        {
+            pos       = {-0.636,0.1,1.0512},
+            rows      = 1,
+            width     = 450,
+            alignment = 3,
+            font_size = 270,
+            label     = "0",
+            validation = 2,
+            id        = "Merit Cost 2",
+        },
+        {
+            pos       = {-0.636,0.1,1.1224},
+            rows      = 1,
+            alignment = 3,
+            width     = 450,
+            font_size = 270,
+            label     = "0",
+            validation = 2,
+            id        = "Merit Cost 3",
+        },
+        {
+            pos       = {-0.636,0.1,1.1936},
+            rows      = 1,
+            alignment = 3,
+            width     = 450,
+            font_size = 270,
+            validation = 2,
+            label     = "0",
+            id        = "Merit Cost 4",
+        },
+        {
+            pos       = {-0.636,0.1,1.2648},
+            rows      = 1,
+            alignment = 3,
+            width     = 450,
+            font_size = 270,
+            label     = "0",
+            validation = 2,
+            id        = "Merit Cost 5",
+        },
+        
+        {--0.07
+            pos       = {-1.487,0.1,1.514},
+            rows      = 1,
+            width     = 3700,
+            font_size = 270,
+            label     = "Flaw",
+            id        = "Flaw 1",
+        },
+
+        {--0.07
+            pos       = {-1.487,0.1,1.5852},
+            rows      = 1,
+            width     = 3700,
+            font_size = 270,
+            label     = "Flaw",
+            id        = "Flaw 2",
+        },
+        {--0.07
+            pos       = {-1.487,0.1,1.6564},
+            rows      = 1,
+            width     = 3700,
+            font_size = 270,
+                label     = "Flaw",
+            id        = "Flaw 3",
+        },
+        {--0.07
+            pos       = {-1.487,0.1,1.7276},
+            rows      = 1,
+            width     = 3700,
+            font_size = 270,
+                        label     = "Flaw",
+            id        = "Flaw 4",
+        },
+        {--0.07
+            pos       = {-1.487,0.1,1.7988},
+            rows      = 1,
+            width     = 3700,
+                        font_size = 270,
+            label     = "Flaw",
+            id        = "Flaw 5",
+        },
+
+         {--0.07
+            pos       = {-0.636,0.1,1.514},
+            rows      = 1,
+            alignment = 3,
+            width     = 450,
+            font_size = 270,
+            validation = 2,
+            label     = "0",
+            id        = "Flaw Cost 1",
+        },
+        {--0.07
+            pos       = {-0.636,0.1,1.5852},
+            rows      = 1,
+            alignment = 3,
+            width     = 450,
+            font_size = 270,
+            validation = 2,
+            label     = "0",
+            id        = "Flaw Cost 2",
+        },
+        {--0.07
+            pos       = {-0.636,0.1,1.6564},
+            rows      = 1,
+            alignment = 3,
+            width     = 450,
+            font_size = 270,
+            validation = 2,
+            label     = "0",
+            id        = "Flaw Cost 3",
+        },
+        {--0.07
+            pos       = {-0.636,0.1,1.7276},
+            rows      = 1,
+            alignment = 3,
+            width     = 450,
+            font_size = 270,
+            validation = 2,
+            label     = "0",
+            id        = "Flaw Cost 4",
+        },
+        {--0.07
+            pos       = {-0.636,0.1,1.7988},
+            rows      = 1,
+            alignment = 3,
+            width     = 450,
+            font_size = 270,
+            validation = 2,
+            label     = "0",
+            id        = "Flaw Cost 5",
         },
         --Weakness
         {
@@ -335,14 +515,24 @@ defaultButtonData = {
         },
         --Experience
         {
-            pos       = {0.546,0.1,1.756},
+            pos       = {0.531,0.1,1.794},
             rows      = 1,
-            width     = 4700,
+            width     = 1500,
             font_size = 300,
             value     = 0,
             validation = 2,
             alignment = 3,
-            id        = "Experience",
+            id        = "Experience Current",
+        },
+        {
+            pos       = {0.868,0.1,1.794},
+            rows      = 1,
+            width     = 1500,
+            font_size = 300,
+            value     = 0,
+            validation = 2,
+            alignment = 3,
+            id        = "Experience Spent",
         },
         --End of textboxes
     },
@@ -375,11 +565,11 @@ defaultButtonData = {
         size  = height/width/font_size for checkbox
         dependsOn = {0 = nothing, 1 = generation, 2 = bloodPool}
         ]]
-        --Attributes
+        --Attributes (0.0716)
         --Physical
         --Str
         {
-            pos   = {-0.9333,0.1,-1.212},
+            pos   = {-0.915,0.1,-1.212},
                         sequence = 9,
             value = 1,
             id =  "Strength",
@@ -390,7 +580,7 @@ defaultButtonData = {
 
         --Dex
         {
-            pos   = {-0.9333,0.1,-1.141},
+            pos   = {-0.915,0.1,-1.1404},
                         sequence = 9,
             value = 1,
             id =  "Dexterity",
@@ -400,7 +590,7 @@ defaultButtonData = {
         }, 
         --Stam
          {
-            pos   = {-0.9333,0.1,-1.07},
+            pos   = {-0.915,0.1,-1.0688},
                         sequence = 9,
             value = 1,
             id =  "Stamina",
@@ -412,7 +602,7 @@ defaultButtonData = {
         --Social
         --Cha
         {
-            pos   = {0.106,0.1,-1.212},
+            pos   = {0.095,0.1,-1.212},
                         sequence = 9,
             value = 1,
             id =  "Charisma",
@@ -423,7 +613,7 @@ defaultButtonData = {
         
         --Man
         {
-            pos   = {0.106,0.1,-1.141},
+            pos   = {0.095,0.1,-1.1404},
                         sequence = 9,
             value = 1,
             id =  "Manipulation",
@@ -434,7 +624,7 @@ defaultButtonData = {
         
         --App
         {
-            pos   = {0.106,0.1,-1.07},
+            pos   = {0.095,0.1,-1.0688},
                         sequence = 9,
             value = 1,
             id =  "Appearance",
@@ -445,7 +635,7 @@ defaultButtonData = {
         --Mental
         --Per
         {
-             pos   = {1.092,0.1,-1.212},
+             pos   = {1.108,0.1,-1.212},
                           sequence = 9,
              value = 1,
              id =  "Perception",
@@ -455,8 +645,8 @@ defaultButtonData = {
         },
         --Int
         {
-             pos   = {1.092,0.1,-1.141},
-                          sequence = 9,
+             pos   = {1.108,0.1,-1.1404},
+              sequence = 9,
              value = 1,
              id =  "Inteligence",
              category = 3,
@@ -465,19 +655,19 @@ defaultButtonData = {
         },
         --Wits
         {
-             pos   = {1.092,0.1,-1.07},
-                          sequence = 9,
+             pos   = {1.108,0.1,-1.0688},
+              sequence = 9,
              value = 1,
              id =  "Wits",
              category = 3,
              group = 1,
             specializes = true,
         },
-        --Abilities
+        --Abilities (0.0716)
         --Talents
         --Alertness
         {
-            pos   = {-0.9333,0.1,-0.781},
+            pos   = {-0.915,0.1,-0.781},
                         sequence = 9,
             id =  "Alertness",
             category = 1,
@@ -486,7 +676,7 @@ defaultButtonData = {
         }, 
         --Athetics
          {
-            pos   = {-0.9333,0.1,-0.71},
+            pos   = {-0.915,0.1,-0.7094},
                         sequence = 9,
             id =  "Athletics",
             category = 1,
@@ -495,7 +685,7 @@ defaultButtonData = {
         }, 
         --Awareness
          {
-            pos   = {-0.9333,0.1,-0.639},
+            pos   = {-0.915,0.1,-0.6378},
                         sequence = 9,
             id =  "Awareness",
             category = 1,
@@ -504,7 +694,7 @@ defaultButtonData = {
         }, 
         --Brawl
          {
-            pos   = {-0.9333,0.1,-0.568},
+            pos   = {-0.915,0.1,-0.5662},
                         sequence = 9,
             id =  "Brawl",
             category = 1,
@@ -513,7 +703,7 @@ defaultButtonData = {
         }, 
         --Empathy
         {
-            pos   = {-0.9333,0.1,-0.497},
+            pos   = {-0.915,0.1,-0.4946},
                         sequence = 9,
             id =  "Empathy",
             category = 1,
@@ -522,7 +712,7 @@ defaultButtonData = {
         }, 
         --Expression
         {
-            pos   = {-0.9333,0.1,-0.426},
+            pos   = {-0.915,0.1,-0.423},
                         sequence = 9,
             id =  "Expression",
             category = 1,
@@ -531,7 +721,7 @@ defaultButtonData = {
         }, 
         --Intimidation
         {
-            pos   = {-0.9333,0.1,-0.355},
+            pos   = {-0.915,0.1,-0.3514},
                         sequence = 9,
             id =  "Intimidation", 
             category = 1,
@@ -540,7 +730,7 @@ defaultButtonData = {
         }, 
         --Leadership
         {
-            pos   = {-0.9333,0.1,-0.284},
+            pos   = {-0.915,0.1,-0.2798},
                         sequence = 9,
             id =  "Leadership",
             category = 1,
@@ -549,7 +739,7 @@ defaultButtonData = {
         }, 
         --Legerdemain
         {
-            pos   = {-0.9333,0.1,-0.213},
+            pos   = {-0.915,0.1,-0.2082},
                         sequence = 9,
             id =  "Legerdemain",
             category = 1,
@@ -558,7 +748,7 @@ defaultButtonData = {
         }, 
         --Subterfuge
         {
-            pos   = {-0.9333,0.1,-0.142},
+            pos   = {-0.915,0.1,-0.1366},
                         sequence = 9,
             id =  "Subterfuge",
             category = 1,
@@ -567,18 +757,17 @@ defaultButtonData = {
         }, 
         --Extra 1
         {
-            pos   = {-0.9333,0.1,-0.071},
+            pos   = {-0.915,0.1,-0.065},
                         sequence = 9,
             id =  "Extra 1",
             category = 1,
             group = 2,
-            fkTooltip = true,
             specializes = true,
         }, 
         --Skills
         --Animal Ken
         {
-            pos   = {0.106,0.1,-0.781},
+            pos   = {0.095,0.1,-0.781},
                         sequence = 9,
             id =  "Animal Ken",
             category = 2,
@@ -587,7 +776,7 @@ defaultButtonData = {
         },
         --Archery
         {
-            pos   = {0.106,0.1,-0.71},
+            pos   = {0.095,0.1,-0.7094},
                         sequence = 9,
             id =  "Archery",
             category = 2,
@@ -596,7 +785,7 @@ defaultButtonData = {
         },
         --Commerce
         {
-            pos   = {0.106,0.1,-0.639},
+            pos   = {0.095,0.1,-0.6378},
                         sequence = 9,
             id =  "Commerce",
             category = 2,
@@ -605,7 +794,7 @@ defaultButtonData = {
         },
         --Crafts
         {
-            pos   = {0.106,0.1,-0.568},
+            pos   = {0.095,0.1,-0.5662},
                         sequence = 9,
             id =  "Crafts",
             category = 2,
@@ -614,7 +803,7 @@ defaultButtonData = {
         },
         --Etiquette
         {
-            pos   = {0.106,0.1,-0.497},
+            pos   = {0.095,0.1,-0.4946},
                         sequence = 9,
             id =  "Etiquette",
             category = 2,
@@ -623,7 +812,7 @@ defaultButtonData = {
         },
         --Melee
         {
-            pos   = {0.106,0.1,-0.426},
+            pos   = {0.095,0.1,-0.423},
                         sequence = 9,
             id =  "Melee",
             category = 2,
@@ -632,7 +821,7 @@ defaultButtonData = {
         },
         --Performance
         {
-            pos   = {0.106,0.1,-0.355},
+            pos   = {0.095,0.1,-0.3514},
                         sequence = 9,
             id =  "Performance",
             category = 2,
@@ -641,7 +830,7 @@ defaultButtonData = {
         },
         --Ride
         {
-            pos   = {0.106,0.1,-0.284},
+            pos   = {0.095,0.1,-0.2798},
                         sequence = 9,
             id =  "Ride",
             category = 2,
@@ -650,7 +839,7 @@ defaultButtonData = {
         },
         --Stealth
         {
-            pos   = {0.106,0.1,-0.213},
+            pos   = {0.095,0.1,-0.2082},
                         sequence = 9,
             id =  "Stealth",
             category = 2,
@@ -659,7 +848,7 @@ defaultButtonData = {
         },
         --Survival
         {
-            pos   = {0.106,0.1,-0.142},
+            pos   = {0.095,0.1,-0.1366},
                         sequence = 9,
             id =  "Survival",
             category = 2,
@@ -668,18 +857,17 @@ defaultButtonData = {
         },
         --Extra 2
         {
-            pos   = {0.106,0.1,-0.071},
+            pos   = {0.095,0.1,-0.065},
                         sequence = 9,
             id =  "Extra 2",
             category = 2,
             group = 2,
-            fkTooltip = true,
             specializes = true,
         },
         --Knowledges
         --Academics
         {
-             pos   = {1.092,0.1,-0.781},
+             pos   = {1.108,0.1,-0.781},
                           sequence = 9,
              id =  "Academics",
              category = 3,
@@ -688,7 +876,7 @@ defaultButtonData = {
         },
         --Enigmas
         {
-             pos   = {1.092,0.1,-0.71},
+             pos   = {1.108,0.1,-0.7094},
                           sequence = 9,
              id =  "Enigmas",
              category = 3,
@@ -697,7 +885,7 @@ defaultButtonData = {
         },
         --Hearth Wisdom
         {
-             pos   = {1.092,0.1,-0.639},
+             pos   = {1.108,0.1,-0.6378},
                           sequence = 9,
              id =  "Hearth Wisdom",
              category = 3,
@@ -706,7 +894,7 @@ defaultButtonData = {
         },
         --Investigation
         {
-             pos   = {1.092,0.1,-0.568},
+             pos   = {1.108,0.1,-0.5662},
                           sequence = 9,
              id =  "Investigation",
              category = 3,
@@ -715,7 +903,7 @@ defaultButtonData = {
         },
         --Law
         {
-             pos   = {1.092,0.1,-0.497},
+             pos   = {1.108,0.1,-0.4946},
                           sequence = 9,
              id =  "Law",
              category = 3,
@@ -724,7 +912,7 @@ defaultButtonData = {
         },
         --Medicine
         {
-             pos   = {1.092,0.1,-0.426},
+             pos   = {1.108,0.1,-0.423},
                           sequence = 9,
              id =  "Medicine",
              category = 3,
@@ -733,7 +921,7 @@ defaultButtonData = {
         },
         --Occult
         {
-             pos   = {1.092,0.1,-0.355},
+             pos   = {1.108,0.1,-0.3514},
                           sequence = 9,
              id =  "Occult",
              category = 3,
@@ -742,7 +930,7 @@ defaultButtonData = {
         },
         --Politics
         {
-             pos   = {1.092,0.1,-0.284},
+             pos   = {1.108,0.1,-0.2798},
                           sequence = 9,
              id =  "Politics",
              category = 3,
@@ -751,7 +939,7 @@ defaultButtonData = {
         },
         --Seneschal 
         {
-             pos   = {1.092,0.1,-0.213},
+             pos   = {1.108,0.1,-0.2082},
                           sequence = 9,
              id =  "Seneschal",
              category = 3,
@@ -760,7 +948,7 @@ defaultButtonData = {
         },
         --Theology 
         {
-             pos   = {1.092,0.1,-0.142},
+             pos   = {1.108,0.1,-0.1366},
                           sequence = 9,
              id =  "Theology",
              category = 3,
@@ -769,92 +957,90 @@ defaultButtonData = {
         },
         --Extra 3 
         {
-             pos   = {1.092,0.1,-0.071},
+             pos   = {1.108,0.1,-0.065},
                           sequence = 9,
              id =  "Extra 3",
              category = 3,
             group = 2,
-             fkTooltip = true,
             specializes = true,
         },
 
-        --Disciplines
+        --Disciplines (0.0716)
         --Discipline 1
         {
-            pos   = {-0.9333,0.1,0.22},
+            pos   = {-0.915,0.1,0.22},
             sequence = 9,
             id =  "Discipline 1",
-            fkTooltip = true
         }, 
         --Discipline 2
         {
-            pos   = {-0.9333,0.1,0.291},
+            pos   = {-0.915,0.1,0.2916},
             id =  "Discipline 2",
             sequence = 9,
         }, 
         --Discipline 3
         {
-            pos   = {-0.9333,0.1,0.362},
+            pos   = {-0.915,0.1,0.3632},
             id =  "Discipline 3",
             sequence = 9,
         }, 
         --Discipline 4
         {
-            pos   = {-0.9333,0.1,0.433},
+            pos   = {-0.915,0.1,0.4348},
             id =  "Discipline 4",
             sequence = 9,
         }, 
         --Discipline 5
         {
-            pos   = {-0.9333,0.1,0.504},
+            pos   = {-0.915,0.1,0.5064},
             id =  "Discipline 5",
             sequence = 9,
         }, 
         --Discipline 6
         {
-            pos   = {-0.9333,0.1,0.575},
+            pos   = {-0.915,0.1,0.578},
             sequence = 9,
             id =  "Discipline 6",
         }, 
         --Backgrounds
         --Background 1
         {
-            pos   = {0.106,0.1,0.22},
+            pos   = {0.095,0.1,0.22},
             sequence = 9,
             id =  "Background 1",
             dependsOn = 0,
         },
         --Background 2
         {
-            pos   = {0.106,0.1,0.291},
+            pos   = {0.095,0.1,0.2916},
             sequence = 9,
             id =  "Background 2",
             dependsOn = 0,
         },
         --Background 3
         {
-            pos   = {0.106,0.1,0.362},
+            pos   = {0.095,0.1,0.3632},
             sequence = 9,
             id =  "Background 2",
             dependsOn = 0,
         },
         --Background 4
         {
-            pos   = {0.106,0.1,0.433},
+            pos   = {0.095,0.1,0.4348},
             sequence = 9,
             id =  "Background 3",
             dependsOn = 0,
         },
         --Background 5
         {
-            pos   = {0.106,0.1,0.504},
+            pos   = {0.095,0.1,0.5064},
             sequence = 9,
             id =  "Background 4",
             dependsOn = 0,
         },
         --Background 6
         {
-            pos   = {0.106,0.1,0.575},
+            pos   = {0.095,0.1,0.578},
             sequence = 9,
             id =  "Background 6",
             dependsOn = 0,
@@ -863,7 +1049,7 @@ defaultButtonData = {
         --Virtues
         --Conscience
         {
-            pos   = {1.278,0.1,0.22},
+            pos   = {1.293,0.1,0.234},
                         value = 1,
             sequence = 5,
             id =  "Conscience/Conviction",
@@ -871,7 +1057,7 @@ defaultButtonData = {
         },
         --Self-control
         {
-            pos   = {1.278,0.1,0.362},
+            pos   = {1.293,0.1,0.402},
                         value = 1,
             sequence = 5,
             id =  "Self-Control/Instinct",
@@ -879,7 +1065,7 @@ defaultButtonData = {
         },
         --Courage
         {
-            pos   = {1.278,0.1,0.504},
+            pos   = {1.293,0.1,0.574},
                         value = 1,
             sequence = 5,
             id =  "Courage",
@@ -887,42 +1073,42 @@ defaultButtonData = {
         },
         --Road (0.07)
         {
-            pos   = {-0.416,0.1,0.965},
+            pos   = {-0.46,0.1,0.966},
                         sequence = 10,
             value = 5,
-            sequenceWidth = 0.09115,
+            sequenceWidth = 0.104,
             dependsOn = 0,
             id =  "Road",
         },
         --Willpower
         {
-            pos   = {-0.416,0.1,1.238},
+            pos   = {-0.46,0.1,1.238},
             sequence = 10,
             value = 5,
-            sequenceWidth = 0.09115,
+            sequenceWidth = 0.104,
             dependsOn = 0,
             id =  "Willpower Rating",
         },
         {
-            pos   = {-0.416,0.1,1.301},
+            pos   = {-0.46,0.1,1.315},
             sequence = 10,
             glyphFilled = string.char(9632),
             glyphEmpty = string.char(9633),
             value = 5,
-            sequenceWidth = 0.09115,
+            sequenceWidth = 0.104,
             dependsOn = 0,
             id =  "Willpower Pool",
         },
          
         --Blood Pool (0.07 x 0.065)
         {
-            pos   = {-0.416,0.1,1.471},
+            pos   = {-0.46,0.1,1.471},
                         sequence = 10,
             value = 10,
             glyphFilled = string.char(9632),
             glyphEmpty = string.char(9633),
             sequenceColumns = 5,
-            sequenceWidth = 0.09115,
+            sequenceWidth = 0.104,
             sequenceHeight = 0.065,
             dependsOn = 2,
             id =  "Blood Pool",
@@ -931,7 +1117,7 @@ defaultButtonData = {
     },
     health = {
         --Health
-        pos   = {1.462,0.1,0.85},
+        pos   = {1.481,0.1,0.85},
         size = 300,
         sequenceColumns = 7,
         sequenceHeight = 0.0765,
@@ -948,12 +1134,21 @@ defaultButtonData = {
         ]]
         --Generation
         {
-            pos    = {1.0,0.1,-1.59},
-            size   = 300,
+            pos    = {0.938,0.1,-1.60},
+            size   = 400,
             value  = 10,
             hideBG = true
         },
         --End of counters
+    },
+    --Player
+    player =  {
+            pos       = {-1.17,0.1,-1.59},
+            rows      = 1,
+            width     = 2750,
+            font_size = 300,
+            label     = "Claim",
+            id        = "Player",
     },
     ownerColor = Player.Black.color,
     --Add custom
@@ -963,14 +1158,20 @@ defaultButtonData = {
         },
         --Blood per Turn
         {
-            pos       = {0.152,0.1,1.815},
+            pos       = {0.152,0.1,1.81},
             width     = 4700,
             font_size = 300,
         },
         --Aura modifier
         {
-            pos       = {0.381,0.1,1.055},
+            pos       = {0.44,0.1,1.056},
             width     = 4700,
+            font_size = 300,
+        },
+        {
+            pos       = {1.349,0.1,1.794},
+            rows      = 1,
+            width     = 1500,
             font_size = 300,
         },
     }
@@ -1010,8 +1211,8 @@ local maxTraitDots = 0
 local bloodPerTurn = 0
 
 local readWriteId = 0
-local cycleColorId = 0
 local bloodPerTurnId = 0
+local totalExpId = 0
 local bearingId = 0
 
 --Startup procedure
@@ -1037,26 +1238,28 @@ function onload(saved_data)
     createHealth()
 
     --permission
+    local claimant = ref_buttonData.player.claimantName
+    if claimant == nil then claimant = ref_buttonData.player.label end
+
+    local customLoc = {ref_buttonData.player.pos[1] + ((ref_buttonData.player.width / 2)  * (buttonScale[1] * 0.002)), ref_buttonData.player.pos[2], ref_buttonData.player.pos[3]}
 
     self.createButton({
-            label="OWNER", click_function="click_none", function_owner=self,
-            position= {-1.265,0.1,-1.779}, height=0, width=0,
-            font_size=300, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
-    })
+        label = claimant, position = customLoc, height = ref_buttonData.player.font_size,
+         width = ref_buttonData.player.width, font_size = ref_buttonData.player.font_size, scale = buttonScale,
+         color = buttonColor, click_function="claim", function_owner = self, tooltip = "Claim this sheet"
+         })
+
+    ref_buttonData.player.buttonId = spawnedButtonCount
+
+    customLoc[1] = customLoc[1] + ((ref_buttonData.player.width / 2)  * (buttonScale[1] * 0.002)) + 0.08
 
     spawnedButtonCount = spawnedButtonCount + 1
 
-    local playerColor = getPlayerColor(ref_buttonData.ownerColor)
-
     self.createButton({
-            label = string.char(9632), click_function="cycleColor", function_owner=self,
-            position= {-0.96,0.1,-1.784}, height=400, width=400,
-            font_size=500, scale=buttonScale,
-            color={0, 0, 0}, font_color=playerColor, tooltip = ref_buttonData.ownerColor
-    })
-
-    cycleColorId = spawnedButtonCount
+        label = string.char(9632), position = customLoc, height = ref_buttonData.player.font_size,
+         width = 300, font_size = ref_buttonData.player.font_size * 1.5, scale = buttonScale,
+         font_color = {1, 0, 0}, click_function="revokeClaim", function_owner = self, tooltip = "Revoke claim"
+         })
 
     spawnedButtonCount = spawnedButtonCount + 1
 
@@ -1065,7 +1268,6 @@ function onload(saved_data)
     if writeAllowed == true then 
         label = string.char(9632) 
     end
-
     
     local roadVal = getDot("Road").value
 
@@ -1077,7 +1279,17 @@ function onload(saved_data)
 
     spawnedButtonCount = spawnedButtonCount + 1
 
-     self.createButton({label=bloodPerTurn, click_function="click_none", function_owner = self,
+    local totalExp = getTextbox("Experience Current").value + getTextbox("Experience Spent").value
+
+     self.createButton({label=totalExp, click_function="click_none", function_owner = self,
+     position = ref_buttonData.custom[4].pos, font_size=ref_buttonData.custom[4].font_size,
+     height = 0, width = 0, scale = buttonScale, color=buttonColor, font_color=buttonFontColor})
+
+    totalExpId = spawnedButtonCount
+
+    spawnedButtonCount = spawnedButtonCount + 1
+
+    self.createButton({label=bloodPerTurn, click_function="click_none", function_owner = self,
      position = ref_buttonData.custom[2].pos, font_size=ref_buttonData.custom[2].font_size,
      height = 0, width = 0, scale = buttonScale, color=buttonColor, font_color=buttonFontColor})
 
@@ -1087,21 +1299,12 @@ function onload(saved_data)
 
     --Read/Write has to be last because of id, fixme
 
-    self.createButton({
-            label="Edit Mode", click_function="click_none", function_owner=self,
-            position= {-1.2,0.1,-2.03}, height=0, width=0,
-            font_size=500, scale=buttonScale,
-            color=buttonColor, font_color=buttonFontColor
-    })
-
-    spawnedButtonCount = spawnedButtonCount + 1
-
     local readWriteParams = {click_function="toggleReadWrite",
             label = label,
             function_owner=self,
-            position= {-0.895,0.1,-2.04},
-            height=500,
-            width=500,
+            position= {-1.053,0.1,-1.773},
+            height=400,
+            width=400,
             font_size=(500 * 1.5),
             scale=buttonScale,
             color=buttonColor,
@@ -1115,10 +1318,48 @@ function onload(saved_data)
     spawnedButtonCount = spawnedButtonCount + 1
 
     if self.getInputs()[2].value ~= nil and self.getInputs()[2].value ~= "" then 
-        self.setName(self.getInputs()[2].value.."'s' V20:DA Character Sheet") --hard-coded, fix me !
+         --hard-coded, fix me !
     end
 
     setReadWrite(writeAllowed)
+end
+
+function claim(obj, playerColor) 
+    if writeAllowed and ref_buttonData.player.claimantId == nil and playerColor ~= "Black" then
+        ref_buttonData.player.claimantId = Player[playerColor].steam_id
+        ref_buttonData.player.claimantName = Player[playerColor].steam_name
+
+        updateSave()
+
+        self.editButton({
+            index = ref_buttonData.player.buttonId,
+            label = ref_buttonData.player.claimantName,
+            tooltip = ""
+            })  
+
+        self.setName(ref_buttonData.player.claimantName.."'s' V20:DA Character Sheet")
+    end
+end
+
+function revokeClaim(obj, playerColor)
+    if writeAllowed then
+        if playerColor == "Black" then
+            ref_buttonData.player.claimantId = nil
+            ref_buttonData.player.claimantName = nil
+
+            updateSave()
+
+            self.editButton({
+                index = ref_buttonData.player.buttonId,
+                label = "Claim",
+                tooltip = "Claim this sheet"
+                })  
+
+            self.setName("V20:DA Character Sheet")
+        else
+            Player[playerColor].broadcast("Only the GM (Black) Player can revoke claims")
+        end
+    end
 end
 
 function calculateGenerationStats() 
@@ -1190,42 +1431,18 @@ function getDot(id)
     return selectedDot
 end
 
-function getPlayerColor(player)
-    local color = {}
-    for i, playerColor in ipairs(playerColors) do 
-        
-        if player == playerColor.name then
-            color = playerColor.color
+function getTextbox(id)
+    local selectedTextbox = {}
+
+    for i, textbox in ipairs(ref_buttonData.textbox) do
+
+        if textbox.id == id then
+            selectedTextbox = textbox
             break
         end
     end
 
-    return color
-end
-
-
-function cycleColor(object, playerColor)
-    if Player[playerColor] ~= Player.Black then
-        Player[playerColor].broadcast("Only the Black Color Player (GM) can change Sheet Ownership")
-    elseif writeAllowed then
-        local currentColor = ref_buttonData..ownerColor
-        local colorIndex = 1
-
-        for i, playerColor in ipairs(playerColors) do
-            if playerColor.name == currentColor then
-                colorIndex = i + 1
-                break
-            end
-        end
-
-        if playerColors[colorIndex] == nil then colorIndex = 1 end
-
-        ref_buttonData.ownerColor = Player[playerColors[colorIndex].name].color
-
-        self.editButton({index = cycleColorId, font_color=getPlayerColor(ref_buttonData.ownerColor), tooltip = ref_buttonData.ownerColor})
-
-        updateSave()
-    end
+    return selectedTextbox
 end
 
 function toggleReadWrite()
@@ -1293,7 +1510,7 @@ end
 
 --Checks or unchecks the given box
 function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerColor)
-    if playerColor == "Black" or playerColor == ref_buttonData.ownerColor then
+    if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId then
         if writeAllowed == true then
             if ref_buttonData.dots[tableIndex].value == columnIndex then
                 columnIndex = columnIndex - 1
@@ -1338,7 +1555,7 @@ end
 
 --Applies value to given counter display
 function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used for generation ?
-    if playerColor == "Black" or playerColor == ref_buttonData.ownerColor then
+    if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId then
         if writeAllowed == true then
             local newValue = ref_buttonData.counter[tableIndex].value + amount
             if newValue >= 4 and newValue <= 13 then
@@ -1358,10 +1575,32 @@ end
 
 --Updates saved value for given text box
 function click_textbox(i, type, key,  playerColor, value, selected)
-    if (playerColor == "Black" or playerColor == ref_buttonData.ownerColor) and writeAllowed == true then
+    if (playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId) and writeAllowed == true then
         if selected == false then
             ((ref_buttonData[type])[i])[key] = value
             updateSave()
+
+            local id = ((ref_buttonData[type])[i]).id
+
+            if type == "textbox" and ref_buttonData.textbox[i].fkTooltip then
+                local dot = getDot(id)
+
+                for i = 1, dot.sequence do
+                    self.editButton({index = dot.buttonId + (i - 1), tooltip = value})
+                end
+            elseif id == "Experience Current" or ((ref_buttonData[type])[i]).id == "Experience Spent" then
+                local val = value
+
+                if ((ref_buttonData[type])[i]).id == "Experience Current" then
+                    val = val + getTextbox("Experience Spent").value
+                else
+                    val = val + getTextbox("Experience Current").value
+                end
+
+                self.editButton({
+                    index = totalExpId, label = val
+                    })
+            end
         end
 
         setReadOnlyTimer()
@@ -1478,10 +1717,10 @@ function fillDots(data, i)
     if data.specializes then
         local specialityUnlocked = data.value > 3
 
-        local width = 800
+        local width = 900
         if not specialityUnlocked then width = 0 end
 
-        local fontSize = 140
+        local fontSize = 155
         if not specialityUnlocked then fontSize = 0 end
 
         if data.inputId == nil then
@@ -1495,7 +1734,7 @@ function fillDots(data, i)
                 input_function = funcName,
                 function_owner = self,
                 alignment      = 4,
-                position       = {data.pos[1] - data.sequenceWidth - ((800 / 2) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3]},
+                position       = {data.pos[1] - data.sequenceWidth - ((900 / 2) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3] - 0.005},
                 scale          = buttonScale,
                 width          = width,
                 height         = fontSize + 24,
@@ -1639,7 +1878,7 @@ function createHealth()
 end
 
 function click_health(i, playerColor) 
-    if playerColor == "Black" or playerColor == ref_buttonData.ownerColor then
+    if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId then
         local nextVal = ref_buttonData.health.value[i] + 1
         if nextVal > 3 then nextVal = 0 end
 
