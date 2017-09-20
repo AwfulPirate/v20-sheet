@@ -1,6 +1,8 @@
 --[[    Character Sheet Template    by: MrStump
 V20: Dark Ages Character Sheet by: Phenicks]]
 
+sheetType="Main Sheet"
+
 --state of play/edit
 writeAllowed = false
 
@@ -43,7 +45,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 3200,
             font_size = 300,
-            label     = "Name",
+            label     = "",
             id        = "Name",
         },
         --Campaign
@@ -52,7 +54,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 3200,
             font_size = 300,
-            label     = "Campaign",
+            label     = "",
             id        = "Campaign",
         },
         --Nature
@@ -61,7 +63,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 3200,
             font_size = 300,
-            label     = "Nature",
+            label     = "",
             id        = "Nature",
         },
         --Demeanor
@@ -70,7 +72,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 3200,
             font_size = 300,
-            label     = "Demeanor",
+            label     = "",
             id        = "Demeanor",
         },
         --Concept
@@ -79,7 +81,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 3200,
             font_size = 300,
-            label     = "Concept",
+            label     = "",
             id        = "Concept",
         },
         --Clan
@@ -88,7 +90,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 3200,
             font_size = 300,
-            label     = "Clan",
+            label     = "",
             id        = "Clan",
         },
         --Sire
@@ -97,14 +99,14 @@ defaultButtonData = {
             rows      = 1,
             width     = 3200,
             font_size = 300,
-            label     = "Sire",
+            label     = "",
             id        = "Sire",
         },
         --Extra 1
         {
             pos       = {-1.496,0.1,0.-0.065},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 340,
             label     = "Extra",
             id        = "Extra 1",
@@ -114,7 +116,7 @@ defaultButtonData = {
         {
             pos       = {-0.491,0.1,-0.065},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 340,
             label     = "Extra",
             id        = "Extra 2",
@@ -124,7 +126,7 @@ defaultButtonData = {
         {
             pos       = {0.523,0.1,-0.065},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 340,
             label     = "Extra",
             id        = "Extra 3",
@@ -134,7 +136,7 @@ defaultButtonData = {
         {
             pos       = {-1.496,0.1,0.22},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 1",
@@ -144,7 +146,7 @@ defaultButtonData = {
         {
             pos       = {-1.496,0.1,0.2916},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 2",
@@ -154,7 +156,7 @@ defaultButtonData = {
         {
             pos       = {-1.496,0.1,0.3632},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 3",
@@ -164,7 +166,7 @@ defaultButtonData = {
         {
             pos       = {-1.496,0.1,0.4348},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 4",
@@ -174,7 +176,7 @@ defaultButtonData = {
         {
             pos       = {-1.496,0.1,0.5064},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 5",
@@ -184,7 +186,7 @@ defaultButtonData = {
         {
             pos       = {-1.496,0.1,0.578},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Discipline",
             id        = "Discipline 6",
@@ -194,7 +196,7 @@ defaultButtonData = {
         {
             pos       ={-0.491,0.1,0.22},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Background",
             id        = "Background 1",
@@ -204,7 +206,7 @@ defaultButtonData = {
         {
             pos       ={-0.491,0.1,0.2916},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Background",
             id        = "Background 2",
@@ -214,7 +216,7 @@ defaultButtonData = {
         {
             pos       ={-0.491,0.1,0.3632},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Background",
             id        = "Background 3",
@@ -224,7 +226,7 @@ defaultButtonData = {
         {
             pos       ={-0.491,0.1,0.4348},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Background",
             id        = "Background 4",
@@ -234,7 +236,7 @@ defaultButtonData = {
         {
             pos       ={-0.491,0.1,0.5064},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Background",
             id        = "Background 5",
@@ -244,7 +246,7 @@ defaultButtonData = {
         {
             pos       ={-0.491,0.1,0.578},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 300,
             label     = "Background",
             id        = "Background 6",
@@ -273,7 +275,7 @@ defaultButtonData = {
         {--0.0712
             pos       = {-1.487,0.1,0.980},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
             font_size = 270,
             label     = "Merit",
             id        = "Merit 1",
@@ -281,7 +283,7 @@ defaultButtonData = {
         {
             pos       = {-1.487,0.1,1.0512},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
             font_size = 270,
             label     = "Merit",
             id        = "Merit 2",
@@ -289,7 +291,7 @@ defaultButtonData = {
         {
             pos       = {-1.487,0.1,1.1224},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
             font_size = 270,
             label     = "Merit",
             id        = "Merit 3",
@@ -297,7 +299,7 @@ defaultButtonData = {
         {
             pos       = {-1.487,0.1,1.1936},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
             font_size = 270,
             label     = "Merit",
             id        = "Merit 4",
@@ -305,7 +307,7 @@ defaultButtonData = {
         {
             pos       = {-1.487,0.1,1.2648},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
             font_size = 270,
             label     = "Merit",
             id        = "Merit 5",
@@ -364,7 +366,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.487,0.1,1.514},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
             font_size = 270,
             label     = "Flaw",
             id        = "Flaw 1",
@@ -373,7 +375,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.487,0.1,1.5852},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
             font_size = 270,
             label     = "Flaw",
             id        = "Flaw 2",
@@ -381,15 +383,15 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.487,0.1,1.6564},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
             font_size = 270,
-                label     = "Flaw",
+            label     = "Flaw",
             id        = "Flaw 3",
         },
         {--0.07
             pos       = {-1.487,0.1,1.7276},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
             font_size = 270,
                         label     = "Flaw",
             id        = "Flaw 4",
@@ -397,7 +399,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.487,0.1,1.7988},
             rows      = 1,
-            width     = 3700,
+            width     = 4100,
                         font_size = 270,
             label     = "Flaw",
             id        = "Flaw 5",
@@ -459,7 +461,7 @@ defaultButtonData = {
             rows      = 2,
             width     = 4700,
             font_size = 300,
-            label     = "Weakness",
+            label     = "",
             id        = "Weakness",
 
         },
@@ -1127,6 +1129,16 @@ defaultButtonData = {
 --Intercom
 local childSheet = nil
 
+function onObjectDestroy(dying_object)
+    if childSheet and dying_object == childSheet then
+        childSheet = nil
+
+        ref_buttonData.childSheet.guid = nil
+
+        updateSave()
+    end
+end
+
 function setChildSheet(params) 
     if childSheet and childSheet ~= params["sheet"] then
         childSheet.call("orphanSheet", {mainSheet = self})
@@ -1134,12 +1146,21 @@ function setChildSheet(params)
 
     childSheet = params["sheet"]
 
-    ref_buttonData.childSheet.guid = childSheet.getGUID()
+    if childSheet then
+        ref_buttonData.childSheet.guid = childSheet.getGUID()
+    else
+        ref_buttonData.childSHeet.guid = nil
+    end
+
     updateSave()
 end
 
 function getClaimantId()
     return ref_buttonData.player.claimantId    
+end
+
+function getClaimantName()
+    return ref_buttonData.player.claimantName    
 end
 
 playerColors = {
@@ -1190,6 +1211,10 @@ function onload(saved_data)
 
     if ref_buttonData.childSheet.guid then
         childSheet = getObjectFromGUID(ref_buttonData.childSheet.guid)
+
+        if not childSheet or childSheet.getVar("sheetType") ~= "Child Sheet" then
+            childSheet = nil
+        end
     end
 
     spawnedButtonCount = 0
@@ -1201,7 +1226,6 @@ function onload(saved_data)
     createCounter()
     createTextbox()
     createHealth()
-
     --permission
     local claimant = ref_buttonData.player.claimantName
     if claimant == nil then claimant = ref_buttonData.player.label end
@@ -1285,14 +1309,14 @@ function onload(saved_data)
     setReadWrite(writeAllowed)
 
     if ref_buttonData.player.claimantId == nil then
-        self.setName("V20:DA Character Sheet")
+        self.setName("V20:DA Main Character Sheet")
     else 
-        self.setName(ref_buttonData.player.claimantName.."'s' V20:DA Character Sheet")
+        self.setName(ref_buttonData.player.claimantName.."'s V20:DA Main Character Sheet")
     end
 end
 
 function claim(obj, playerColor) 
-    if writeAllowed and ref_buttonData.player.claimantId == nil and playerColor ~= "Black" then
+    if ref_buttonData.player.claimantId == nil and playerColor ~= "Black" then
         ref_buttonData.player.claimantId = Player[playerColor].steam_id
         ref_buttonData.player.claimantName = Player[playerColor].steam_name
 
@@ -1304,36 +1328,36 @@ function claim(obj, playerColor)
             tooltip = ""
             })  
 
-        self.setName(ref_buttonData.player.claimantName.."'s' V20:DA Character Sheet")
+        self.setName(ref_buttonData.player.claimantName.."'s V20:DA Main Character Sheet")
+
+        setReadWrite(true)
 
         if childSheet then
-            childSheet.call("setClaimant", {mainSheet = self.getGUID(), claimantId = ref_buttonData.player.claimantId})
+            childSheet.call("setClaimant", {mainSheet = self.getGUID(), claimantId = ref_buttonData.player.claimantId, claimantName = ref_buttonData.player.claimantName})
         end
     end
 end
 
 function revokeClaim(obj, playerColor)
-    if writeAllowed then
-        if playerColor == "Black" then
-            ref_buttonData.player.claimantId = nil
-            ref_buttonData.player.claimantName = nil
+    if playerColor == "Black" then
+        ref_buttonData.player.claimantId = nil
+        ref_buttonData.player.claimantName = nil
 
-            updateSave()
+        updateSave()
 
-            self.editButton({
-                index = ref_buttonData.player.buttonId,
-                label = "Claim",
-                tooltip = "Claim this sheet"
-                })  
+        self.editButton({
+            index = ref_buttonData.player.buttonId,
+            label = "Claim",
+            tooltip = "Claim this sheet"
+            })  
 
-            self.setName("V20:DA Character Sheet")
+        self.setName("V20:DA Main Character Sheet")
 
-            if childSheet then
-               childSheet.call("setClaimant", {mainSheet = self.getGUID(), claimantId = nil})
-            end
-        else
-            Player[playerColor].broadcast("Only the GM/Black Player can revoke claims")
+        if childSheet then
+           childSheet.call("setClaimant", {mainSheet = self.getGUID(), claimantId = nil, claimantName = nil})
         end
+    else
+        Player[playerColor].broadcast("Only the GM/Black Player can revoke claims")
     end
 end
 
@@ -1461,7 +1485,9 @@ function setReadWrite(localWriteAllowed)
     if writeAllowed == true then color = buttonColor end 
 
     for i, button in ipairs(self.getButtons()) do
-        self.editButton({index = button.index, color = color})
+        if button.index ~= ref_buttonData.player.buttonId then
+            self.editButton({index = button.index, color = color})
+        end
     end
 
     for j, input in ipairs(self.getInputs()) do
@@ -1517,12 +1543,16 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
                     })
             end
         else
-            if ref_buttonData.dots[tableIndex].tooltip ~= "" and ref_buttonData.dots[tableIndex].value > 0 then
+            if ref_buttonData.dots[tableIndex].id ~= "" and ref_buttonData.dots[tableIndex].value > 0 then
                 local player = Player[playerColor]
 
 
                 for i = 1, ref_buttonData.dots[tableIndex].value do 
                     local dice = spawnObject({type = "D10", position = self.getPosition()})
+
+                    dice.setName(" ("..ref_buttonData.dots[tableIndex].id.." "..i..")")
+
+                    dice.tooltip = true
 
                     local color = getPlayerColor(Player[playerColor].color)
 
@@ -1539,6 +1569,18 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
     end
 end
 
+function getPlayerColor(player)
+     local color = {0, 0 , 0}
+     for i, playerColor in ipairs(playerColors) do 
+         
+         if player == playerColor.name then
+             color = playerColor.color
+             break
+         end
+     end
+ 
+     return color
+end
 
 --Applies value to given counter display
 function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used for generation ?
@@ -1553,8 +1595,6 @@ function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used 
                 calculateGenerationStats()
                 self.editButton({index = bloodPerTurnId, label = bloodPerTurn})
 
-                print("will call")
-
                 if childSheet then
                     childSheet.call("setGeneration", {mainSheet = self, generation = newValue})
                 end
@@ -1566,8 +1606,8 @@ function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used 
 end
 
 --Updates saved value for given text box
-function click_textbox(i, type, key,  playerColor, value, selected)
-    if (playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId) and writeAllowed == true then
+function click_textbox(i, type, key, isNumeric,  playerColor, value, selected)
+    if (not isNumeric or string.match(value, "^%d+$")) and (playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId) and writeAllowed == true then
         if selected == false then
             ((ref_buttonData[type])[i])[key] = value
             updateSave()
@@ -1595,6 +1635,8 @@ function click_textbox(i, type, key,  playerColor, value, selected)
                 self.editButton({
                     index = totalExpId, label = val
                     })
+            elseif type == "dots" then
+                self.editInput({index = ((ref_buttonData[type])[i]).inputId, tooltip = value})
             end
         end
 
@@ -1722,7 +1764,7 @@ function fillDots(data, i, reset)
         local fontSize = 180
         if not specialityUnlocked then fontSize = 0 end
 
-        local width = 900
+        local width = 800
         if not specialityUnlocked then width = 0 end
 
         if width > 0 and data.dependsOn == 1 then
@@ -1737,7 +1779,7 @@ function fillDots(data, i, reset)
 
         if reset or data.inputId == nil then
             local funcName = "speciality"..data.id
-            local func = function(_,playerColor,val,sel) click_textbox(i, "dots", "speciality", playerColor,val,sel) end
+            local func = function(_,playerColor,val,sel) click_textbox(i, "dots", "speciality", data.validation == 2, playerColor,val,sel) end
             self.setVar(funcName, func)
 
             self.createInput({
@@ -1830,7 +1872,7 @@ function createTextbox()
     for i, data in ipairs(ref_buttonData.textbox) do
         --Sets up reference function
         local funcName = "textbox"..data.id
-        local func = function(_,playerColor,val,sel) click_textbox(i, "textbox", "value", playerColor,val,sel) end
+        local func = function(_,playerColor,val,sel) click_textbox(i, "textbox", "value", data.validation == 2, playerColor,val,sel) end
         self.setVar(funcName, func)
 
         local height = (data.font_size*data.rows)+24

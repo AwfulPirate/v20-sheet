@@ -932,42 +932,36 @@ defaultButtonData = {
             pos   = {0.095,0.1,0.22},
             sequence = 9,
             id =  "Background 1",
-            dependsOn = 0,
         },
         --Background 2
         {
             pos   = {0.095,0.1,0.2916},
             sequence = 9,
             id =  "Background 2",
-            dependsOn = 0,
         },
         --Background 3
         {
             pos   = {0.095,0.1,0.3632},
             sequence = 9,
             id =  "Background 3",
-            dependsOn = 0,
         },
         --Background 4
         {
             pos   = {0.095,0.1,0.4348},
             sequence = 9,
             id =  "Background 4",
-            dependsOn = 0,
         },
         --Background 5
         {
             pos   = {0.095,0.1,0.5064},
             sequence = 9,
             id =  "Background 5",
-            dependsOn = 0,
         },
         --Background 6
         {
             pos   = {0.095,0.1,0.578},
             sequence = 9,
             id =  "Background 6",
-            dependsOn = 0,
         },
         
         --Virtues

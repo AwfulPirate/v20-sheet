@@ -1,6 +1,8 @@
 --[[    Character Sheet Template    by: MrStump
 V20: Dark Ages Character Sheet by: Phenicks]]
 
+sheetType="Child Sheet"
+
 --state of play/edit
 writeAllowed = false
 
@@ -8,7 +10,7 @@ writeAllowed = false
 readOnlyTimerDelay = 90
 
 --Set this to true while editing and false when you have finished
-disableSave = true
+disableSave = false
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -42,13 +44,13 @@ defaultButtonData = {
             rows      = 15,
             width     = 4650,
             font_size = 270,
-            label     = "Notes",
+            label     = "",
             id        = "Notes",
         },
         {--0.07
             pos       = {-1.491,0.1,-0.558},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 1",
@@ -57,7 +59,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.488},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 2",
@@ -66,7 +68,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.418},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 3",
@@ -75,7 +77,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.348},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 4",
@@ -84,7 +86,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.278},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 5",
@@ -93,7 +95,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.208},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 6",
@@ -102,7 +104,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.138},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 7",
@@ -111,7 +113,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,-0.068},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 8",
@@ -120,7 +122,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.002},
             rows      = 1,
-            width     = 1700,
+            width     = 2000,
             font_size = 270,
             label     = "Trait",
             id        = "Other Trait 9",
@@ -129,7 +131,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.223},
             rows      = 1,
-            width     = 2500,
+            width     = 3500,
             font_size = 270,
             label     = "Path",
             id        = "Path 1",
@@ -138,7 +140,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.293},
             rows      = 1,
-            width     = 2500,
+            width     = 3500,
             font_size = 270,
             label     = "Path",
             id        = "Path 2",
@@ -147,7 +149,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.363},
             rows      = 1,
-            width     = 2500,
+            width     = 3500,
             font_size = 270,
             label     = "Path",
             id        = "Path 3",
@@ -156,7 +158,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.433},
             rows      = 1,
-            width     = 2500,
+            width     = 3500,
             font_size = 270,
             label     = "Path",
             id        = "Path 4",
@@ -165,7 +167,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.503},
             rows      = 1,
-            width     = 2500,
+            width     = 3500,
             font_size = 270,
             label     = "Path",
             id        = "Path 5",
@@ -174,7 +176,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.573},
             rows      = 1,
-            width     = 2500,
+            width     = 3500,
             font_size = 270,
             label     = "Path",
             id        = "Path 6",
@@ -183,7 +185,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.643},
             rows      = 1,
-            width     = 2500,
+            width     = 3500,
             font_size = 270,
             label     = "Path",
             id        = "Path 7",
@@ -192,7 +194,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.713},
             rows      = 1,
-            width     = 2500,
+            width     = 3500,
             font_size = 270,
             label     = "Path",
             id        = "Path 8",
@@ -201,7 +203,7 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,0.783},
             rows      = 1,
-            width     = 2500,
+            width     = 3500,
             font_size = 270,
             label     = "Path",
             id        = "Path 9",
@@ -210,101 +212,90 @@ defaultButtonData = {
         {--0.07
             pos       = {-1.491,0.1,1.072},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 1",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.1447},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 2",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.2174},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 3",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.2901},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 4",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.3628},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 5",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.4355},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 6",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.5082},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 7",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.5809},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 8",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.6536},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 9",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.7263},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 10",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.1,1.799},
             rows      = 1,
-            width     = 2500,
+            width     = 4000,
             font_size = 270,
             label     = "Ritual",
             id        = "Ritual 11",
-            fkTooltip = true,
         },
         {--0.07
             pos       = {-0.66,0.1,1.072},
@@ -446,7 +437,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "Age",
+            label     = "",
             id        = "Age",
             validation = 2,
         },
@@ -456,7 +447,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "Apparent Age",
+            label     = "",
             id        = "Apparent Age",
             validation = 2,
         },
@@ -466,7 +457,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "RIP",
+            label     = "",
             id        = "RIP",
             validation = 2,
         },
@@ -476,7 +467,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "Sex",
+            label     = "",
             id        = "Sex",
         },
          {
@@ -485,7 +476,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "Race",
+            label     = "",
             id        = "Race",
         },
          {
@@ -494,7 +485,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "Hair",
+            label     = "",
             id        = "Hair",
         },
          {
@@ -503,7 +494,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "Eyes",
+            label     = "",
             id        = "Eyes",
         },
         {
@@ -512,7 +503,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "Height",
+            label     = "",
             id        = "Height",
         },
          {
@@ -521,7 +512,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "Weight",
+            label     = "",
             id        = "Weight",
         },
          {
@@ -530,7 +521,7 @@ defaultButtonData = {
             font_size = 270,
             width     = 2500,
             alignment = 4,
-            label     = "Nationality",
+            label     = "",
             id        = "Nationality",
         },
         {
@@ -538,7 +529,7 @@ defaultButtonData = {
             rows      = 6,
             width     = 4550,
             font_size = 270,
-            label     = "Allies",
+            label     = "",
             id        = "Allies",
         },
         {
@@ -546,7 +537,7 @@ defaultButtonData = {
             rows      = 6,
             width     = 4550,
             font_size = 270,
-            label     = "Contacts",
+            label     = "",
             id        = "Contacts",
         },
         {
@@ -554,7 +545,7 @@ defaultButtonData = {
             rows      = 4,
             width     = 4550,
             font_size = 270,
-            label     = "Gear",
+            label     = "",
             id        = "Gear",
         },
         {
@@ -562,7 +553,7 @@ defaultButtonData = {
             rows      = 4,
             width     = 4550,
             font_size = 270,
-            label     = "Equipment",
+            label     = "",
             id        = "Equipment",
         },
         {
@@ -570,7 +561,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 3750,
             font_size = 270,
-            label     = "Armor",
+            label     = "",
             id        = "Armor",
         },
         {
@@ -578,7 +569,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 500,
             font_size = 270,
-            label     = "Class",
+            label     = "",
             id        = "Class",
         },
         {
@@ -586,7 +577,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 500,
             font_size = 270,
-            label     = "Rating",
+            label     = "",
             id        = "Rating",
         },
         {
@@ -594,7 +585,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 500,
             font_size = 270,
-            label     = "Penalty",
+            label     = "",
             id        = "Penalty",
         },
         {--0.07
@@ -610,7 +601,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Diff",
+            label     = "",
             id        = "Diff 1",
         },
         {--0.07
@@ -618,7 +609,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Damage",
+            label     = "",
             id        = "Damage 1",
         },
         {--0.07
@@ -626,7 +617,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Range",
+            label     = "",
             id        = "Range 1",
         },
         {--0.07
@@ -634,7 +625,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Rate",
+            label     = "",
             id        = "Rate 1",
         },
         {--0.07
@@ -642,7 +633,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Clip",
+            label     = "",
             id        = "Diff 1",
         },
         {--0.07
@@ -650,7 +641,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Conceal",
+            label     = "",
             id        = "Conceal 1",
         },
        
@@ -667,7 +658,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Diff",
+            label     = "",
             id        = "Diff 2",
         },
         {--0.07
@@ -675,7 +666,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Damage",
+            label     = "",
             id        = "Damage 2",
         },
         {--0.07
@@ -683,7 +674,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Range",
+            label     = "",
             id        = "Range 2",
         },
         {--0.07
@@ -691,7 +682,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Rate",
+            label     = "",
             id        = "Rate 2",
         },
         {--0.07
@@ -699,7 +690,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Clip",
+            label     = "",
             id        = "Diff 2",
         },
         {--0.07
@@ -707,7 +698,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Conceal",
+            label     = "",
             id        = "Conceal 2",
         },
 
@@ -724,7 +715,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Diff",
+            label     = "",
             id        = "Diff 3",
         },
         {--0.07
@@ -732,7 +723,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Damage",
+            label     = "",
             id        = "Damage 3",
         },
         {--0.07
@@ -740,7 +731,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Range",
+            label     = "",
             id        = "Range 3",
         },
         {--0.07
@@ -748,7 +739,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Rate",
+            label     = "",
             id        = "Rate 3",
         },
         {--0.07
@@ -756,7 +747,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Clip",
+            label     = "",
             id        = "Diff 3",
         },
         {--0.07
@@ -764,7 +755,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Conceal",
+            label     = "",
             id        = "Conceal 3",
         },
 
@@ -781,7 +772,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Diff",
+            label     = "",
             id        = "Diff 4",
         },
         {--0.07
@@ -789,7 +780,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Damage",
+            label     = "",
             id        = "Damage 4",
         },
         {--0.07
@@ -797,7 +788,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Range",
+            label     = "",
             id        = "Range 4",
         },
         {--0.07
@@ -805,7 +796,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Rate",
+            label     = "",
             id        = "Rate 4",
         },
         {--0.07
@@ -813,7 +804,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Clip",
+            label     = "",
             id        = "Diff 5",
         },
         {--0.07
@@ -821,7 +812,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Conceal",
+            label     = "",
             id        = "Conceal 5",
         },
 
@@ -838,7 +829,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Diff",
+            label     = "",
             id        = "Diff 5",
         },
         {--0.07
@@ -846,7 +837,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Damage",
+            label     = "",
             id        = "Damage 5",
         },
         {--0.07
@@ -854,7 +845,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Range",
+            label     = "",
             id        = "Range 5",
         },
         {--0.07
@@ -862,7 +853,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Rate",
+            label     = "",
             id        = "Rate 5",
         },
         {--0.07
@@ -870,7 +861,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Clip",
+            label     = "",
             id        = "Diff 5",
         },
         {--0.07
@@ -878,7 +869,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Conceal",
+            label     = "",
             id        = "Conceal 5",
         },
 
@@ -895,7 +886,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Diff",
+            label     = "",
             id        = "Diff 6",
         },
         {--0.07
@@ -903,7 +894,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Damage",
+            label     = "",
             id        = "Damage 6",
         },
         {--0.07
@@ -911,7 +902,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Range",
+            label     = "",
             id        = "Range 6",
         },
         {--0.07
@@ -919,7 +910,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Rate",
+            label     = "",
             id        = "Rate 6",
         },
         {--0.07
@@ -927,7 +918,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Clip",
+            label     = "",
             id        = "Diff 6",
         },
         {--0.07
@@ -935,7 +926,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Conceal",
+            label     = "",
             id        = "Conceal 6",
         },
 
@@ -952,7 +943,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Diff",
+            label     = "",
             id        = "Diff 7",
         },
         {--0.07
@@ -960,7 +951,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Damage",
+            label     = "",
             id        = "Damage 7",
         },
         {--0.07
@@ -968,7 +959,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Range",
+            label     = "",
             id        = "Range 7",
         },
         {--0.07
@@ -976,7 +967,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Rate",
+            label     = "",
             id        = "Rate 7",
         },
         {--0.07
@@ -984,7 +975,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 800,
             font_size = 270,
-            label     = "Clip",
+            label     = "",
             id        = "Diff 7",
         },
         {--0.07
@@ -992,7 +983,7 @@ defaultButtonData = {
             rows      = 1,
             width     = 1000,
             font_size = 270,
-            label     = "Conceal",
+            label     = "",
             id        = "Conceal 7",
         },
         --End of textboxes
@@ -1175,6 +1166,24 @@ playerColors = {
 
 local mainSheet = nil
 
+function onObjectDestroy(dying_object)
+    if mainSheet and dying_object == mainSheet then
+        mainSheet = nil
+
+        ref_buttonData.player.claimantId = nil
+        ref_buttonData.player.claimantName = nil
+        ref_buttonData.player.generation = nil
+
+        ref_buttonData.mainSheet.guid = nil
+
+        updateSave()
+
+        self.editInput({index = mainSheetSetId, value = ""})
+
+        setReadWrite(false)
+    end
+end
+
 --Save function
 function updateSave()
     if disableSave==false then
@@ -1198,12 +1207,21 @@ function orphanSheet(params)
         mainSheet = nil
 
         self.editInput({index = mainSheetSetId, value = ""}) 
+
+        self.setName("V20:DA Secondary Character Sheet")
     end
 end
 
 function setClaimant(params) 
     if mainSheet and params.mainSheet == mainSheet.getGUID() then
         ref_buttonData.player.claimantId = params.claimantId
+        ref_buttonData.player.claimantName = params.claimantName
+
+        if ref_buttonData.player.claimantId == nil then
+            self.setName("V20:DA Secondary Character Sheet")
+        else 
+            self.setName(ref_buttonData.player.claimantName.."'s V20:DA Secondary Character Sheet")
+        end
 
         updateSave()
     end
@@ -1225,6 +1243,10 @@ function onload(saved_data)
 
     if ref_buttonData.mainSheet.guid then
         mainSheet = getObjectFromGUID(ref_buttonData.mainSheet.guid)
+
+        if not mainSheet or mainSheet.getVar("sheetType") ~= "Main Sheet" then
+            mainSheet = nil
+        end
     end
 
     spawnedButtonCount = 0
@@ -1266,35 +1288,41 @@ end
 
 function mainSheetSet(obj, playerColor, val, sel)
     if not sel then
-        if playerColor == "Black" and getObjectFromGUID(val) then
-
+        if playerColor == "Black" and getObjectFromGUID(val) and getObjectFromGUID(val).getVar("sheetType") == "Main Sheet" then
             mainSheet = getObjectFromGUID(val)
 
-            if mainSheet ~= nil then
-                mainSheet.call("setChildSheet", {sheet = self})
+            mainSheet.call("setChildSheet", {sheet = self})
 
-                ref_buttonData.mainSheet.guid = val
+            ref_buttonData.mainSheet.guid = val
 
-                ref_buttonData.player.claimantId = mainSheet.call("getClaimantId")
-                ref_buttonData.player.generation = mainSheet.call("getGeneration")
-                updateSave()
+            ref_buttonData.player.claimantId = mainSheet.call("getClaimantId")
+            ref_buttonData.player.claimantName = mainSheet.call("getClaimantName")
+            ref_buttonData.player.generation = mainSheet.call("getGeneration")
+            updateSave()
 
-                calculateGenerationStats()
-                createDots()
+            self.editInput()
 
-                setReadWrite(mainSheet.call("getReadWrite"))
-
-                Player[playerColor].broadcast("Valid GUID set !")
+             if ref_buttonData.player.claimantId == nil then
+                self.setName("V20:DA Secondary Character Sheet")
+            else 
+                self.setName(ref_buttonData.player.claimantName.."'s V20:DA Secondary Character Sheet")
             end
+
+            calculateGenerationStats()
+            createDots()
+
+            setReadWrite(mainSheet.call("getReadWrite"))
+
+            Player[playerColor].broadcast("Valid GUID set !")
         else 
             local resetFuncName = "resetMainSheet"..self.getGUID()
             Timer.destroy(resetFuncName)
 
-            Timer.create({identifier=resetFuncName, function_name="resetMainSheet", parameters = {label = ref_buttonData.player.claimantId, index = mainSheetSetId}, function_owner=self, delay=0.03})
+            Timer.create({identifier=resetFuncName, function_name="resetMainSheet", parameters = {label = ref_buttonData.mainSheet.guid, index = mainSheetSetId}, function_owner=self, delay=0.03})
             
             if playerColor ~= "Black" then
                 Player[playerColor].broadcast("Only the GM/Black Player can set main sheet")
-            elseif not getObjectFromGUID(val) then
+            else
                 Player[playerColor].broadcast("Invalid GUID, Right Click the Main Sheet, go to Scripting and press GUID to get a valid one")
             end
         end
@@ -1302,7 +1330,6 @@ function mainSheetSet(obj, playerColor, val, sel)
 end
 
 function setGeneration(parameters) 
-    print("called")
     if parameters.mainSheet == mainSheet then
         ref_buttonData.player.generation = parameters.generation
         updateSave()
@@ -1360,10 +1387,7 @@ end
 
 function resetMainSheet(parameters)
     local label = ""
-
     if parameters.label then label = parameters.label end
-
-    print(parameters.index)
 
     self.editInput({index = parameters.index, value = label})
 end
@@ -1381,7 +1405,7 @@ function claim(obj, playerColor)
             tooltip = ""
             })  
 
-        self.setName(ref_buttonData.player.claimantName.."'s' V20:DA Character Sheet")
+        self.setName(ref_buttonData.player.claimantName.."'s' V20:DA Secondary Character Sheet")
     end
 end
 
@@ -1399,7 +1423,7 @@ function revokeClaim(obj, playerColor)
                 tooltip = "Claim this sheet"
                 })  
 
-            self.setName("V20:DA Character Sheet")
+            self.setName("V20:DA Secondary Character Sheet")
         else
             Player[playerColor].broadcast("Only the GM (Black) Player can revoke claims")
         end
@@ -1511,12 +1535,16 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
 
             updateSave()
         else
-            if ref_buttonData.dots[tableIndex].tooltip ~= "" and ref_buttonData.dots[tableIndex].value > 0 then
+             if ref_buttonData.dots[tableIndex].id ~= "" and ref_buttonData.dots[tableIndex].value > 0 then
                 local player = Player[playerColor]
 
 
                 for i = 1, ref_buttonData.dots[tableIndex].value do 
                     local dice = spawnObject({type = "D10", position = self.getPosition()})
+
+                    dice.setName(" ("..ref_buttonData.dots[tableIndex].id.." "..i..")")
+
+                    dice.tooltip = true
 
                     local color = getPlayerColor(Player[playerColor].color)
 
@@ -1533,6 +1561,18 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
     end
 end
 
+function getPlayerColor(player)
+     local color = {0, 0 , 0}
+     for i, playerColor in ipairs(playerColors) do 
+         
+         if player == playerColor.name then
+             color = playerColor.color
+             break
+         end
+     end
+ 
+     return color
+end
 
 --Updates saved value for given text box
 function click_textbox(i, type, key,  playerColor, value, selected)
