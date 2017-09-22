@@ -215,7 +215,7 @@ defaultButtonData = {
         {
             pos       = {-0.469,0.862},
             width     = 4740,
-            label     = "Humanitas",
+            label     = "Humanity",
             id        = "Road",
             alignment = 3,
         },
@@ -535,10 +535,10 @@ defaultButtonData = {
             pos   = {-0.915,-0.2798},
             id =  "Leadership",
         }, 
-        --Legerdemain
+        --Streetwise
         {
             pos   = {-0.915,-0.2082},
-            id =  "Legerdemain",
+            id =  "Streetwise",
         }, 
         --Subterfuge
         {
@@ -556,40 +556,40 @@ defaultButtonData = {
             pos   = {0.095,-0.781},
             id =  "Animal Ken",
         },
-        --Archery
-        {
-            pos   = {0.095,-0.7094},
-            id =  "Archery",
-        },
-        --Commerce
-        {
-            pos   = {0.095,-0.6378},
-            id =  "Commerce",
-        },
         --Crafts
         {
-            pos   = {0.095,-0.5662},
+            pos   = {0.095,-0.7094},
             id =  "Crafts",
+        },
+        --Drive
+        {
+            pos   = {0.095,-0.6378},
+            id =  "Drive",
         },
         --Etiquette
         {
-            pos   = {0.095,-0.4946},
+            pos   = {0.095,-0.5662},
             id =  "Etiquette",
+        },
+        --Firearms
+        {
+            pos   = {0.095,-0.4946},
+            id =  "Firearms",
+        },
+        --Larceny
+        {
+            pos   = {0.095,-0.423},
+            id =  "Larceny",
         },
         --Melee
         {
-            pos   = {0.095,-0.423},
+            pos   = {0.095,-0.3514},
             id =  "Melee",
         },
         --Performance
         {
-            pos   = {0.095,-0.3514},
-            id =  "Performance",
-        },
-        --Ride
-        {
             pos   = {0.095,-0.2798},
-            id =  "Ride",
+            id =  "Performance",
         },
         --Stealth
         {
@@ -612,15 +612,15 @@ defaultButtonData = {
              pos   = {1.108,-0.781},
              id =  "Academics",
         },
-        --Enigmas
+        --Computer
         {
              pos   = {1.108,-0.7094},
-             id =  "Enigmas",
+             id =  "Computer",
         },
-        --Hearth Wisdom
+        --Finance
         {
              pos   = {1.108,-0.6378},
-             id =  "Hearth Wisdom",
+             id =  "Finance",
         },
         --Investigation
         {
@@ -647,15 +647,15 @@ defaultButtonData = {
              pos   = {1.108,-0.2798},
              id =  "Politics",
         },
-        --Seneschal 
+        --Science
         {
              pos   = {1.108,-0.2082},
-             id =  "Seneschal",
+             id =  "Science",
         },
-        --Theology 
+        --Technology 
         {
              pos   = {1.108,-0.1366},
-             id =  "Theology",
+             id =  "Technology",
         },
         --Extra 3 
         {
@@ -835,7 +835,7 @@ defaultButtonData = {
         {
             pos    = {0.938,-1.60},
             size   = 400,
-            value  = 12,
+            value  = 13,
             hideBG = true
         },
         --End of counters
