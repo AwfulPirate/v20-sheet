@@ -11,6 +11,8 @@ readOnlyTimerDelay = 90
 
 --Set this to true while editing and false when you have finished
 disableSave = false
+
+debug = false
 --Remember to set this to false once you are done making changes
 --Then, after you save & apply it, save your game too
 
@@ -40,401 +42,315 @@ defaultButtonData = {
                     (1=Automatic, 2=Left, 3=Center, 4=Right, 5=Justified)
         ]]
         {--0.07
-            pos       = {-1.483,0.1,-1.585},
+            pos       = {-1.483,-1.585},
             rows      = 15,
             width     = 4650,
-            font_size = 270,
             label     = "",
             id        = "Notes",
         },
         {--0.07
-            pos       = {-1.491,0.1,-0.558},
-            rows      = 1,
+            pos       = {-1.491,-0.558},
             width     = 2000,
-            font_size = 270,
             label     = "Trait",
             id        = "Other Trait 1",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,-0.488},
-            rows      = 1,
+            pos       = {-1.491,-0.488},
             width     = 2000,
-            font_size = 270,
             label     = "Trait",
             id        = "Other Trait 2",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,-0.418},
-            rows      = 1,
+            pos       = {-1.491,-0.418},
             width     = 2000,
-            font_size = 270,
             label     = "Trait",
             id        = "Other Trait 3",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,-0.348},
-            rows      = 1,
+            pos       = {-1.491,-0.348},
             width     = 2000,
-            font_size = 270,
             label     = "Trait",
             id        = "Other Trait 4",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,-0.278},
-            rows      = 1,
+            pos       = {-1.491,-0.278},
             width     = 2000,
-            font_size = 270,
             label     = "Trait",
             id        = "Other Trait 5",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,-0.208},
-            rows      = 1,
+            pos       = {-1.491,-0.208},
             width     = 2000,
-            font_size = 270,
             label     = "Trait",
             id        = "Other Trait 6",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,-0.138},
-            rows      = 1,
+            pos       = {-1.491,-0.138},
             width     = 2000,
-            font_size = 270,
             label     = "Trait",
             id        = "Other Trait 7",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,-0.068},
-            rows      = 1,
+            pos       = {-1.491,-0.068},
             width     = 2000,
-            font_size = 270,
             label     = "Trait",
             id        = "Other Trait 8",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.002},
-            rows      = 1,
+            pos       = {-1.491,0.002},
             width     = 2000,
-            font_size = 270,
             label     = "Trait",
             id        = "Other Trait 9",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.223},
-            rows      = 1,
+            pos       = {-1.491,0.223},
             width     = 3500,
-            font_size = 270,
             label     = "Path",
             id        = "Path 1",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.293},
-            rows      = 1,
+            pos       = {-1.491,0.293},
             width     = 3500,
-            font_size = 270,
             label     = "Path",
             id        = "Path 2",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.363},
-            rows      = 1,
+            pos       = {-1.491,0.363},
             width     = 3500,
-            font_size = 270,
             label     = "Path",
             id        = "Path 3",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.433},
-            rows      = 1,
+            pos       = {-1.491,0.433},
             width     = 3500,
-            font_size = 270,
             label     = "Path",
             id        = "Path 4",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.503},
-            rows      = 1,
+            pos       = {-1.491,0.503},
             width     = 3500,
-            font_size = 270,
             label     = "Path",
             id        = "Path 5",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.573},
-            rows      = 1,
+            pos       = {-1.491,0.573},
             width     = 3500,
-            font_size = 270,
             label     = "Path",
             id        = "Path 6",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.643},
-            rows      = 1,
+            pos       = {-1.491,0.643},
             width     = 3500,
-            font_size = 270,
             label     = "Path",
             id        = "Path 7",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.713},
-            rows      = 1,
+            pos       = {-1.491,0.713},
             width     = 3500,
-            font_size = 270,
             label     = "Path",
             id        = "Path 8",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,0.783},
-            rows      = 1,
+            pos       = {-1.491,0.783},
             width     = 3500,
-            font_size = 270,
             label     = "Path",
             id        = "Path 9",
             fkTooltip = true,
         },
         {--0.07
-            pos       = {-1.491,0.1,1.072},
-            rows      = 1,
+            pos       = {-1.491,1.072},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 1",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.1447},
-            rows      = 1,
+            pos       = {-1.491,1.1447},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 2",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.2174},
-            rows      = 1,
+            pos       = {-1.491,1.2174},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 3",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.2901},
-            rows      = 1,
+            pos       = {-1.491,1.2901},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 4",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.3628},
-            rows      = 1,
+            pos       = {-1.491,1.3628},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 5",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.4355},
-            rows      = 1,
+            pos       = {-1.491,1.4355},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 6",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.5082},
-            rows      = 1,
+            pos       = {-1.491,1.5082},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 7",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.5809},
-            rows      = 1,
+            pos       = {-1.491,1.5809},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 8",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.6536},
-            rows      = 1,
+            pos       = {-1.491,1.6536},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 9",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.7263},
-            rows      = 1,
+            pos       = {-1.491,1.7263},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 10",
         },
         {--0.07
-            pos       = {-1.491,0.1,1.799},
-            rows      = 1,
+            pos       = {-1.491,1.799},
             width     = 4000,
-            font_size = 270,
             label     = "Ritual",
             id        = "Ritual 11",
         },
         {--0.07
-            pos       = {-0.66,0.1,1.072},
-            rows      = 1,
+            pos       = {-0.66,1.072},
             width     = 700,
             alignment = 3,
-            font_size = 270,
             validation = 2,
             label     = "0",
             id        = "Ritual Level 1",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.1447},
-            rows      = 1,
+            pos       = {-0.66,1.1447},
             width     = 700,
             validation = 2,
             alignment = 3,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 2",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.2174},
-            rows      = 1,
+            pos       = {-0.66,1.2174},
             width     = 700,
             alignment = 3,
             validation = 2,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 3",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.2901},
-            rows      = 1,
+            pos       = {-0.66,1.2901},
             width     = 700,
             validation = 2,
             alignment = 3,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 4",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.3628},
-            rows      = 1,
+            pos       = {-0.66,1.3628},
             width     = 700,
             validation = 2,
             alignment = 3,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 5",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.4355},
-            rows      = 1,
+            pos       = {-0.66,1.4355},
             width     = 700,
             validation = 2,
             alignment = 3,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 6",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.5082},
-            rows      = 1,
+            pos       = {-0.66,1.5082},
             width     = 700,
             alignment = 3,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 7",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.5809},
-            rows      = 1,
+            pos       = {-0.66,1.5809},
             width     = 700,
             validation = 2,
             alignment = 3,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 8",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.6536},
-            rows      = 1,
+            pos       = {-0.66,1.6536},
             width     = 700,
             validation = 2,
             alignment = 3,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 9",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.7263},
-            rows      = 1,
+            pos       = {-0.66,1.7263},
             width     = 700,
             validation = 2,
             alignment = 3,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 10",
         },
          {--0.07
-            pos       = {-0.66,0.1,1.799},
-            rows      = 1,
+            pos       = {-0.66,1.799},
             width     = 700,
             validation = 2,
             alignment = 3,
-            font_size = 270,
             label     = "0",
             id        = "Ritual Level 11",
         },
 
         {
-            pos       = {-0.392,0.1,-1.585},
+            pos       = {-0.392,-1.585},
             rows      = 10,
             width     = 9200,
-            font_size = 270,
             label     = "",
             id        = "History",
         },
         {
-            pos       = {-0.392,0.1,-0.891},
+            pos       = {-0.392,-0.891},
             rows      = 4,
             width     = 9200,
-            font_size = 270,
             label     = "",
             id        = "Goals",
         },
         {
-            pos       = {-0.392,0.1,-0.542},
+            pos       = {-0.392,-0.542},
             rows      = 5,
             width     = 9200,
-            font_size = 270,
             label     = "",
             id        = "Description",
         },
         {
-            pos       = {0.59,0.1, -0.212},
-            rows      = 1,
-            font_size = 270,
+            pos       = {0.59, -0.212},
             width     = 2500,
             alignment = 4,
             label     = "",
@@ -442,9 +358,7 @@ defaultButtonData = {
             validation = 2,
         },
          {
-            pos       = {0.59,0.1, -0.142},
-            rows      = 1,
-            font_size = 270,
+            pos       = {0.59, -0.142},
             width     = 2500,
             alignment = 4,
             label     = "",
@@ -452,9 +366,7 @@ defaultButtonData = {
             validation = 2,
         },
         {
-            pos       = {0.59,0.1, -0.072},
-            rows      = 1,
-            font_size = 270,
+            pos       = {0.59, -0.072},
             width     = 2500,
             alignment = 4,
             label     = "",
@@ -462,527 +374,403 @@ defaultButtonData = {
             validation = 2,
         },
          {
-            pos       = {0.59,0.1, -0.002},
-            rows      = 1,
-            font_size = 270,
+            pos       = {0.59, -0.002},
             width     = 2500,
             alignment = 4,
             label     = "",
             id        = "Sex",
         },
          {
-            pos       = {0.59,0.1, 0.068},
-            rows      = 1,
-            font_size = 270,
+            pos       = {0.59, 0.068},
             width     = 2500,
             alignment = 4,
             label     = "",
             id        = "Race",
         },
          {
-            pos       = {1.475,0.1, -0.212},
-            rows      = 1,
-            font_size = 270,
+            pos       = {1.475, -0.212},
             width     = 2500,
             alignment = 4,
             label     = "",
             id        = "Hair",
         },
          {
-            pos       = {1.475,0.1, -0.142},
-            rows      = 1,
-            font_size = 270,
+            pos       = {1.475, -0.142},
             width     = 2500,
             alignment = 4,
             label     = "",
             id        = "Eyes",
         },
         {
-            pos       = {1.475,0.1, -0.072},
-            rows      = 1,
-            font_size = 270,
+            pos       = {1.475, -0.072},
             width     = 2500,
             alignment = 4,
             label     = "",
             id        = "Height",
         },
          {
-            pos       = {1.475,0.1, -0.002},
-            rows      = 1,
-            font_size = 270,
+            pos       = {1.475, -0.002},
             width     = 2500,
             alignment = 4,
             label     = "",
             id        = "Weight",
         },
          {
-            pos       = {1.475,0.1, 0.068},
-            rows      = 1,
-            font_size = 270,
+            pos       = {1.475, 0.068},
             width     = 2500,
             alignment = 4,
             label     = "",
             id        = "Nationality",
         },
         {
-            pos       = {-0.41,0.1,0.268},
+            pos       = {-0.41,0.268},
             rows      = 6,
             width     = 4550,
-            font_size = 270,
             label     = "",
             id        = "Allies",
         },
         {
-            pos       = {0.568,0.1,0.268},
+            pos       = {0.568,0.268},
             rows      = 6,
             width     = 4550,
-            font_size = 270,
             label     = "",
             id        = "Contacts",
         },
         {
-            pos       = {-0.41,0.1,0.757},
+            pos       = {-0.41,0.757},
             rows      = 4,
             width     = 4550,
-            font_size = 270,
             label     = "",
             id        = "Gear",
         },
         {
-            pos       = {0.568,0.1,0.757},
+            pos       = {0.568,0.757},
             rows      = 4,
             width     = 4550,
-            font_size = 270,
             label     = "",
             id        = "Equipment",
         },
         {
-            pos       = {-0.247,0.1,1.072},
-            rows      = 1,
+            pos       = {-0.247,1.072},
             width     = 3750,
-            font_size = 270,
             label     = "",
             id        = "Armor",
         },
         {
-            pos       = {0.736,0.1,1.072},
-            rows      = 1,
+            pos       = {0.736,1.072},
             width     = 500,
-            font_size = 270,
             label     = "",
             id        = "Class",
         },
         {
-            pos       = {1.057,0.1,1.072},
-            rows      = 1,
+            pos       = {1.057,1.072},
             width     = 500,
-            font_size = 270,
             label     = "",
             id        = "Rating",
         },
         {
-            pos       = {1.393,0.1,1.072},
-            rows      = 1,
+            pos       = {1.393,1.072},
             width     = 500,
-            font_size = 270,
             label     = "",
             id        = "Penalty",
         },
         {--0.07
-            pos       = {-0.426,0.1,1.324},
-            rows      = 1,
+            pos       = {-0.426,1.324},
             width     = 2700,
-            font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 1",
         },
         {--0.07
-            pos       = {0.167,0.1,1.319},
-            rows      = 1,
+            pos       = {0.167,1.319},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 1",
         },
         {--0.07
-            pos       = {0.384,0.1,1.319},
-            rows      = 1,
+            pos       = {0.384,1.319},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Damage 1",
         },
         {--0.07
-            pos       = {0.626,0.1,1.319},
-            rows      = 1,
+            pos       = {0.626,1.319},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Range 1",
         },
         {--0.07
-            pos       = {0.871,0.1,1.319},
-            rows      = 1,
+            pos       = {0.871,1.319},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Rate 1",
         },
         {--0.07
-            pos       = {1.093,0.1,1.319},
-            rows      = 1,
+            pos       = {1.093,1.319},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 1",
         },
         {--0.07
-            pos       = {1.289,0.1,1.319},
-            rows      = 1,
+            pos       = {1.289,1.319},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Conceal 1",
         },
        
         {--0.07
-            pos       = {-0.426,0.1,1.399},
-            rows      = 1,
+            pos       = {-0.426,1.399},
             width     = 2700,
-            font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 2",
         },
          {--0.07
-            pos       = {0.167,0.1,1.399},
-            rows      = 1,
+            pos       = {0.167,1.399},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 2",
         },
         {--0.07
-            pos       = {0.384,0.1,1.399},
-            rows      = 1,
+            pos       = {0.384,1.399},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Damage 2",
         },
         {--0.07
-            pos       = {0.626,0.1,1.399},
-            rows      = 1,
+            pos       = {0.626,1.399},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Range 2",
         },
         {--0.07
-            pos       = {0.871,0.1,1.399},
-            rows      = 1,
+            pos       = {0.871,1.399},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Rate 2",
         },
         {--0.07
-            pos       = {1.093,0.1,1.399},
-            rows      = 1,
+            pos       = {1.093,1.399},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 2",
         },
         {--0.07
-            pos       = {1.289,0.1,1.399},
-            rows      = 1,
+            pos       = {1.289,1.399},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Conceal 2",
         },
 
          {--0.07
-            pos       = {-0.426,0.1,1.479},
-            rows      = 1,
+            pos       = {-0.426,1.479},
             width     = 2700,
-            font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 3",
         },
          {--0.07
-            pos       = {0.167,0.1,1.479},
-            rows      = 1,
+            pos       = {0.167,1.479},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 3",
         },
         {--0.07
-            pos       = {0.384,0.1,1.479},
-            rows      = 1,
+            pos       = {0.384,1.479},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Damage 3",
         },
         {--0.07
-            pos       = {0.626,0.1,1.479},
-            rows      = 1,
+            pos       = {0.626,1.479},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Range 3",
         },
         {--0.07
-            pos       = {0.871,0.1,1.479},
-            rows      = 1,
+            pos       = {0.871,1.479},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Rate 3",
         },
         {--0.07
-            pos       = {1.093,0.1,1.479},
-            rows      = 1,
+            pos       = {1.093,1.479},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 3",
         },
         {--0.07
-            pos       = {1.289,0.1,1.479},
-            rows      = 1,
+            pos       = {1.289,1.479},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Conceal 3",
         },
 
         {--0.07
-            pos       = {-0.426,0.1,1.559},
-            rows      = 1,
+            pos       = {-0.426,1.559},
             width     = 2700,
-            font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 4",
         },
          {--0.07
-            pos       = {0.167,0.1,1.559},
-            rows      = 1,
+            pos       = {0.167,1.559},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 4",
         },
         {--0.07
-            pos       = {0.384,0.1,1.559},
-            rows      = 1,
+            pos       = {0.384,1.559},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Damage 4",
         },
         {--0.07
-            pos       = {0.626,0.1,1.559},
-            rows      = 1,
+            pos       = {0.626,1.559},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Range 4",
         },
         {--0.07
-            pos       = {0.871,0.1,1.559},
-            rows      = 1,
+            pos       = {0.871,1.559},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Rate 4",
         },
         {--0.07
-            pos       = {1.093,0.1,1.559},
-            rows      = 1,
+            pos       = {1.093,1.559},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 5",
         },
         {--0.07
-            pos       = {1.289,0.1,1.559},
-            rows      = 1,
+            pos       = {1.289,1.559},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Conceal 5",
         },
 
         {--0.07
-            pos       = {-0.426,0.1,1.639},
-            rows      = 1,
+            pos       = {-0.426,1.639},
             width     = 2700,
-            font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 5",
         },
          {--0.07
-            pos       = {0.167,0.1,1.639},
-            rows      = 1,
+            pos       = {0.167,1.639},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 5",
         },
         {--0.07
-            pos       = {0.384,0.1,1.639},
-            rows      = 1,
+            pos       = {0.384,1.639},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Damage 5",
         },
         {--0.07
-            pos       = {0.626,0.1,1.639},
-            rows      = 1,
+            pos       = {0.626,1.639},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Range 5",
         },
         {--0.07
-            pos       = {0.871,0.1,1.639},
-            rows      = 1,
+            pos       = {0.871,1.639},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Rate 5",
         },
         {--0.07
-            pos       = {1.093,0.1,1.639},
-            rows      = 1,
+            pos       = {1.093,1.639},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 5",
         },
         {--0.07
-            pos       = {1.289,0.1,1.639},
-            rows      = 1,
+            pos       = {1.289,1.639},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Conceal 5",
         },
 
          {--0.07
-            pos       = {-0.426,0.1,1.719},
-            rows      = 1,
+            pos       = {-0.426,1.719},
             width     = 2700,
-            font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 6",
         },
          {--0.07
-            pos       = {0.167,0.1,1.719},
-            rows      = 1,
+            pos       = {0.167,1.719},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 6",
         },
         {--0.07
-            pos       = {0.384,0.1,1.719},
-            rows      = 1,
+            pos       = {0.384,1.719},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Damage 6",
         },
         {--0.07
-            pos       = {0.626,0.1,1.719},
-            rows      = 1,
+            pos       = {0.626,1.719},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Range 6",
         },
         {--0.07
-            pos       = {0.871,0.1,1.719},
-            rows      = 1,
+            pos       = {0.871,1.719},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Rate 6",
         },
         {--0.07
-            pos       = {1.093,0.1,1.719},
-            rows      = 1,
+            pos       = {1.093,1.719},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 6",
         },
         {--0.07
-            pos       = {1.289,0.1,1.719},
-            rows      = 1,
+            pos       = {1.289,1.719},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Conceal 6",
         },
 
          {--0.07
-            pos       = {-0.426,0.1,1.799},
-            rows      = 1,
+            pos       = {-0.426,1.799},
             width     = 2700,
-            font_size = 270,
             label     = "Weapon/Attack",
             id        = "Weapon 7",
         },
          {--0.07
-            pos       = {0.167,0.1,1.799},
-            rows      = 1,
+            pos       = {0.167,1.799},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 7",
         },
         {--0.07
-            pos       = {0.384,0.1,1.799},
-            rows      = 1,
+            pos       = {0.384,1.799},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Damage 7",
         },
         {--0.07
-            pos       = {0.626,0.1,1.799},
-            rows      = 1,
+            pos       = {0.626,1.799},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Range 7",
         },
         {--0.07
-            pos       = {0.871,0.1,1.799},
-            rows      = 1,
+            pos       = {0.871,1.799},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Rate 7",
         },
         {--0.07
-            pos       = {1.093,0.1,1.799},
-            rows      = 1,
+            pos       = {1.093,1.799},
             width     = 800,
-            font_size = 270,
             label     = "",
             id        = "Diff 7",
         },
         {--0.07
-            pos       = {1.289,0.1,1.799},
-            rows      = 1,
+            pos       = {1.289,1.799},
             width     = 1000,
-            font_size = 270,
             label     = "",
             id        = "Conceal 7",
         },
@@ -999,128 +787,93 @@ defaultButtonData = {
         --Physical
         --Str
         {
-            pos   = {-0.9333,0.1,-0.558},
-            sequence = 9,
+            pos   = {-0.9333,-0.558},
             id =  "Other Trait 1",
-            specializes = true,
         }, 
         {
-            pos   = {-0.9333,0.1,-0.488},
-            sequence = 9,
+            pos   = {-0.9333,-0.488},
             id =  "Other Trait 2",
-            fkTooltip = true,
-            specializes = true,
         }, 
         {
-            pos   = {-0.9333,0.1,-0.418},
-            sequence = 9,
+            pos   = {-0.9333,-0.418},
             id =  "Other Trait 3",
-            fkTooltip = true,
-            specializes = true,
         }, 
         {
-            pos   = {-0.9333,0.1,-0.348},
-            sequence = 9,
+            pos   = {-0.9333,-0.348},
             id =  "Other Trait 4",
-            fkTooltip = true,
-            specializes = true,
         }, 
         {
-            pos   = {-0.9333,0.1,-0.278},
-            sequence = 9,
+            pos   = {-0.9333,-0.278},
             id =  "Other Trait 5",
-            fkTooltip = true,
-            specializes = true,
         }, 
         {
-            pos   = {-0.9333,0.1,-0.208},
-            sequence = 9,
+            pos   = {-0.9333,-0.208},
             id =  "Other Trait 6",
-            fkTooltip = true,
-            specializes = true,
         }, 
         {
-            pos   = {-0.9333,0.1,-0.138},
-            sequence = 9,
+            pos   = {-0.9333,-0.138},
             id =  "Other Trait 7",
-            fkTooltip = true,
-            specializes = true,
         }, 
         {
-            pos   = {-0.9333,0.1,-0.068},
-            sequence = 9,
+            pos   = {-0.9333,-0.068},
             id =  "Other Trait 8",
-            fkTooltip = true,
-            specializes = true,
         }, 
         { --0.0475
-            pos   = {-0.9333,0.1,0.002},
-            sequence = 9,
+            pos   = {-0.9333,0.002},
             id =  "Other Trait 9",
-            fkTooltip = true,
-            specializes = true,
         }, 
         {
-            pos   = {-0.7433,0.1,0.223},
+            pos   = {-0.7433,0.223},
             sequence = 5,
             id =  "Path 1",
-            fkTooltip = true,
             dependsOn = 0,
         }, 
         {
-            pos   = {-0.7433,0.1,0.293},
+            pos   = {-0.7433,0.293},
             sequence = 5,
             id =  "Path 2",
-            fkTooltip = true,
             dependsOn = 0,
         }, 
         {
-            pos   = {-0.7433,0.1,0.363},
+            pos   = {-0.7433,0.363},
             sequence = 5,
             id =  "Path 3",
-            fkTooltip = true,
             dependsOn = 0,
         }, 
         {
-            pos   = {-0.7433,0.1,0.433},
+            pos   = {-0.7433,0.433},
             sequence = 5,
             id =  "Path 4",
-            fkTooltip = true,
             dependsOn = 0,
         }, 
         {
-            pos   = {-0.7433,0.1,0.503},
+            pos   = {-0.7433,0.503},
             sequence = 5,
             id =  "Path 5",
-            fkTooltip = true,
             dependsOn = 0,
         }, 
         {
-            pos   = {-0.7433,0.1,0.573},
+            pos   = {-0.7433,0.573},
             sequence = 5,
             id =  "Path 6",
-            fkTooltip = true,
             dependsOn = 0,
         }, 
         {
-            pos   = {-0.7433,0.1,0.643},
+            pos   = {-0.7433,0.643},
             sequence = 5,
             id =  "Path 7",
-            fkTooltip = true,
             dependsOn = 0,
         }, 
         {
-            pos   = {-0.7433,0.1,0.713},
+            pos   = {-0.7433,0.713},
             sequence = 5,
             id =  "Path 8",
-            fkTooltip = true,
             dependsOn = 0,
         }, 
         {
-            pos   = {-0.7433,0.1,0.783},
+            pos   = {-0.7433,0.783},
             sequence = 5,
             id =  "Path 9",
-            fkTooltip = true,
             dependsOn = 0,
         }, 
         --End of checkboxes
@@ -1193,7 +946,9 @@ function updateSave()
     end
     self.script_state = saved_data
 
-    --setReadOnlyTimer()
+    if debug then
+        self.editInput({index = 0, value = self.script_state}) 
+    end
 
     if mainSheet then
         mainSheet.call("setReadOnlyTimer")
@@ -1284,6 +1039,9 @@ function onload(saved_data)
 
     spawnedInputCount = spawnedInputCount + 1
 
+    if debug then
+        self.editInput({index = 0, value = self.script_state}) 
+    end
 end
 
 function mainSheetSet(obj, playerColor, val, sel)
@@ -1523,7 +1281,7 @@ end
 function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerColor)
     if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId then
         if writeAllowed == true then
-            if ref_buttonData.dots[tableIndex].value == columnIndex then
+            if ref_buttonData.dots[tableIndex].value and ref_buttonData.dots[tableIndex].value == columnIndex then
                 columnIndex = columnIndex - 1
             end
 
@@ -1531,11 +1289,17 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
 
             data.value = columnIndex
 
-            fillDots(data)
+            fillDots(data, tableIndex)
 
             updateSave()
+
+            if data.id == "Road" then
+                self.editButton({
+                    index = bearingId, label = getBearingLabel(data.value)
+                    })
+            end
         else
-             if ref_buttonData.dots[tableIndex].id ~= "" and ref_buttonData.dots[tableIndex].value > 0 then
+            if ref_buttonData.dots[tableIndex].id ~= "" and ref_buttonData.dots[tableIndex].value and ref_buttonData.dots[tableIndex].value > 0 then
                 local player = Player[playerColor]
 
 
@@ -1575,8 +1339,8 @@ function getPlayerColor(player)
 end
 
 --Updates saved value for given text box
-function click_textbox(i, type, key,  playerColor, value, selected)
-    if (playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId) and writeAllowed == true then
+function click_textbox(i, type, key, isNumeric,  playerColor, value, selected)
+    if (not isNumeric or string.match(value, "^%d+$")) and (playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId) and writeAllowed == true then
         if selected == false then
             ((ref_buttonData[type])[i])[key] = value
             updateSave()
@@ -1589,9 +1353,23 @@ function click_textbox(i, type, key,  playerColor, value, selected)
                 local tooltip = value
                 if tooltip == nil or tooltip =='' then tooltip = dot.id end
 
-                for i = 1, dot.sequence do
-                    self.editButton({index = dot.buttonId + (i - 1), tooltip = tooltip})
+                for i, index in ipairs(dot.ids) do
+                    self.editButton({index = index, tooltip = tooltip})
                 end
+            elseif id == "Experience Current" or ((ref_buttonData[type])[i]).id == "Experience Spent" then
+                local val = value
+
+                if ((ref_buttonData[type])[i]).id == "Experience Current" then
+                    val = val + getTextbox("Experience Spent").value
+                else
+                    val = val + getTextbox("Experience Current").value
+                end
+
+                self.editButton({
+                    index = totalExpId, label = val
+                    })
+            elseif type == "dots" then
+                self.editInput({index = ((ref_buttonData[type])[i]).inputId, tooltip = value})
             end
         end
 
@@ -1626,108 +1404,120 @@ function click_none() end
 --Makes checkboxes
 function createDots(reset)
     for i, data in ipairs(ref_buttonData.dots) do
-        
-        if data.sequence == nil then data.sequence = 1 end
-        if data.sequenceWidth == nil then data.sequenceWidth = 0.0475 end
-        if data.sequenceHeight == nil then data.sequenceHeight = 0 end
-        if data.sequenceColumns == nil then data.sequenceColumns = 1 end
-        if data.value == nil then data.value = 0 end
-        if data.id == nil then data.id = "" end
-        if data.size == nil then data.size = 340 end
-        if data.dependsOn == nil then data.dependsOn = 1 end
-
-        if data.glyphFilled == nil then data.glyphFilled = string.char(9679) end
-        if data.glyphEmpty == nil then data.glyphEmpty = string.char(9675) end
-
         fillDots(data, i, reset)
     end
 end
 
 function fillDots(data, i, reset)
-    local finalSequence = data.sequence * data.sequenceColumns
-    if data.dependsOn == 1 then
+    --default inits start
+    if not data.ids or reset then data.ids = {} end
+
+    local sequence = 9
+    if data.sequence then sequence = data.sequence end
+
+    local sequenceWidth = 0.0475 
+    if data.sequenceWidth then sequenceWidth = data.sequenceWidth end
+
+    local sequenceHeight = 0
+    if data.sequenceHeight then sequenceHeight = data.sequenceHeight end
+
+    local sequenceColumns = 1
+    if data.sequenceColumns then sequenceColumns = data.sequenceColumns end
+
+    local value = 0
+    if data.value then value = data.value end
+
+    local size = 340
+    if data.size then size = data.size end
+
+    dependsOn = 1
+    if data.dependsOn then dependsOn = data.dependsOn end
+
+    local glyphEmpty = string.char(9675)
+    if data.glyphEmpty then glyphEmpty = data.glyphEmpty end
+
+    local glyphFilled = string.char(9679)
+    if data.glyphFilled then glyphFilled = data.glyphFilled end
+
+    --default inits end
+
+    local finalSequence = sequence * sequenceColumns
+    if dependsOn == 1 then
         finalSequence = maxTraitDots
-    elseif data.dependsOn == 2 then
+    elseif dependsOn == 2 then
         finalSequence = bloodPool            
     end
 
     local buttonNumber = spawnedButtonCount
-    for k=1,data.sequenceColumns do
-        for j=1,data.sequence do
+    for k=1,sequenceColumns do
+        for j=1,sequence do
             --Sets up reference function
-            local realIndex = ((k - 1) * data.sequence) + j
+            local realIndex = ((k - 1) * sequence) + j
             
             --Sets up label
-            local label = data.glyphEmpty
-            if data.value >= realIndex then label = data.glyphFilled end
+            local label = glyphEmpty
+            if value >= realIndex then label = glyphFilled end
             --Creates button and counts it
 
-            local isDisabled = finalSequence < realIndex
+            if finalSequence >= realIndex then
+                local fontSize = size * 1.5
 
-            local size = data.size
-            if isDisabled then size = 0 end
+                local copyPos = {data.pos[1] + ((j - 1) * sequenceWidth) ,0.1, data.pos[2] + ((k - 1) * sequenceHeight)}
 
-            local fontSize = size * 1.5
+                if dependsOn == 1 then
+                    copyPos[1] = copyPos[1] + ((sequence - finalSequence) * sequenceWidth)
+                end
 
-            local copyPos = {data.pos[1] + ((j - 1) * data.sequenceWidth) , data.pos[2], data.pos[3] + ((k - 1) * data.sequenceHeight)}
+                if reset or data.ids[realIndex] == nil then
+                    local funcName = "dot"..data.id..realIndex
 
-            if data.dependsOn == 1 then
-                copyPos[1] = copyPos[1] + ((data.sequence - finalSequence) * data.sequenceWidth)
-            end
-
-            if reset or data.buttonId == nil then
-                local funcName = "dot"..data.id..realIndex
-
-                local func = function(_, playerColor) click_dot(i, realIndex, data.sequence * data.sequenceColumns, buttonNumber, playerColor) end
-                self.setVar(funcName, func)
-
-                
-
-                self.createButton({
-                index = spawnedButtonCount,
-                label=label, click_function=funcName, function_owner=self,
-                position=copyPos, height=size, width=size,
-                font_size=fontSize, scale=buttonScale,
-                color=buttonColor, font_color=buttonFontColor, tooltip = data.id
-                })     
+                    local func = function(_, playerColor) click_dot(i, realIndex, sequence * sequenceColumns, buttonNumber, playerColor) end
+                    self.setVar(funcName, func)
 
 
-                spawnedButtonCount = spawnedButtonCount + 1
-            else 
+                    self.createButton({
+                    index = spawnedButtonCount,
+                    label=label, click_function=funcName, function_owner=self,
+                    position=copyPos, height=size, width=size,
+                    font_size=fontSize, scale=buttonScale,
+                    color=buttonColor, font_color=buttonFontColor, tooltip = data.id
+                    })     
+
+                    data.ids[realIndex] = spawnedButtonCount
+
+                    spawnedButtonCount = spawnedButtonCount + 1
+                else 
+                    self.editButton({
+                            index = data.ids[realIndex], label = label, height=size, width=size, font_size = fontSize, position = copyPos,
+                        })
+                end
+            elseif data.ids[realIndex] ~= nil then
                 self.editButton({
-                        index = (data.buttonId + ( realIndex - 1)), label = label, height=size, width=size, font_size = fontSize, position = copyPos,
-
-                    })
+                            index = data.ids[realIndex], label = "", height=0, width=0, font_size = 0,
+                        })
             end
         end
     end
 
-    if data.buttonId == nil then
-        data.buttonId = buttonNumber
-    end
-
-    if data.specializes then
-        local specialityUnlocked = data.value > 3
+    if data.specs == nil and value > 3 then
 
         local fontSize = 180
-        if not specialityUnlocked then fontSize = 0 end
+        local width = 800
 
-        local width = 900
-        if not specialityUnlocked then width = 0 end
-
-        if width > 0 and data.dependsOn == 1 then
-            width = (width * (data.sequence / finalSequence))
+        if width > 0 and dependsOn == 1 then
+            width = (width * (sequence / finalSequence))
         end
 
-        local localPos = {data.pos[1] - data.sequenceWidth - ((width / 2) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3] - 0.005}
+        local localPos = {data.pos[1] - sequenceWidth - ((width / 2) * (buttonScale[1] * 0.002)), 0.1, data.pos[2] - 0.005}
 
-        if data.dependsOn == 1 then
-            localPos[1] = localPos[1] + ((data.sequence - finalSequence) * data.sequenceWidth)
+        if dependsOn == 1 then
+            localPos[1] = localPos[1] + ((sequence - finalSequence) * sequenceWidth)
         end
 
         if reset or data.inputId == nil then
             local funcName = "speciality"..data.id
-            local func = function(_,playerColor,val,sel) click_textbox(i, "dots", "speciality", playerColor,val,sel) end
+
+            local func = function(_,playerColor,val,sel) click_textbox(i, "dots", "speciality", false, playerColor,val,sel) end
             self.setVar(funcName, func)
 
             self.createInput({
@@ -1742,8 +1532,8 @@ function fillDots(data, i, reset)
                 color          = buttonColor,
                 font_color     = buttonFontColor,
                 value          = data.speciality,
-                validation     = data.validation,
                 label = "Speciality",
+                value = data.speciality,
                 tooltip = data.speciality
              })
 
@@ -1755,6 +1545,68 @@ function fillDots(data, i, reset)
                 index = data.inputId, value = data.speciality, height = fontSize + 24, width = width, font_size = fontSize, position = localPos, tooltip = data.speciality
                 })
         end
+    elseif data.inputId then
+        self.editInput({
+                index = data.inputId, height = 0, width = 0, font_size = 0,
+                })
+    end
+end
+
+--Makes counters
+function createCounter()
+    for i, data in ipairs(ref_buttonData.counter) do
+        --Sets up display
+        local displayNumber = spawnedButtonCount
+        --Sets up label
+        local label = data.value
+        --Sets height/width for display
+        local size = data.size
+        if data.hideBG == true then size = 0 end
+        --Creates button and counts it
+        self.createButton({
+            label=label, click_function="click_none", function_owner=self,
+            position={data.pos[1], 0.1, data.pos[2]}, height=size, width=size,
+            font_size=data.size, scale=buttonScale,
+            color=buttonColor, font_color=buttonFontColor
+        })
+        spawnedButtonCount = spawnedButtonCount + 1
+
+        --Sets up add 1
+        local funcName = "counterAdd"..i
+        local func = function(_, playerColor) click_counter(i, playerColor, displayNumber, 1) end
+        self.setVar(funcName, func)
+        --Sets up label
+        local label = "+"
+        --Sets up position
+        local offsetDistance = (data.size/2 + data.size/4) * (buttonScale[1] * 0.002)
+        local pos = {data.pos[1] + offsetDistance, 0.1, data.pos[2]}
+        --Sets up size
+        local size = data.size / 2
+        --Creates button and counts it
+        self.createButton({
+            label=label, click_function=funcName, function_owner=self,
+            position=pos, height=size, width=size,
+            font_size=size, scale=buttonScale,
+            color=buttonColor, font_color=buttonFontColor
+        })
+        spawnedButtonCount = spawnedButtonCount + 1
+
+        --Sets up subtract 1
+        local funcName = "counterSub"..i
+        local func = function(_, playerColor) click_counter(i, playerColor, displayNumber, -1) end
+        self.setVar(funcName, func)
+        --Sets up label
+        local label = "-"
+        --Set up position
+        local pos = {data.pos[1] - offsetDistance, 0.1, data.pos[2]}
+        --Creates button and counts it
+        self.createButton({
+            label=label, click_function=funcName, function_owner=self,
+            position=pos, height=size, width=size,
+            font_size=size, scale=buttonScale,
+            color=buttonColor, font_color=buttonFontColor
+        })
+        spawnedButtonCount = spawnedButtonCount + 1
     end
 end
 
@@ -1762,13 +1614,18 @@ function createTextbox()
     for i, data in ipairs(ref_buttonData.textbox) do
         --Sets up reference function
         local funcName = "textbox"..data.id
-        local func = function(_,playerColor,val,sel) click_textbox(i, "textbox", "value", playerColor,val,sel) end
+        local func = function(_,playerColor,val,sel) click_textbox(i, "textbox", "value", data.validation == 2, playerColor,val,sel) end
         self.setVar(funcName, func)
 
-        local height = (data.font_size*data.rows)+24
-        local finalPos = {data.pos[1] + ((data.width * 0.5) * (buttonScale[1] * 0.002)), data.pos[2], data.pos[3]}
+        local rows = 1
+        if data.rows then rows = data.rows end
 
-        if data.rows > 1 then finalPos[3] = finalPos[3] + ((height * 0.5) * (buttonScale[3] * 0.002))
+        local height = (270*rows)+24
+        local finalPos = {data.pos[1] + ((data.width * 0.5) * (buttonScale[1] * 0.002)), 0.1, data.pos[2]}
+
+
+
+        if rows > 1 then finalPos[3] = finalPos[3] + ((height * 0.5) * (buttonScale[3] * 0.002))
         elseif data.alignment == 4 then finalPos[1] = finalPos[1] - (data.width * (buttonScale[1] * 0.002)) end
 
         --if data.validation == nil then finalPos[1] = finalPos[1] + ((data.width * 0.5) * (buttonScale[1] * 0.002)) end
@@ -1782,7 +1639,7 @@ function createTextbox()
             scale          = buttonScale,
             width          = data.width,
             height         = height,
-            font_size      = data.font_size,
+            font_size      = 270,
             color          = buttonColor,
             font_color     = buttonFontColor,
             value          = data.value,
