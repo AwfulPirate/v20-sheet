@@ -1064,9 +1064,9 @@ function onload(saved_data)
     setReadWrite(writeAllowed)
 
     if ref_buttonData.player.claimantId == nil then
-        self.setName("V20:DA Main Character Sheet")
+        self.setName("V20 Main Character Sheet")
     else 
-        self.setName(ref_buttonData.player.claimantName.."'s V20:DA Main Character Sheet")
+        self.setName(ref_buttonData.player.claimantName.."'s V20 Main Character Sheet")
     end
 
     if debug then
@@ -1087,7 +1087,7 @@ function claim(obj, playerColor)
             tooltip = ""
             })  
 
-        self.setName(ref_buttonData.player.claimantName.."'s V20:DA Main Character Sheet")
+        self.setName(ref_buttonData.player.claimantName.."'s V20 Main Character Sheet")
 
         setReadWrite(true)
 
@@ -1110,7 +1110,7 @@ function revokeClaim(obj, playerColor)
             tooltip = "Claim this sheet"
             })  
 
-        self.setName("V20:DA Main Character Sheet")
+        self.setName("V20 Main Character Sheet")
 
         if childSheet then
            childSheet.call("setClaimant", {mainSheet = self.getGUID(), claimantId = nil, claimantName = nil})
@@ -1317,7 +1317,7 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
 
                     dice.setColorTint(color)
 
-                    dice.setLuaScript("local destroyed = false \n \nlocal isRolling = false \nhighlightDuration = 30 \n \nfunction onUpdate() \n    if not self.resting then  \n        self.highlightOff() \n        isRolling = true \n    elseif isRolling and self.resting then \n        isRolling = false \n \n        local value = self.getValue() \n        if value == 1 then \n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration) \n        elseif value == 10 then \n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration) \n        elseif value >= 6 then  \n            self.highlightOn({1, 1, 1}, highlightDuration)  \n        end \n    end \nend")
+                    dice.setLuaScript("local isRolling = false\nlocal defaultDiff = 5\nhighlightDuration = 30\n\nfunction onUpdate()\n    local newDefaultDiff = Global.getVar('d10Difficulty')\n\n    if newDefaultDiff and newDefaultDiff ~= defaultDiff then \n        defaultDiff = newDefaultDiff\n        if self.resting then isRolling = true end\n    end\n\n    if not self.resting then \n        self.highlightOff()\n        isRolling = true\n    elseif isRolling and self.resting then\n        isRolling = false\n\n        local value = self.getValue()\n        if value == 1 then\n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration)\n        elseif value == 10 then\n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration)\n        elseif value >= defaultDiff then \n            self.highlightOn({1, 1, 1}, highlightDuration) \n        else\n            self.highlightOff()\n        end\n    end\nend\n")
 
                     dice.use_hands = true
 
