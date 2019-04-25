@@ -1307,21 +1307,19 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
 
 
                 for i = 1, ref_buttonData.dots[tableIndex].value do 
-                    local dice = spawnObject({type = "D10", position = self.getPosition()})
+                    local dice = spawnObject({type = "D10", position = player.getHandTransform().position})
 
-                    dice.setName(" ("..ref_buttonData.dots[tableIndex].id.." "..i..")")
+                    dice.setName(" ("..ref_buttonData.dots[tableIndex].id.." - "..i..")")
 
                     dice.tooltip = true
 
-                    local color = getPlayerColor(Player[playerColor].color)
+                    local color = getPlayerColor(player.color)
 
                     dice.setColorTint(color)
 
                     dice.setLuaScript("local isRolling = false\nlocal defaultDiff = 5\nhighlightDuration = 30\n\nfunction onUpdate()\n    local newDefaultDiff = Global.getVar('d10Difficulty')\n\n    if newDefaultDiff and newDefaultDiff ~= defaultDiff then \n        defaultDiff = newDefaultDiff\n        if self.resting then isRolling = true end\n    end\n\n    if not self.resting then \n        self.highlightOff()\n        isRolling = true\n    elseif isRolling and self.resting then\n        isRolling = false\n\n        local value = self.getValue()\n        if value == 1 then\n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration)\n        elseif value == 10 then\n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration)\n        elseif value >= defaultDiff then \n            self.highlightOn({1, 1, 1}, highlightDuration) \n        else\n            self.highlightOff()\n        end\n    end\nend\n")
 
                     dice.use_hands = true
-
-                    dice.deal(i)
                 end
             end
         end
@@ -1343,8 +1341,8 @@ end
 
 --Applies value to given counter display
 function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used for generation ?
-    if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId then
-        if writeAllowed == true then
+    if writeAllowed == true then
+        if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId then
             local newValue = ref_buttonData.counter[tableIndex].value + amount
             if newValue >= 4 and newValue <= 13 then
                 ref_buttonData.counter[tableIndex].value = newValue
@@ -1479,6 +1477,11 @@ function fillDots(data, i, reset)
         finalSequence = maxTraitDots
     elseif dependsOn == 2 then
         finalSequence = bloodPool            
+    end
+
+    if value > finalSequence then
+        value = finalSequence
+        data.value = finalSequence
     end
 
     local buttonNumber = spawnedButtonCount
