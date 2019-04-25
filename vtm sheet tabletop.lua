@@ -10,7 +10,7 @@ writeAllowed = false
 readOnlyTimerDelay = 90
 
 --Set this to true while editing and false when you have finished
-disableSave = false
+disableSave = true
 
 debug = false
 
@@ -1347,7 +1347,6 @@ function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used 
             if newValue >= 4 and newValue <= 13 then
                 ref_buttonData.counter[tableIndex].value = newValue
                 self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})
-                updateSave()
 
                 calculateGenerationStats()
                 self.editButton({index = bloodPerTurnId, label = bloodPerTurn})
@@ -1357,6 +1356,8 @@ function click_counter(tableIndex, playerColor, buttonIndex, amount)--only used 
                 end
 
                 createDots()
+
+                updateSave()
             end
         end
     end

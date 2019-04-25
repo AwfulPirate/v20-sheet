@@ -1093,10 +1093,10 @@ end
 function setGeneration(parameters) 
     if parameters.mainSheet == mainSheet then
         ref_buttonData.player.generation = parameters.generation
-        updateSave()
 
         calculateGenerationStats()
         createDots()
+        updateSave()
     end
 end
 
