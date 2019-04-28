@@ -1,5 +1,7 @@
 --[[    Character Sheet Template    by: MrStump
-V20: Dark Ages Character Sheet by: Phenicks]]
+V20: Dark Ages Character Sheet by: Phenicks
+version: 1.2
+]]
 
 sheetType="Child Sheet"
 
@@ -10,7 +12,7 @@ writeAllowed = false
 readOnlyTimerDelay = 90
 
 --Set this to true while editing and false when you have finished
-disableSave = false
+disableSave = true
 
 debug = false
 --Remember to set this to false once you are done making changes
@@ -113,63 +115,63 @@ defaultButtonData = {
         },
         {--0.07
             pos       = {-1.491,0.223},
-            width     = 3500,
+            width     = 2000,
             label     = "Path",
             id        = "Path 1",
             fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.293},
-            width     = 3500,
+            width     = 2000,
             label     = "Path",
             id        = "Path 2",
             fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.363},
-            width     = 3500,
+            width     = 2000,
             label     = "Path",
             id        = "Path 3",
             fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.433},
-            width     = 3500,
+            width     = 2000,
             label     = "Path",
             id        = "Path 4",
             fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.503},
-            width     = 3500,
+            width     = 2000,
             label     = "Path",
             id        = "Path 5",
             fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.573},
-            width     = 3500,
+            width     = 2000,
             label     = "Path",
             id        = "Path 6",
             fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.643},
-            width     = 3500,
+            width     = 2000,
             label     = "Path",
             id        = "Path 7",
             fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.713},
-            width     = 3500,
+            width     = 2000,
             label     = "Path",
             id        = "Path 8",
             fkTooltip = true,
         },
         {--0.07
             pos       = {-1.491,0.783},
-            width     = 3500,
+            width     = 2000,
             label     = "Path",
             id        = "Path 9",
             fkTooltip = true,
@@ -484,7 +486,7 @@ defaultButtonData = {
             pos       = {0.167,1.319},
             width     = 800,
             label     = "",
-            id        = "Diff 1",
+            id        = "Difficulty 1",
         },
         {--0.07
             pos       = {0.384,1.319},
@@ -508,7 +510,7 @@ defaultButtonData = {
             pos       = {1.093,1.319},
             width     = 800,
             label     = "",
-            id        = "Diff 1",
+            id        = "Clip 1",
         },
         {--0.07
             pos       = {1.289,1.319},
@@ -527,7 +529,7 @@ defaultButtonData = {
             pos       = {0.167,1.399},
             width     = 800,
             label     = "",
-            id        = "Diff 2",
+            id        = "Difficulty 2",
         },
         {--0.07
             pos       = {0.384,1.399},
@@ -551,7 +553,7 @@ defaultButtonData = {
             pos       = {1.093,1.399},
             width     = 800,
             label     = "",
-            id        = "Diff 2",
+            id        = "Clip 2",
         },
         {--0.07
             pos       = {1.289,1.399},
@@ -570,7 +572,7 @@ defaultButtonData = {
             pos       = {0.167,1.479},
             width     = 800,
             label     = "",
-            id        = "Diff 3",
+            id        = "Difficulty 3",
         },
         {--0.07
             pos       = {0.384,1.479},
@@ -594,7 +596,7 @@ defaultButtonData = {
             pos       = {1.093,1.479},
             width     = 800,
             label     = "",
-            id        = "Diff 3",
+            id        = "Clip 3",
         },
         {--0.07
             pos       = {1.289,1.479},
@@ -613,7 +615,7 @@ defaultButtonData = {
             pos       = {0.167,1.559},
             width     = 800,
             label     = "",
-            id        = "Diff 4",
+            id        = "Difficulty 4",
         },
         {--0.07
             pos       = {0.384,1.559},
@@ -637,13 +639,13 @@ defaultButtonData = {
             pos       = {1.093,1.559},
             width     = 800,
             label     = "",
-            id        = "Diff 5",
+            id        = "Clip 4",
         },
         {--0.07
             pos       = {1.289,1.559},
             width     = 1000,
             label     = "",
-            id        = "Conceal 5",
+            id        = "Conceal 4",
         },
 
         {--0.07
@@ -656,7 +658,7 @@ defaultButtonData = {
             pos       = {0.167,1.639},
             width     = 800,
             label     = "",
-            id        = "Diff 5",
+            id        = "Difficulty 5",
         },
         {--0.07
             pos       = {0.384,1.639},
@@ -680,7 +682,7 @@ defaultButtonData = {
             pos       = {1.093,1.639},
             width     = 800,
             label     = "",
-            id        = "Diff 5",
+            id        = "Clip 5",
         },
         {--0.07
             pos       = {1.289,1.639},
@@ -699,7 +701,7 @@ defaultButtonData = {
             pos       = {0.167,1.719},
             width     = 800,
             label     = "",
-            id        = "Diff 6",
+            id        = "Difficulty 6",
         },
         {--0.07
             pos       = {0.384,1.719},
@@ -723,7 +725,7 @@ defaultButtonData = {
             pos       = {1.093,1.719},
             width     = 800,
             label     = "",
-            id        = "Diff 6",
+            id        = "Clip 6",
         },
         {--0.07
             pos       = {1.289,1.719},
@@ -742,7 +744,7 @@ defaultButtonData = {
             pos       = {0.167,1.799},
             width     = 800,
             label     = "",
-            id        = "Diff 7",
+            id        = "Difficulty 7",
         },
         {--0.07
             pos       = {0.384,1.799},
@@ -766,7 +768,7 @@ defaultButtonData = {
             pos       = {1.093,1.799},
             width     = 800,
             label     = "",
-            id        = "Diff 7",
+            id        = "Clip 7",
         },
         {--0.07
             pos       = {1.289,1.799},
@@ -895,7 +897,8 @@ defaultButtonData = {
     --Add custom
     custom = {
         {
-            ownerColor = Player.Black.color
+            ownerColor = Player.Black.color,
+            version = 1.2
         },
     }
 }
@@ -1090,10 +1093,10 @@ end
 function setGeneration(parameters) 
     if parameters.mainSheet == mainSheet then
         ref_buttonData.player.generation = parameters.generation
-        updateSave()
 
         calculateGenerationStats()
         createDots()
+        updateSave()
     end
 end
 
@@ -1304,21 +1307,19 @@ function click_dot(tableIndex, columnIndex, totalColumns, buttonIndex, playerCol
 
 
                 for i = 1, ref_buttonData.dots[tableIndex].value do 
-                    local dice = spawnObject({type = "D10", position = self.getPosition()})
+                    local dice = spawnObject({type = "D10", position = player.getHandTransform().position})
 
-                    dice.setName(" ("..ref_buttonData.dots[tableIndex].id.." "..i..")")
+                    dice.setName(" ("..ref_buttonData.dots[tableIndex].id.." - "..i..")")
 
                     dice.tooltip = true
 
-                    local color = getPlayerColor(Player[playerColor].color)
+                    local color = getPlayerColor(player.color)
 
                     dice.setColorTint(color)
 
-                    dice.setLuaScript("local isRolling = false\nlocal defaultDiff = 5\nhighlightDuration = 30\n\nfunction onUpdate()\n    local newDefaultDiff = Global.getVar('d10Difficulty')\n\n    if newDefaultDiff and newDefaultDiff ~= defaultDiff then \n        defaultDiff = newDefaultDiff\n        if self.resting then isRolling = true end\n    end\n\n    if not self.resting then \n        self.highlightOff()\n        isRolling = true\n    elseif isRolling and self.resting then\n        isRolling = false\n\n        local value = self.getValue()\n        if value == 1 then\n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration)\n        elseif value == 10 then\n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration)\n        elseif value >= defaultDiff then \n            self.highlightOn({1, 1, 1}, highlightDuration) \n        else\n            self.highlightOff()\n        end\n    end\nend\n")
+                    dice.setLuaScript("local isRolling = false\nlocal defaultDifficulty = 5\nhighlightDuration = 30\n\nfunction onUpdate()\n    local newDefaultDifficulty = Global.getVar('d10Difficulty')\n\n    if newDefaultDifficulty and newDefaultDifficulty ~= defaultDifficulty then \n        defaultDifficulty = newDefaultDiff\n        if self.resting then isRolling = true end\n    end\n\n    if not self.resting then \n        self.highlightOff()\n        isRolling = true\n    elseif isRolling and self.resting then\n        isRolling = false\n\n        local value = self.getValue()\n        if value == 1 then\n            self.highlightOn({0.856, 0.1, 0.094}, highlightDuration)\n        elseif value == 10 then\n            self.highlightOn({0.192, 0.701, 0.168}, highlightDuration)\n        elseif value >= defaultDifficulty then \n            self.highlightOn({1, 1, 1}, highlightDuration) \n        else\n            self.highlightOff()\n        end\n    end\nend\n")
 
                     dice.use_hands = true
-
-                    dice.deal(i)
                 end
             end
         end
@@ -1446,6 +1447,11 @@ function fillDots(data, i, reset)
         finalSequence = maxTraitDots
     elseif dependsOn == 2 then
         finalSequence = bloodPool            
+    end
+
+    if value > finalSequence then
+        value = finalSequence
+        data.value = finalSequence
     end
 
     local buttonNumber = spawnedButtonCount
