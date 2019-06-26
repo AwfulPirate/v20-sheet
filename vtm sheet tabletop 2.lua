@@ -1,6 +1,6 @@
 --[[    Character Sheet Template    by: MrStump
 V20: Dark Ages Character Sheet by: Phenicks
-version: 1.2
+version: 1.3
 ]]
 
 sheetType="Child Sheet"
@@ -1505,8 +1505,8 @@ function fillDots(data, i, reset)
         end
     end
 
-    if data.specs == nil and value > 3 then
-
+    if data.specs == nil then
+        local height = 204
         local fontSize = 180
         local width = 800
 
@@ -1518,6 +1518,12 @@ function fillDots(data, i, reset)
 
         if dependsOn == 1 then
             localPos[1] = localPos[1] + ((sequence - finalSequence) * sequenceWidth)
+        end
+
+        if value < 3 then
+            width = 0
+            height = 0
+            fontSize = 0
         end
 
         if reset or data.inputId == nil then
@@ -1533,7 +1539,7 @@ function fillDots(data, i, reset)
                 position       = localPos,
                 scale          = buttonScale,
                 width          = width,
-                height         = fontSize + 24,
+                height         = height,
                 font_size      = fontSize,
                 color          = buttonColor,
                 font_color     = buttonFontColor,
@@ -1548,13 +1554,9 @@ function fillDots(data, i, reset)
             spawnedInputCount = spawnedInputCount + 1
         else 
             self.editInput({
-                index = data.inputId, value = data.speciality, height = fontSize + 24, width = width, font_size = fontSize, position = localPos, tooltip = data.speciality
+                index = data.inputId, value = data.speciality, height = height, width = width, font_size = fontSize, position = localPos, tooltip = data.speciality
                 })
         end
-    elseif data.inputId then
-        self.editInput({
-                index = data.inputId, height = 0, width = 0, font_size = 0,
-                })
     end
 end
 
