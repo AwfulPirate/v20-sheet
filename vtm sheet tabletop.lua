@@ -1,5 +1,7 @@
 --[[    Character Sheet Template    by: MrStump
-V20: Dark Ages Character Sheet by: Phenicks]]
+V20: Dark Ages Character Sheet by: Phenicks
+version: 1.3
+]]
 
 sheetType="Main Sheet"
 
@@ -742,7 +744,7 @@ defaultButtonData = {
         --Conscience
         {
             pos   = {1.293,0.234},
-                        value = 1,
+            value = 1,
             sequence = 5,
             id =  "Conscience/Conviction",
             dependsOn = 0,
@@ -751,7 +753,7 @@ defaultButtonData = {
         --Self-control
         {
             pos   = {1.293,0.402},
-                        value = 1,
+            value = 1,
             sequence = 5,
             id =  "Self-Control/Instinct",
             dependsOn = 0,
@@ -760,7 +762,7 @@ defaultButtonData = {
         --Courage
         {
             pos   = {1.293,0.574},
-                        value = 1,
+            value = 1,
             sequence = 5,
             id =  "Courage",
             dependsOn = 0,
@@ -769,7 +771,7 @@ defaultButtonData = {
         --Road (0.07)
         {
             pos   = {-0.46,0.966},
-                        sequence = 10,
+            sequence = 10,
             value = 5,
             sequenceWidth = 0.104,
             dependsOn = 0,
@@ -801,7 +803,7 @@ defaultButtonData = {
         --Blood Pool (0.07 x 0.065)
         {
             pos   = {-0.46,1.471},
-                        sequence = 10,
+            sequence = 10,
             value = 10,
             glyphFilled = string.char(9632),
             glyphEmpty = string.char(9633),
@@ -1536,8 +1538,8 @@ function fillDots(data, i, reset)
         end
     end
 
-    if data.specs == nil and value > 3 then
-
+    if data.specs == nil then
+        local height = 204
         local fontSize = 180
         local width = 800
 
@@ -1549,6 +1551,12 @@ function fillDots(data, i, reset)
 
         if dependsOn == 1 then
             localPos[1] = localPos[1] + ((sequence - finalSequence) * sequenceWidth)
+        end
+
+        if value < 3 then
+            width = 0
+            height = 0
+            fontSize = 0
         end
 
         if reset or data.inputId == nil then
@@ -1564,7 +1572,7 @@ function fillDots(data, i, reset)
                 position       = localPos,
                 scale          = buttonScale,
                 width          = width,
-                height         = fontSize + 24,
+                height         = height,
                 font_size      = fontSize,
                 color          = buttonColor,
                 font_color     = buttonFontColor,
@@ -1579,13 +1587,9 @@ function fillDots(data, i, reset)
             spawnedInputCount = spawnedInputCount + 1
         else 
             self.editInput({
-                index = data.inputId, value = data.speciality, height = fontSize + 24, width = width, font_size = fontSize, position = localPos, tooltip = data.speciality
+                index = data.inputId, value = data.speciality, height = height, width = width, font_size = fontSize, position = localPos, tooltip = data.speciality
                 })
         end
-    elseif data.inputId then
-        self.editInput({
-                index = data.inputId, height = 0, width = 0, font_size = 0,
-                })
     end
 end
 
@@ -1715,7 +1719,7 @@ function createHealth()
 end
 
 function click_health(i, playerColor) 
-    if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId then
+    if playerColor == "Black" or Player[playerColor].steam_id == ref_buttonData.player.claimantId and writeAllowed == true then
         local nextVal = ref_buttonData.health.value[i] + 1
         if nextVal > 3 then nextVal = 0 end
 
